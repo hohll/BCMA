@@ -327,7 +327,8 @@ Full-Width Styles
 }
 
 .zip_download_link {
-  display: block;
+   
+  display: none;
   float: right;
   width: 90px;
   height:70px;
@@ -337,7 +338,7 @@ Full-Width Styles
 }
 
 .tar_download_link {
-  display: block;
+  display: none;
   float: right;
   width: 90px;
   height:70px;
