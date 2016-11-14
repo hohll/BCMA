@@ -272,7 +272,7 @@ Full-Width Styles
 }
 
 #forkme_banner {
-  display: block;
+  display: none;
   position: absolute;
   top:0;
   right: 10px;
@@ -316,7 +316,7 @@ Full-Width Styles
 }
 
 #downloads {
-  display: none
+  display: none;
   position: absolute;
   width: 210px;
   z-index: 10;
@@ -327,8 +327,8 @@ Full-Width Styles
 }
 
 .zip_download_link {
-   
-  display: none;
+
+  display: block;
   float: right;
   width: 90px;
   height:70px;
@@ -338,7 +338,7 @@ Full-Width Styles
 }
 
 .tar_download_link {
-  display: none;
+  display: block;
   float: right;
   width: 90px;
   height:70px;
