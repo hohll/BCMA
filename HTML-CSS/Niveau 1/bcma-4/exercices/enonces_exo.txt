@@ -1,116 +1,69 @@
-En pratique
+Commençons en ajustant la taille de notre boîte en utilisant la version border-box du modèle de boîte, 
+qui fera que l’ajustement de la taille de tous nos éléments sera beaucoup plus facile. 
+Dans notre fichier style.css nous allons ajouter un commentaire pour identifier le code de ce qui 
+deviendra notre grille qui va nous aider à déterminer la mise en page de notre site Web. 
+De là, nous pouvons utiliser le sélecteur universel, *,ainsi que les pseudo-éléments universels, 
+*:before et *:after, pour sélectionner tous les élément imaginable et changer le box-sizing à border-box. 
+Rappelez vous, nous devons inclure tous les préfixes des fournisseurs nécessaires à la propriété box-sizing, 
+car elle est une propriété relativement nouvelle.
+
+                 
+Ensuite nous allons voulons créer une classe qui servira de conteneur pour nos éléments. 
+Nous pouvons utiliser cette classe de conteneur sur différents éléments pour définir une, largeur commune, 
+centrer les éléments sur la page et appliquer un padding horizontal commun.
+Juste en dessous  de notre ensemble de règles de sélections universelles, nous allons créer un sélecteur avec une 
+classe container.Dans ce sélecteur nous allons définir notre width à 960 pixels, notre padding droite et gauche 
+à 30 pixels,nos marges supérieure et inférieure à 0 et nos marges gauche et droite à auto.
+Définir une largeur indique au navigateur la largeur de tout élément avec la classe container. 
+En utilisant auto comme valeur pour les marges de gauche et de droite permet au navigateur de comprendre 
+automatiquement que les marges seront égales à gauche et à droite pour l'élément, centrant ainsi le contenu 
+sur la page. Enfin, le padding à gauche et droite assure que notre contenu ne sera pas directement coller 
+sur le bord de l'élément et fournit un peu d’aération pour le contenu.
+
+                 
+Maintenant que nous avons une classe de conteneur à utiliser, nous allons aller l’appliquer la classe de conteneur 
+tout long notre code HTML dans les éléments  <header> et <footer> de chaque page, y compris le fichier index.html…
+
+                
+Pendant que y nous sommes, nous allons aller de l’avant et centrer le reste du contenu de nos pages. Sur la page d'accueil, 
+notre  fichier index.html, ajoutons la classe de container pour chaque élément <section> sur la page, un pour notre section 
+de présentation (la section qui introduit notre cours) et une pour notre section d’appel.
+
+                 
+En outre, nous allons envelopper tous les <h1> éléments sur chaque page avec une <section> élément avec la classe de container
+
+                 
+Nous reviendrons ajuster ces éléments et ces classes plus tard, mais pour l’instant nous nous avançons dans la bonne direction.
+Maintenant que l’ensemble de notre contenu est centré, nous allons créer un certain espacement vertical entre les éléments. 
+Pour commencer nous allons placer une marge inférieure de 22 pixel sur des éléments titres et paragraphes. 
+Nous allons placer et commenter ces styles typographiques ci-dessous nos styles de grille.
+
+
+Nous avons volontairement sauté l’éléments  <h6> parce nous ne l'utiliserons pas pour le moment.
+Faisons aussi la création d’un bordure et de quelques coins arrondis. Nous allons commencer par placer un bouton dans 
+l’élément  <section> sur notre page d'accueil, situé juste en dessous de l'entête.
+Auparavant nous avons ajouté un élément <a> dans cette <section>. Ajoutons les classes de btn et btn-alt à cette ancre.
+
+                 
+Maintenant nous allons créer quelques styles pour ces classes au sein de notre CSS. Ci dessous notre règle de typographie 
+définies, nous allons créer une nouvelle section du fichier CSS pour les boutons.
+Pour commencer nous allons ajouter la classe btn et appliquer des styles communs qui peuvent être partagées entre tous les 
+boutons. Nous voulons que tous nos boutons aient un  border-radius de 5 pixel.Ils doivent être présentés comme des éléments  
+inline-block afin que nous puissions ajouter du padding autour des quatre côtés sans problème. Nous supprimons toute marge.
+
+
+Nous voulons également inclure les styles spécifiques à ce bouton, que nous ferons en utilisant la classe btn-alt. Ici nous 
+allons ajouter une bordure de 1-pixel, solide et grise avec 10 pixels de padding en haut et en bas de la touche 
+et 30 pixels de padding à gauche et droite du bouton.
+
+                 
+L’utilisation de deux classes btn et btn-alt sur le même élément <a> permet à ces styles de se superposer sur un seul élément.
+Parce que nous travaillons sur la page d'accueil, ajoutons aussi un peu de padding à l'élément <section> qui contient notre 
+élément <a> avec les classes de btn et btn-alt. Nous allons faire cela en ajoutant une classe leader à l'élément <section> , 
+au côté de la valeur d’attribut de classe container, comme ce sera le premier de notre site Web.
+
+
+Ensuite nous allons créer une nouvelle règle au sein de notre fichier CSS pour la classe leader qui appliquera un  padding des 
+quatre côtés de  l'élément sélectionné par la classe. Le padding sera en haut de 22 pixels, à droite de 80 pixels, 
+en dessous de 66 pixels et à gauche de 80 pixels.
 
-Exercice 1
-
-1 - Faire en sorte que les éléments de titre aient une taille qui s'échelonne de 10px en 10px sachant que le titre le plus petit aura une taille de 15px
-2 - Tous les éléments de type ancre doivent être de couleur verte.
-3 - On attribuera un identifiant "carte" à l’élément d'ancre de la section "cartes". Cet élément doivent être de couleur orange.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Exercice 2
-
-1 - Tous les éléments ancre du menu doivent être de couleur grise.
-2 - On attribuera une classe "btn" à tous les éléments d'ancres des sections "horaires" et "cartes". Ces éléments avec la classe "btn" doivent être de couleur rouge.
-3 - On attribuera à tous les éléments de titre 4 contenus dans une classe "btn" la couleur bleu turquoise -aqua-.
-4 - On attribuera à l'élements de classe "btn" de la section "programme" une autre classe "btn-primary". Cette classe ajouter un fond de couleur marron.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Exercice 3
-
-1 - Transformer les couleurs concernant en hexadécimal à l’aide  du tableau ci-dessus
-2 - Transformer en RGBA la couleur les classes “btn”  et “btn-primary”. Mettre une opacité de 50% sur la classe “btn-primary”
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Exercice 4
-
-1 - Faire en sorte que les sections à l’intérieur de la section principale, aient une largeur de 15%. 
