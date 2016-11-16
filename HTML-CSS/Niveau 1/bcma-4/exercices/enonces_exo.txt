@@ -1,0 +1,116 @@
+En pratique
+
+Exercice 1
+
+1 - Faire en sorte que les éléments de titre aient une taille qui s'échelonne de 10px en 10px sachant que le titre le plus petit aura une taille de 15px
+2 - Tous les éléments de type ancre doivent être de couleur verte.
+3 - On attribuera un identifiant "carte" à l’élément d'ancre de la section "cartes". Cet élément doivent être de couleur orange.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercice 2
+
+1 - Tous les éléments ancre du menu doivent être de couleur grise.
+2 - On attribuera une classe "btn" à tous les éléments d'ancres des sections "horaires" et "cartes". Ces éléments avec la classe "btn" doivent être de couleur rouge.
+3 - On attribuera à tous les éléments de titre 4 contenus dans une classe "btn" la couleur bleu turquoise -aqua-.
+4 - On attribuera à l'élements de classe "btn" de la section "programme" une autre classe "btn-primary". Cette classe ajouter un fond de couleur marron.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercice 3
+
+1 - Transformer les couleurs concernant en hexadécimal à l’aide  du tableau ci-dessus
+2 - Transformer en RGBA la couleur les classes “btn”  et “btn-primary”. Mettre une opacité de 50% sur la classe “btn-primary”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercice 4
+
+1 - Faire en sorte que les sections à l’intérieur de la section principale, aient une largeur de 15%. 
