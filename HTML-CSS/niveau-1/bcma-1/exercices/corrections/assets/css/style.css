@@ -1,0 +1,47 @@
+/* Style - Cours BCMA - HTML- CSS - Dernière modification Novembre 2016 */
+/* Les titres */
+h1{ font-size: 65px }
+h2{ font-size: 55px }
+h3{ font-size: 45px }
+h4{ font-size: 35px }
+h5{ font-size: 25px }
+h6{ font-size: 15px }
+
+/* Les ancres */
+a{
+	color: green;
+	color: #008000;
+}
+
+#carte{
+	color: yellow;
+	color: #ffff00;
+}
+
+/* Ajouter une couleur de fond */
+nav a {
+	color: gray;
+	color: #808080;
+}
+
+
+.btn{
+	color: red;
+	color: #ff0000;	
+	color: rgba( 255, 0, 0, 1);	
+}
+
+.btn h4{
+	color: aqua;
+	color: #00ffff;	
+}
+
+.btn-primary{
+	background: maroon;
+	background: #800000;
+	background: rgba( 128, 0, 0, .5);
+}
+
+section section{ 
+	width: 15%;
+}
