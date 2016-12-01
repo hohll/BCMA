@@ -326,8 +326,24 @@ Full-Width Styles
   background: url('../images/icon_download.png') no-repeat 0% 90%;
 }
 
-.zip_download_link {
+ol li{ width: 500px; margin:15px 0 }
+ol li a{ width: 400px; display: inline-block }
+ol li a:hover{ color: #000; text-decoration: none; }
 
+ol li a[href $='.zip'] { 
+	background: transparent url('../images/page_white_zip.png') no-repeat center right;
+	text-align: right;
+	width: 16px;
+	height: 16px
+}
+ol li a[href $='.zip']:hover { 
+   text-decoration: none;
+   -webkit-box-shadow: 1px 1px 20px 4px rgba(21,247,0,1);
+	-moz-box-shadow: 1px 1px 20px 4px rgba(21,247,0,1);
+	box-shadow: 1px 1px 20px 4px rgba(21,247,0,1);
+}
+
+.zip_download_link {
   display: block;
   float: right;
   width: 90px;
