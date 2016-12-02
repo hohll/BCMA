@@ -328,7 +328,7 @@ Full-Width Styles
 
 ol li{ width: 500px; margin:15px 0 }
 ol li a{ width: 400px; display: inline-block }
-ol li a:hover{ color: #000; text-decoration: none; }
+ol li a:hover{ color: #000; text-decoration: none;text-shadow: 1px 1px 20px 4px rgb(21,247,0); -webkit-text-shadow: 1px 1px 20px 4px rgb(21,247,0)}
 
 ol li a[href $='.zip'] { 
 	background: transparent url('../images/page_white_zip.png') no-repeat center right;
