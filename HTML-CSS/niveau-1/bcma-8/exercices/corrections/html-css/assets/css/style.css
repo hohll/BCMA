@@ -266,11 +266,37 @@ p a{
   text-align: right;
 }
 
+.nav li {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+}
+.nav li:last-child {
+  margin-right: 0;
+}
+
 .nav-principale{
   font-size: 14px;
   font-weight: 400;
   letter-spacing: .5px;
   text-transform: uppercase;
+}
+
+/*
+  =======================================
+  Auteur
+  =======================================
+*/
+ .auteur {
+  margin-bottom: 44px;
+}
+ 
+.auteur-info {
+  border: 1px #dfe2e5 solid;
+  border-radius: 5px;
+  margin-top: 88px;
+  padding: 22px 0;
+  text-align: center;
 }
 
 
