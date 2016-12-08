@@ -272,7 +272,7 @@ Full-Width Styles
 }
 
 #forkme_banner {
-  display: none; 
+  display: none;
   position: absolute;
   top:0;
   right: 10px;
@@ -330,18 +330,32 @@ ol li{ width: 500px; margin:15px 0 }
 ol li a{ width: 400px; display: inline-block }
 ol li a:hover{ color: #000; text-decoration: none;text-shadow: 1px 1px 20px 4px rgb(21,247,0); -webkit-text-shadow: 1px 1px 20px 4px rgb(21,247,0)}
 
-ol li a[href $='.zip'] { 
+ol li a[href $='.zip'] {
 	background: transparent url('../images/page_white_zip.png') no-repeat center right;
 	text-align: right;
 	width: 16px;
 	height: 16px
 }
-ol li a[href $='.zip']:hover { 
+ol li a[href $='.zip']:hover {
    text-decoration: none;
    -webkit-box-shadow: 1px 1px 20px 4px rgba(21,247,0,1);
 	-moz-box-shadow: 1px 1px 20px 4px rgba(21,247,0,1);
 	box-shadow: 1px 1px 20px 4px rgba(21,247,0,1);
 }
+
+ol li.extra a{
+	background: none;
+	text-align: right;
+  width: auto;
+}
+ol li.extra a:hover{
+  color: #000;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+ -moz-box-shadow: none;
+ box-shadow: none;
+}
+
 
 .zip_download_link {
   display: block;
