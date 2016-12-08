@@ -344,7 +344,10 @@ ol li a[href $='.zip']:hover {
 }
 
 ol li.extra a{
-	background: none;
+  background-position: left center;
+  line-height: 22px;
+  height: 22px;
+  padding-left: 20px;
 	text-align: right;
   width: auto;
 }
