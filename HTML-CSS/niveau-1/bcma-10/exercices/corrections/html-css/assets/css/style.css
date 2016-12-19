@@ -103,6 +103,10 @@ strong{
 cite, em {
   font-style: italic;
 }
+/*
+
+*/
+
 
 /*
   ========================================
@@ -229,6 +233,10 @@ p a{
   border-bottom: 1px #dfe2e5 solid;
 }
 
+a.active {
+	border-bottom: 2px solid ; 
+	padding-bottom:5px;
+}
 /*
   ========================================
   Header
@@ -284,14 +292,14 @@ p a{
 
 /*
   =======================================
-  Auteur
+  Profs
   =======================================
 */
- .auteur {
+ .prof {
   margin-bottom: 44px;
 }
  
-.auteur-info {
+.prof-info {
   border: 1px #dfe2e5 solid;
   border-radius: 5px;
   margin-top: 88px;
@@ -299,6 +307,18 @@ p a{
   text-align: center;
 }
 
+/*
+  ================================== ======
+  Lieu
+  ========================================
+*/
+
+.lieu-cours{
+  margin-bottom: 66px;
+}
+.lieu-cours-fin{
+  margin-bottom: 22px;
+}
 
 /*
   ========================================
@@ -351,21 +371,21 @@ p a{
 
 /*
   ========================================
-  Auteurs
+  Profs
   ========================================
 */
 
-.auteur {
+.prof {
   margin-bottom: 44px;
 }
-.auteur-info {
+.prof-info {
   border: 1px solid #dfe2e5;
   border-radius: 5px;
   margin-top: 88px;
   padding-bottom: 22px;
   text-align: center;
 }
-.auteur-info img {
+.prof-info img {
   border-radius: 50%;
   border: 1px solid #dfe2e5;
   height: 130px;
@@ -385,6 +405,6 @@ p a{
 .lieu-hotel {
   margin-bottom: 22px;
 }
-.lieu-map {
+.lieu-loc {
   height: 264px;
 }

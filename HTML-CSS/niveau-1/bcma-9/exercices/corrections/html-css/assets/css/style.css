@@ -283,19 +283,19 @@ p a{
 }
 
 /*
-  =======================================
-  Auteur
-  =======================================
+  ========================================
+  Profs
+  ========================================
 */
- .auteur {
+
+.prof {
   margin-bottom: 44px;
 }
- 
-.auteur-info {
-  border: 1px #dfe2e5 solid;
+.prof-info {
+  border: 1px solid #dfe2e5;
   border-radius: 5px;
   margin-top: 88px;
-  padding: 22px 0;
+  padding-bottom: 22px;
   text-align: center;
 }
 
