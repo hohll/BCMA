@@ -159,6 +159,14 @@ cite, em {
   width: 66.66%;
 }
 
+.col-mid{
+	width:480px;
+}
+
+.col-mid video{
+	width:100%;
+}
+
 /*
   ========================================
   Rows
