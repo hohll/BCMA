@@ -1,0 +1,96 @@
+
+#container {
+	margin: 0 auto;
+	width: 800px;
+	text-align: left;
+	border: #090 dashed 1px;
+}
+
+section {
+	padding: 10px;
+}
+
+header {
+	background: url(../images/nature-paris.jpg) no-repeat;
+	height: 160px;
+}
+
+header.jardins {
+	background: url(../images/jardins-paris.jpg) no-repeat;
+	height: 160px;
+}
+
+header.parcs {
+	background: url(../images/parcs-paris.jpg) no-repeat;
+	height: 160px;
+}
+
+p {
+	text-align: justify;
+}
+
+footer {
+	color: #090;
+	font-size: 80%;
+	text-align: center;
+}
+
+h1 {
+	color: #090;
+}
+
+h2 {
+	font-size: 120%;
+	background: url(../images/fleche.png) no-repeat;
+	padding-left: 25px;
+}
+
+a:link,
+a:visited {
+	text-decoration: underline;
+}
+
+nav ul {
+	list-style-type: none;
+	margin-top: 20px;
+	padding: 0px;
+	margin-left: 10px;
+}
+
+nav li {
+	display: inline-block;
+	padding: 4px;
+}
+
+nav li a {
+	color: #090;
+	padding: 4px;
+}
+
+nav li a:link {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+nav li.on a:link {
+	background-color: #ddd;
+}
+
+nav li a:hover {
+	text-decoration: underline;
+	color: #BBB;
+}
+
+figure {
+	text-align: center;
+}
+
+#parcs figure img{
+	width: 118px;
+	height: 89px;
+}
+
+figcaption {
+	font-style: italic;
+	font-size: 80%;
+}
