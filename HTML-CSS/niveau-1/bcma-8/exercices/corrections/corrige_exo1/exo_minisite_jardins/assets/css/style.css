@@ -1,9 +1,16 @@
-
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Marvel:400,700');
+body{
+	font-family: 'Marvel', sans-serif;
+    /* font-family: 'Fredericka the Great', cursive; */
+	font-size: 18px;
+	line-height:22px;
+}
 #container {
 	margin: 0 auto;
 	width: 800px;
 	text-align: left;
-	border: #090 dashed 1px;
+	background-color: #DEDEDE
+	/* border: #090 dashed 1px; */
 }
 
 section {
