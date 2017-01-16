@@ -5,6 +5,7 @@ body{
 	font-size: 18px;
 	line-height:22px;
 }
+
 #container {
 	margin: 0 auto;
 	width: 800px;
@@ -13,13 +14,29 @@ body{
 	/* border: #090 dashed 1px; */
 }
 
+h1{
+	font-family: 'Fredericka the Great', cursive;
+}
+
 section {
 	padding: 10px;
 }
 
+section ul{
+	list-style-type: square;
+}
+
 header {
-	background: url(../images/nature-paris.jpg) no-repeat;
-	height: 160px;
+	background: url(../images/header1.jpg) no-repeat;
+	background-size: cover;
+	height: 210px;
+}
+
+header h1{
+	padding: 60px 30px;
+	font-size: 48px;
+	font-weight: bold;
+	color: #fff;
 }
 
 header.jardins {
