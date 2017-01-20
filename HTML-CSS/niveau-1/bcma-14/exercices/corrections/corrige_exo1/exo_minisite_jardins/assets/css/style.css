@@ -1,120 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Marvel:400,700');
-body{
-	font-family: 'Marvel', sans-serif;
-    /* font-family: 'Fredericka the Great', cursive; */
-	font-size: 18px;
-	line-height:22px;
-}
 
-#container {
-	margin: 0 auto;
-	width: 800px;
-	text-align: left;
-	background-color: #DEDEDE
-	/* border: #090 dashed 1px; */
-}
+/* Primaire : #245C00 |	Secondaire:	#67A125 | Tertiaire: #B2DE81 | Complémentaire: #FCFEFE */
 
-h1{
-	font-family: 'Fredericka the Great', cursive;
-}
+body{	font-family: 'Marvel', sans-serif;	font-size: 18px;	line-height:22px }
+h1, h2, h3{	font-family: 'Fredericka the Great', cursive; color: #245C00; }
+h1{ font-size: 32px; }
+h2{ font-size: 24px; }
+h3{ font-size: 20px; }
 
-section {
-	padding: 10px;
-}
+a,a:hover, a:link,a:visited {	text-decoration: none }
+p {	text-align: justify; margin-bottom: 15px }
 
-section ul{
-	list-style-type: square;
-}
+header {	background: url(../images/header.jpg) no-repeat;	background-size: cover;	height: 210px }
+header h1{ padding: 60px 30px;	font-size: 48px;	font-weight: bold; color: #FCFEFE }
 
-header {
-	background: url(../images/header1.jpg) no-repeat;
-	background-size: cover;
-	height: 210px;
-}
+#container {	margin: 0 auto;	width: 80%;	text-align: left;	background-color: #FCFEFE }
 
-header h1{
-	padding: 60px 30px;
-	font-size: 48px;
-	font-weight: bold;
-	color: #fff;
-}
+nav ul {	background-color:#67A125;	list-style-type: none;	padding: 0px; margin:0 }
+nav li { display: inline-block;	padding: 15px 0;}
+nav li.contact{ float: right }
+nav li a {color: #FCFEFE;	font-weight: bold; padding:11px 12px 13px 12px; font-size: 24px;  }
+nav li a:link {	text-decoration: none; font-weight: bold }
+nav li.on a:link { background-color: #B2DE81 }
+nav li a:hover { text-decoration: underline;	background-color: #B2DE81 }
 
-header.jardins {
-	background: url(../images/jardins-paris.jpg) no-repeat;
-	height: 160px;
-}
+section {	padding: 10px;}
+section h1{	padding: 10px 0; margin-bottom: 15px; font-weight: bold }
+section h2{ background: url(../images/fleche.png) no-repeat;	padding-left: 25px; margin-bottom: 15px}
+section ul{	list-style-type: square; margin:15px 50px}
 
-header.parcs {
-	background: url(../images/parcs-paris.jpg) no-repeat;
-	height: 160px;
-}
+article{ }
 
-p {
-	text-align: justify;
-}
+figure{ text-align: center;}
+figcaption{ font-style: italic;	font-size: 80%;}
 
-footer {
-	color: #090;
-	font-size: 80%;
-	text-align: center;
-}
+footer { background-color: #67A125; font-size: 80%; text-align: center; height: 5vh; color: #fff }
 
-h1 {
-	color: #090;
-}
+/* Page index */
+.video{ width: 100%; margin:0; padding:0; height: 400px; overflow: hidden }
+.video video{ width: 100% }
+/* Page Jardin */
+.header-jardin{ background: url(../images/header-jardin.jpg) no-repeat;background-size: cover; height: 160px }
 
-h2 {
-	font-size: 120%;
-	background: url(../images/fleche.png) no-repeat;
-	padding-left: 25px;
-}
-
-a:link,
-a:visited {
-	text-decoration: underline;
-}
-
-nav ul {
-	list-style-type: none;
-	margin-top: 20px;
-	padding: 0px;
-	margin-left: 10px;
-}
-
-nav li {
-	display: inline-block;
-	padding: 4px;
-}
-
-nav li a {
-	color: #090;
-	padding: 4px;
-}
-
-nav li a:link {
-	text-decoration: none;
-	font-weight: bold;
-}
-
-nav li.on a:link {
-	background-color: #ddd;
-}
-
-nav li a:hover {
-	text-decoration: underline;
-	color: #BBB;
-}
-
-figure {
-	text-align: center;
-}
-
-#parcs figure img{
-	width: 118px;
-	height: 89px;
-}
-
-figcaption {
-	font-style: italic;
-	font-size: 80%;
-}
+/* Page Parcs */
+.header-parc{ background: url(../images/header-parc.jpg) no-repeat;background-size: cover; height: 160px }
+#parcs figure img{	width: 118px;	height: 89px;}
