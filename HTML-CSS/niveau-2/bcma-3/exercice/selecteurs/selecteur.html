@@ -1,165 +1,36 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang='fr'>
   <head>
-    <meta charset="UTF-8">
-    <title>Select Is Easy!</title>
-    <link href="styles.css" rel="stylesheet">
+    <meta charset='UTF-8'/>
+    <title>Sélecteurs CSS </title>
+    <link rel='stylesheet' href='styles.css'/>
   </head>
   <body>
-    <section id="intro">
-  <h1>...</h1>
-  <h2 class="tagline">...</h2>
-  <input type="checkbox" id="toggle">
-<label for="toggle">&#9776;</label>
-<nav>
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
-<a href="#" target="_blank">...</a>
-<a href="http://google.com/">...</a>
-<a href="/login.php">...</a>
-<a href="https://chase.com/">...</a>
-<a href="/docs/menu.pdf">...</a>
-<a href="#" rel="tag nofollow">...</a>
-<a href="http://google.com/">Search the Web</a>
-<a href="http://learn.shayhowe.com/">Learn How to Build Websites</a>
-<a class="arrow" href="#">Continue Reading</a>
+    <header id="main">
+        <input type="checkbox" id="toggle">
+        <label for="toggle">&#9776;</label>
+          <h1 class="title">Les sélecteurs CSS</h1>
+        <nav>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Infos</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
 
-</section>
-<section id="content">
-<h2>...</h2>
-<p>...</p>
-<article>
-  <p>...</p>
-  <h2>This heading will be selected</h2>
-  <p>This paragraph will be selected</p>
-  <div>
-    <h2>This heading will be selected</h2>
-    <p>...</p>
-  </div>
-  <p>This paragraph will be selected</p>
-  <p class="alpha">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum dignissim leo a interdum. Duis eu orci velit.</p>
+      <p>Un grand pas en avant avec CSS3</p>
+    </header>
+    <section>
+      <p>Les sélecteurs CSS vous permettent de <em>sélectionner</em> es éléments HTML individuels dans un document HTML.
+       C'est<strong>super</strong> utile.</p>
 
-<p class="bravo">Integer eget enim pulvinar leo consectetur tincidunt ut sed erat. Etiam elit velit, molestie eu rutrum vel, vehicula feugiat augue. Vestibulum elementum dictum turpis ac blandit.</p>
-</article>
-</section>
-<table>
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Player</th>
-      <th>Position</th>
-      <th>Height</th>
-      <th>Weight</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>8</td>
-      <td>Marco Belinelli</td>
-      <td>G</td>
-      <td>6-5</td>
-      <td>195</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Carlos Boozer</td>
-      <td>F</td>
-      <td>6-9</td>
-      <td>266</td>
-    </tr>
-    <tr>
-      <td>21</td>
-      <td>Jimmy Butler</td>
-      <td>G-F</td>
-      <td>6-7</td>
-      <td>220</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>Luol Deng</td>
-      <td>F</td>
-      <td>6-9</td>
-      <td>220</td>
-    </tr>
-    <tr>
-      <td>22</td>
-      <td>Taj Gibson</td>
-      <td>F</td>
-      <td>6-9</td>
-      <td>225</td>
-    </tr>
-    <tr>
-      <td>32</td>
-      <td>Richard Hamilton</td>
-      <td>G</td>
-      <td>6-7</td>
-      <td>193</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>Kirk Hinrich</td>
-      <td>G</td>
-      <td>6-4</td>
-      <td>190</td>
-    </tr>
-    <tr>
-      <td>48</td>
-      <td>Nazr Mohammed</td>
-      <td>C</td>
-      <td>6-10</td>
-      <td>250</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>Joakim Noah</td>
-      <td>C</td>
-      <td>6-11</td>
-      <td>232</td>
-    </tr>
-    <tr>
-      <td>77</td>
-      <td>Vladimir Radmanovic</td>
-      <td>F</td>
-      <td>6-10</td>
-      <td>235</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Nate Robinson</td>
-      <td>G</td>
-      <td>5-9</td>
-      <td>180</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Derrick Rose</td>
-      <td>G</td>
-      <td>6-3</td>
-      <td>190</td>
-    </tr>
-    <tr>
-      <td>25</td>
-      <td>Marquis Teague</td>
-      <td>G</td>
-      <td>6-2</td>
-      <td>190</td>
-    </tr>
-  </tbody>
-</table>
-<footer>
-  <ul>
-  <li><a href="#.pdf">PDF Document</a></li>
-  <li><a href="#.doc">Word Document</a></li>
-  <li><a href="#.jpg">Image File</a></li>
-  <li><a href="#.mp3">Audio File</a></li>
-  <li><a href="#.mp4">Video File</a></li>
-</ul>
+      <p>Les classes sont ridiculement important,  car ils vous permettent de sélectionner des boîtes arbitraires dans vos pages Web.</p>
+      <div>
+        <p>Nous allons aussi parler de liens dans cet
+         <a href='https://google.com'>exemple</a> pour le mettre en forme.</p>
+      </div>
 
-</footer>
+    </section>
   </body>
 </html>
