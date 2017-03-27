@@ -336,12 +336,16 @@ ol li a[href $='.zip'] {
 	width: 16px;
 	height: 16px
 }
+
 ol li a[href $='.zip']:hover {
    text-decoration: none;
    -webkit-box-shadow: 1px 1px 20px 4px rgba(21,247,0,1);
 	-moz-box-shadow: 1px 1px 20px 4px rgba(21,247,0,1);
 	box-shadow: 1px 1px 20px 4px rgba(21,247,0,1);
 }
+
+ol li a.exo{ width: 300px; text-align: left;background: transparent url('../images/page_white_zip.png') no-repeat 0 5px; padding-left: 20px; height:auto }
+ol li a.exo:hover{ -webkit-box-shadow: none;-moz-box-shadow:none;box-shadow: none;text-decoration: underline;}
 
 ol li.extra a{
   background-position: left center;
@@ -358,6 +362,7 @@ ol li.extra a:hover{
  -moz-box-shadow: none;
  box-shadow: none;
 }
+
 
 
 .zip_download_link {
