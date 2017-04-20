@@ -1,0 +1,33 @@
+.ticketing-ticket-details fieldset.ticketing-form-group {
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 10px;
+}
+
+.ticketing-ticket-details p {
+	margin: 0px;
+}
+
+.ticketing-ticket-details.ticketing-form-group {
+	margin-bottom: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.ticketing-form-group .btn {
+	margin-bottom: 3px;
+}
+
+textarea.ticketing {
+    width: 100%;
+    height: 135px;
+}
+
+.nopadding{
+    padding-right:0;
+    padding-left:0;
+}
+
+.wordwrap-ticket-comment {
+	word-wrap:break-word;
+	height:100%;
+}

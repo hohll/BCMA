@@ -1,0 +1,33 @@
+
+
+
+
+
+
+<!DOCTYPE html><html>  <head>    <title>Page introuvable</title>    <base href="http://dstibpico34244f.stations.paris.mdp:8080/gra/" />    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Le style -->		<link href="css/bootstrap.min.css" rel="stylesheet">    <!-- <link href="css/bootstrap-theme.min.css" rel="stylesheet"> -->    <link href="css/font-awesome.min.css" rel="stylesheet">    <link href="js/jquery/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">    <link href="css/page_template_styles_md.css" rel="stylesheet">    <!--[if lt IE 9]>    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>    <![endif]-->    <!-- Le fav and touch icons -->    <link rel="shortcut icon" href="favicon.ico">    <script src="js/jquery/jquery-1.11.3.min.js"></script>  </head>  <body>  <!-- header --><header role="banner">  <nav class="navbar navbar-inverse">    <div class="navbar-header">      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myportal-menu">        <span class="sr-only">Toggle navigation</span>        <span class="icon-bar"></span>        <span class="icon-bar"></span>        <span class="icon-bar"></span>      </button>      <a class="navbar-brand" href="#">        <span class="img-nef">&nbsp;</span>        <!-- no myLutece plugin installed -->      </a>    </div>    <div class="collapse navbar-collapse" id="myportal-menu">      <form action="jsp/site/Portal.jsp" method="post" class="navbar-form navbar-right" role="search">        <input type="hidden" name="page" value="search">        <div class="form-group">          <input type="text" class="form-control" placeholder="Rechercher" type="text" name="query" id="searchfield">        </div>        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>      </form>      <ul class="nav navbar-nav navbar-right">        <li> </li>        <li class="active">          <a id="new_widget" class="btn-open btn btn-primary" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un widget" href="jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=browse_categories&amp;tab_index=1">        	   <i class="fa fa-plus"></i> Ajouter un widget        	</a>        </li>        <li>          <a id="new_tab" href="jsp/site/RunStandaloneApp.jsp?page=myportal&#38;action=add_tab" class="btn btn-primary btn-open" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un onglet">        		<span class="fa fa-tag"></span> Ajouter un onglet        	</a>        </li>      </ul>    </div>  </div></nav><div class="hide">	<div class="col-xs-12 col-sm-4">		 <h4>Compte Agents</h4>	</div>  <div class="col-xs-12 col-sm-4">    <div class="btn-menu" style="margin-top:8px">    </div>  </div>  <div class="col-xs-12 col-sm-2">    <form action="jsp/site/Portal.jsp?page=search" method="get" class="form-inline" style="margin-top:15px">      <div class="input-group">        <label for="searchfield" class="sr-only">Rechercher :</label>        <input type="text" name="query" id="searchfield" class="form-control input-sm" placeholder="Rechercher">        <span class="input-group-btn">          <button class="btn btn-sm btn-default" type="button">            <i class="fa fa-search"></i>          </button>        </span>      </div>      </form>    </div>    <div class="col-xs-12 col-sm-2">      <p style="margin-top:30px">      <!-- Button trigger modal -->      <!-- no myLutece plugin installed -->      </p>    </div></div></header><!-- header --><section class="container-fluid"><!-- content -->  <div class="row">    <div class="col-xs-12 col-sm-12"><div class="container">  <!-- Jumbotron -->  <div class="jumbotron">    <h1><i class="fa fa-frown-o text-danger"></i> Page introuvable</h1>    <p class="lead">La page demand�e est introuvable, contactez le webmestre du site ou r�essayez.<br>Utilisez le bouton <b>Retour</b> de votre navigateur pour revenir &agrave; la page pr�c�dente<br>Ou vous pouvez retourner &agrave; la page d'accueil en cliquant sur le bouton ci-dessous  <em><span id="display-domain"></span></em>.</p>    <p><a onclick=javascript:checkSite(); class="btn btn-default btn-lg"><span class="green">Retour à la page principale</span></a>        <script type="text/javascript">            function checkSite(){              var currentSite = window.location.hostname;                window.location = "http://" + currentSite;            }        </script>    </p>  </div></div><div class="container">  <div class="body-content">    <div class="row">      <div class="col-md-6">        <h2>Qu'est-il arrivé ? </h2>        <p class="lead">Une erreur 404 implique que le fichier ou la page que vous recherchez n'a pas pu être trouvée.</p>      </div>      <div class="col-md-6">        <h2>Que puis-je faire ?</h2>        <p>Veuillez utiliser le bouton de retour de votre navigateur et vérifier que vous êtes au bon endroit. Si vous avez besoin d'aide immédiate, envoyez-nous un courriel à la place.</p>     </div>    </div>  </div></div>		</div>
+  </div>
+</section>
+<!-- /content -->
+<footer>
+	<div class="row">
+	<div class="col-xs-12 col-md-offset-1 col-sm-3">
+		<a href="http://www.paris.fr" alt="Paris.fr" title="Paris.fr" target="_blank"><img src="images/local/skin/logo_mdp.png"></a>
+	</div>
+	<div class="col-xs-12 col-md-offset-1 col-sm-7">
+		<ul class="list-inline">
+			<li><a href="http://www.paris.fr/contact" title="Contact" target="_blank">Contact</a></li>
+			<li>
+				<a href="jsp/site/Portal.jsp?page=htmlpage&htmlpage_id=2" title="Mentions légales" target="_blank">Mentions l&eacute;gales</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</footer>
+<!-- end footer -->
+<!-- Included JS Files -->
+<script src="js/jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,45 @@
+/* myapps.css */
+
+.myapps-content {
+	margin-top: 15px;
+	margin-right: 10px;
+}
+
+.myapps-content.left {
+	float: left;
+}
+
+.myapps-content label {
+	float: left;
+	display: block;
+	font-weight: bold;
+	margin: 0;
+	padding-right: 5px;
+	text-align: right;
+	width: 50%;
+}
+
+.myapps-content input, .myapps-content input[type="text"]  {
+	margin: 0;
+}
+
+.portlet-content .myapps-content h3 {
+	font-size: 1em;
+}
+
+.myapps-content ul {
+	list-style-type: none;
+	margin: 0 0 1.5em;
+}
+
+.myapps-description {
+	font-size: 0.8em;
+}
+
+.portlet-content .myapps-content li {
+	padding-top: 5px;
+}
+
+.myapps-table .button {
+	width: 85px;
+}
