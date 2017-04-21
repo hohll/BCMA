@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="fr"><head>
-<title>LUTECE - My Portal</title>
+<html lang="fr">
+<head>
+<title>Mon Intraparis</title>
 <meta http-equiv="x-ua-compatible" content="IE=edge">
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,28 +22,9 @@
 <link href="fichiers/bootstrap.css" rel="stylesheet">
 <link href="fichiers/font-awesome.css" rel="stylesheet">
 <link href="fichiers/jquery-ui.css" rel="stylesheet">
-<link href="fichiers/page_template_styles_gra.css" rel="stylesheet">
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!-- JQUERY UI: Keep for compatibility -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-<![endif]-->
+
 <!-- Le fav and touch icons -->
 <link rel="shortcut icon" href="favicon.ico">
-<!--
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57-precomposed.png">
--->
-		
-	
-	
-
-
- 
 <link rel="stylesheet" href="fichiers/jquery.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/jquery_002.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/jquery_003.css" type="text/css" media="screen">
@@ -54,7 +36,7 @@
 <link rel="stylesheet" href="fichiers/mytasks.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/ticketing.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/workflow_notifygru.css" type="text/css" media="screen">
-
+<link href="fichiers/page_template_styles_gra.css" rel="stylesheet">
 <!-- Included JS Files -->
 <script src="fichiers/jquery-1.js"></script>
 <style type="text/css" id="notify-bootstrap">.notifyjs-bootstrap-base {
@@ -143,41 +125,42 @@
 <header role="banner">
   <nav class="navbar navbar-inverse">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myportal-menu">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        <span class="img-nef">&nbsp;</span>
-      </a>
-      
-
-<a class="navbar-brand navbar-brand-label" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=mydashboard">
-  Bonjour Laurent
-  <img class="avatar avatar-large" src="" alt="">
-</a>
-<small class="navbar-brand navbar-brand-info hidden-xs">DSTI V1029116 laurent.hohl@paris.fr</small>
-
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myportal-menu">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="index.htm">
+			<span class="img-nef">&nbsp;</span>
+		</a>
+		<a class="navbar-brand navbar-brand-label" href="mydashboard.htm">
+		Bonjour XX !
+		<img class="avatar avatar-large" src="" alt="">
+		</a>
+		<small class="navbar-brand navbar-brand-info hidden-xs">DIR V100000 prenom.nom@paris.fr</small>
     </div>
     <div class="collapse navbar-collapse" id="myportal-menu">
-      <form id="search-solr" name="search" action="jsp/site/Portal.jsp" method="post" class="navbar-form navbar-right" role="search">
-				<input name="page" value="search-solr" type="hidden">
-				<div class="form-group">
-          <input id="solr-home" class="form-control" placeholder="Rechercher" name="query" type="text">
+		<form id="search-solr" name="search" action="search.htm" method="post" class="navbar-form navbar-left" role="search">
+		<input name="page" value="search-solr" type="hidden">
+		<div class="form-group">
+          <div class="input-group">
+			<input id="solr-home" class="form-control" placeholder="Rechercher" name="query" value="intraparis" type="text">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
         </div>
-        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-      </form>
+		</form>
       <ul class="nav navbar-nav navbar-right">
         <li> </li>
         <li class="active">
-          <a id="new_widget" class="btn-open btn btn-primary" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un widget" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=browse_categories&amp;tab_index=1">
+          <a id="new_widget" class="btn-open btn btn-primary" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un widget" href="widget.htm">
         	   <i class="fa fa-plus"></i> Ajouter un widget
         	</a>
         </li>
         <li>
-          <a id="new_tab" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=add_tab" class="btn btn-primary btn-open" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un onglet">
+          <a id="new_tab" href="#" class="btn btn-primary btn-open" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un onglet">
         		<span class="fa fa-tag"></span> Ajouter un onglet
         	</a>
         </li>
@@ -185,232 +168,8 @@
     </div>
   
 </nav>
-
-<div class="hide">
-	<div class="col-xs-12 col-sm-4">
-		 <h4>Compte Agents</h4>
-	</div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="btn-menu" style="margin-top:8px">
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-2">
-    <form action="jsp/site/Portal.jsp?page=search" method="get" class="form-inline" style="margin-top:15px">
-      <div class="input-group">
-        <label for="searchfield" class="sr-only">Rechercher :</label>
-        <input name="query" id="searchfield" class="form-control input-sm" placeholder="Rechercher" type="text">
-        <span class="input-group-btn">
-          <button class="btn btn-sm btn-default" type="button">
-            <i class="fa fa-search"></i>
-          </button>
-        </span>
-      </div>
-      </form>
-    </div>
-    <div class="col-xs-12 col-sm-2">
-      <p style="margin-top:30px">
-      <!-- Button trigger modal -->
-      
-
-<a class="navbar-brand navbar-brand-label" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=mydashboard">
-  Bonjour Laurent
-  <img class="avatar avatar-large" src="" alt="">
-</a>
-<small class="navbar-brand navbar-brand-info hidden-xs">DSTI V1029116 laurent.hohl@paris.fr</small>
-
-      </p>
-    </div>
-</div>
-</header>
-<!-- header -->
-<section class="container-fluid">
-<!-- content -->
-  <div class="row">
-    <div class="col-xs-12 col-sm-12">
-      <div id="tabs" class="row">
-    <span class="btn btn-default btn-tab">	<a data-tab="tab_1" data-tab-id="1" class="tab-name pull-left" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=myportal#tabs-1">Mon Compte</a>	<form method="post" action="jsp/site/plugins/myportal/DoDelTab.jsp" class="form-inline pull-right">		<input name="tab_index" value="1" type="hidden">		<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=edit_tab&amp;tab_index=1" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#Widget_modal" data-title="Modifier un onglet">			<span class="fa fa-pencil"></span>		</a>	</form></span>
-<span class="btn btn-default">
-	<a class="tab-name pull-left" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm">
-    Tableau de bord
-  </a>
-</span>
-<div id="tab_1" class="tabs container-fluid">
-	<div class="row">
-		<div class="myportal-column col-xs-12 col-sm-4 col-md-4  ui-sortable">
-			<div id="widget-2" class="panel panel-primary myportal-portlet ui-sortable-handle ui-widget ui-widget-content ui-helper-clearfix">
-	<div class="myportal-portlet-header panel-heading">
-		<h3 class="panel-title">
-			MyApps
-			<div class="btn-toolbar pull-right">
-	  		<div class="btn-group">
-	  			<a class="btn btn-default btn-xs btn-close" data-widget-id="2" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/myportal/DoRemoveWidget.jsp?id_widget=2" title="Retirer le widget de la page">
-						<span class="fa fa-remove"></span>
-					</a>
-					<a class="btn btn-default btn-xs hidden" data-toggle="modal" data-title="Modifier" data-target="#Widget_modal" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=edit_widget&amp;tab_index=1&amp;id_widget=2">
-						<span class="fa fa-edit"></span>
-					</a>
-				<a href="#" class="btn btn-default btn-xs"><span class="fa fa-caret-down"></span></a></div>
-			</div>
-		</h3>
-	</div>
-	<div class="panel-body myportal-portlet-content">
-		<iframe id="myapps" allowtransparency="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" scrolling="no" src="fichiers/RunStandaloneApp.htm" width="100%" frameborder="0" height="350px"></iframe>
-
-	
-
-
-	</div>
-</div>
-<div id="widget-18" class="panel panel-primary myportal-portlet ui-sortable-handle ui-widget ui-widget-content ui-helper-clearfix">
-	<div class="myportal-portlet-header panel-heading">
-		<h3 class="panel-title">
-			Mes Favoris
-			<div class="btn-toolbar pull-right">
-	<a class="btn btn-default btn-xs" data-toggle="modal" data-title="Mes favoris" data-target="#Widget_modal" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;view=createMyFavorites&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18">
-		<span class="fa fa-plus" title="Ajouter un favori"></span>
-	</a>
-
-	  		<div class="btn-group">
-	  			<a class="btn btn-default btn-xs btn-close" data-widget-id="18" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/myportal/DoRemoveWidget.jsp?id_widget=18" title="Retirer le widget de la page">
-						<span class="fa fa-remove"></span>
-					</a>
-					<a class="btn btn-default btn-xs hidden" data-toggle="modal" data-title="Modifier" data-target="#Widget_modal" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=edit_widget&amp;tab_index=1&amp;id_widget=18">
-						<span class="fa fa-edit"></span>
-					</a>
-				<a href="#" class="btn btn-default btn-xs"><span class="fa fa-caret-down"></span></a></div>
-			</div>
-		</h3>
-	</div>
-	<div class="panel-body myportal-portlet-content">
-		<p id="btn-add-fav" class="pull-right" style="display: none;">
-	<a class="btn btn-default btn-xs" data-toggle="modal" data-title="Mes favoris" data-target="#Widget_modal" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;view=createMyFavorites&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18">
-		<span class="fa fa-plus" title="Ajouter un favori"></span>
-	</a>
-</p>
-<form method="post" action="jsp/site/plugins/myportal/modules/mytasks/DoActionMyTask.jsp">
-<input name="action" value="do_change_mytasks_status" type="hidden">
-<input name="id_widget" value="18" type="hidden">
-<input name="myfavorites_url_return" value="../../../../Portal.jsp?page=myportal" type="hidden">
-<input name="myportal_url_return" value="jsp/site/Portal.jsp?page=myportal" type="hidden">
-		<div class="form-group">
-			<div class="well well-sm">
-				<div class="row">
-					<div class="col-xs-12 col-sm-10">
-						<a href="http://paris.fr/" target="_blank" class="btn btn-link">
-							<img src="fichiers/image.png" width="24px"> Paris.fr
-						</a>
-					</div>
-					<div class="col-xs-12 col-sm-2">
-						<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;action=confirmRemoveMyFavorites&amp;id=1&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18%27%20title=%27Supprimer" class="btn btn-danger">
-							<span class="fa fa-remove"></span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="well well-sm">
-				<div class="row">
-					<div class="col-xs-12 col-sm-10">
-						<a href="http://paris.fr/" target="_blank" class="btn btn-link">
-							<img src="fichiers/image_002.png" width="24px"> Météo France
-						</a>
-					</div>
-					<div class="col-xs-12 col-sm-2">
-						<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;action=confirmRemoveMyFavorites&amp;id=2&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18%27%20title=%27Supprimer" class="btn btn-danger">
-							<span class="fa fa-remove"></span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="well well-sm">
-				<div class="row">
-					<div class="col-xs-12 col-sm-10">
-						<a href="http://paris.fr/" target="_blank" class="btn btn-link">
-							<img src="fichiers/image_003.png" width="24px"> Le Monde
-						</a>
-					</div>
-					<div class="col-xs-12 col-sm-2">
-						<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;action=confirmRemoveMyFavorites&amp;id=3&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18%27%20title=%27Supprimer" class="btn btn-danger">
-							<span class="fa fa-remove"></span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="well well-sm">
-				<div class="row">
-					<div class="col-xs-12 col-sm-10">
-						<a href="http://paris.fr/" target="_blank" class="btn btn-link">
-							<img src="fichiers/image_004.png" width="24px"> Calendrier des vacances scolaires
-						</a>
-					</div>
-					<div class="col-xs-12 col-sm-2">
-						<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;action=confirmRemoveMyFavorites&amp;id=4&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18%27%20title=%27Supprimer" class="btn btn-danger">
-							<span class="fa fa-remove"></span>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-</form>
-<script>
-	$( function(){
-		setToolbarAddon( "#btn-add-fav" );
-	});
-</script>
-
-	</div>
-</div>
-
-		</div>
-		<div class="myportal-column column-fixed col-xs-12 col-sm-4 co">
-			<div id="widget-8" class="panel panel-primary myportal-portlet portlet-fixed ui-widget ui-widget-content ui-helper-clearfix">
-	<div class="myportal-portlet-header panel-heading">
-		<h3 class="panel-title">
-			Actualités IntraParis
-			<div class="btn-toolbar pull-right">
-	  		<div class="btn-group"></div>
-			</div>
-		</h3>
-	</div>
-	<div class="panel-body myportal-portlet-content">
-		<div data-ride="carousel" class="carousel slide" id="carousel-home-rss">
-<ol class="carousel-indicators">
-<li class="active" data-slide-to="0" data-target="#carousel-home-rss"></li>
-</ol>
-<div class="carousel-inner">
-<div class="
-				item
-				
-	            	active
-	            ">
-<img alt="..." src="fichiers/document.jpg"><div class="carousel-caption">
-<p>
-<a href="http://intraparis.mdp/intraparis/jsp/site/Portal.jsp?document_id=25721&amp;portlet_id=4673">Une appli pour soutenir Paris 2024</a>
-</p>
-</div>
-</div>
-<a data-slide="prev" href="#carousel-home-rss" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a><a data-slide="next" href="#carousel-home-rss" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
-</div>
-</div>
-
-	</div>
-</div>
-<div id="widget-22" class="panel panel-primary myportal-portlet no-header portlet-fixed ui-widget ui-widget-content ui-helper-clearfix">
-	<div class="myportal-portlet-header panel-heading">
-		<h3 class="panel-title">
-			IntraParis
-			<div class="btn-toolbar pull-right">
-	  		<div class="btn-group"></div>
-			</div>
-		</h3>
-	</div>
-	<div class="panel-body myportal-portlet-content">
-		<nav class="navbar navbar-inverse">
+<!-- Nav intraparis -->
+<nav class="navbar navbar-inverse nav-intraparis">
 <div class="navbar-header">
 	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
 		<span class="sr-only">Toggle navigation</span>
@@ -418,13 +177,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><img src="fichiers/intraparis.png" alt=""></a>
+			<a class="navbar-brand" href="intraparis.htm"><img src="fichiers/intraparis.png" alt=""></a>
 		</div>
 		<div class="collapse navbar-collapse js-navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li class="dropdown mega-dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Directions <span class="caret"></span></a>				
-					<ul class="dropdown-menu mega-dropdown-menu" style="display: none;">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Directions <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
 						<li class="col-xs-12 col-sm-3">
 							<ul>
 							  <li><a target="_top" href="http://intraparis.burcab.mdp/"><abbr title="Cabinet du Maire et ses services administratifs">Cabinet de la maire
@@ -479,7 +238,7 @@
 							  <li><a href="http://intraparis.dpp.mdp/" target="_top"><abbr title="Prévention et protection">DPSP
 							  <br></abbr></a></li>
 							</ul>
-  
+
     					</li>
 						<li class="col-xs-12 col-sm-2">
 							<ul>
@@ -487,7 +246,7 @@
 							  <br> <a href="http://intraparis.drh.mdp/" target="_top"><abbr title="Ressources humaines"></abbr></a></li>
 							  <li><a href="http://intraparis.drh.mdp/" target="_top"><abbr title="Ressources humaines">DRH
 							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dsti.mdp/" target="_top"><abbr title="Systèmes et technologies de linformation">DSTI
+							  <li><a href="http://intraparis.dsti.mdp/" target="_top"><abbr title="Systémes et technologies de linformation">DSTI
 							  <br></abbr></a></li>
 							  <li><a href="http://intraparis.du.mdp/" target="_top"><abbr title="Urbanisme">DU
 							  <br></abbr></a></li>
@@ -495,78 +254,87 @@
 							  <br></abbr></a></li>
 							</ul>
     					</li>
-					</ul>				
+					</ul>
 				</li>
 				<li class="dropdown mega-dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseaux <span class="caret"></span></a>				
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseaux <span class="caret"></span></a>
 					<ul class="dropdown-menu mega-dropdown-menu">
-						<li class="col-xs-12 col-sm-3">
-							<h4>Métiers</h4>
-							<ul>
-							  <li><a href="http://intraparis.achats.mdp/" target="_top"><abbr title="Achats et marchés">Achats</abbr></a></li>
-							  <li><a href="http://intraparis.vie-associative.mdp/" target="_top"><abbr title="Associations">Associations</abbr></a></li>
-							  <li><a href="http://intraparis.communication.mdp/" target="_top"><abbr title="Communication">Communication</abbr></a></li>
-							  <li><a href="http://intraparis.finances.mdp/" target="_top"><abbr title="Finances">Finances</abbr></a></li>
-							  <li><a href="http://intraparis.fonctionimmobiliere.mdp/fimmo/jsp/site/Portal.jsp" target="_top">Fonction Immobilière</a></li>
-							</ul>
-						</li>	
-						<li class="col-xs-12 col-sm-3">	
-							<ul>
-							  <li><a href="http://intraparis.rh.mdp/" target="_top"><abbr title="Gestion des ressources humaines">RH</abbr></a></li>
-							  <li><a href="http://intraparis.sequana.mdp/" target="_top"><abbr title="Programme SEQUANA">SEQUANA</abbr></a></li>
-							  <li><a href="http://m14-base-documentaire.apps.paris.mdp/" target="_top"><abbr title="Base documentaire EPM">Base Doc EPM</abbr></a></li>
-							  <li><a href="http://intraparis.facilfamille.mdp/" target="_top"><abbr title="Facil Familles">Facil' Familles</abbr></a></li>
-							  <li><a href="http://intraparis.qualiparis.mdp/" target="_top"><abbr title="QualiPARIS">QualiPARIS</abbr></a></li>
-							</ul>
-						</li>	
-						<li class="col-xs-12 col-sm-3">		
-							<ul>
-							  <li><a href="http://intraparis.elise.mdp/" target="_top"><abbr title="Gestion du courrier Elise">Elise</abbr></a></li>
-							  <li><a href="http://v64-nomos.apps.paris.mdp/nomos/jsp/site/Portal.jsp" target="_top">NOMOS, textes RH</a></li>
-							  <li><a title="Intraparis Innovations" href="http://intraparis.innovation.mdp/" target="_top">Innovation</a></li>
-							  <li><a title="Intraparis Delib" href="http://intraparis.delib.mdp/" target="_top">Delib'</a></li>
-							  <li><a title="Intraparis Jurilib" href="http://intraparis.jurilib.mdp/" target="_top">Jurilib'</a></li>
-							  <li><a href="http://intraparis.compteparisien.mdp/" target="_top"><abbr title="Compte Parisien">Compte Parisien</abbr></a></li>
-							</ul>
-						</li>
-						<li class="col-xs-12 col-sm-3">	
-							<h4>Territoires</h4>
-							<ul>
-							  <li><a href="http://intraparis.mairie4.mdp/" target="_top"><abbr title="Mairie du 4ème">Mairie du 4ème</abbr></a></li>
-							  <li><a href="http://intraparis.mairie7.mdp/" target="_top"><abbr title="Mairie du 7ème">Mairie du 7ème</abbr></a></li>
-							  <li><a href="http://intraparis.mairie11.mdp/" target="_top"><abbr title="Mairie du 11ème">Mairie du 11ème</abbr></a></li>
-							  <li><a href="http://intraparis.mairie12.mdp/" target="_top"><abbr title="Mairie du 12ème">Mairie du 12ème</abbr></a></li>
-							  <li><a href="http://intraparis.mairie16.mdp/" target="_top"><abbr title="Mairie du 16ème">Mairie du 16ème</abbr></a></li>
-							</ul>
-							<ul>
-							  <li><a href="http://intraparis.mairie18.mdp/" target="_top"><abbr title="Mairie du 18ème">Mairie du 18ème</abbr></a></li>
-							</ul>
-  						</li>
-					</ul>					
+						<li>
+              <div class="row">
+                <div class="col-xs-12 col-sm-offset-1 col-sm-2">
+							    <h4>Métiers</h4>
+    							<ul>
+    							  <li><a href="http://intraparis.achats.mdp/" target="_top"><abbr title="Achats et marchés">Achats</abbr></a></li>
+    							  <li><a href="http://intraparis.vie-associative.mdp/" target="_top"><abbr title="Associations">Associations</abbr></a></li>
+    							  <li><a href="http://intraparis.communication.mdp/" target="_top"><abbr title="Communication">Communication</abbr></a></li>
+    							  <li><a href="http://intraparis.finances.mdp/" target="_top"><abbr title="Finances">Finances</abbr></a></li>
+    							  <li><a href="http://intraparis.fonctionimmobiliere.mdp/fimmo/jsp/site/Portal.jsp" target="_top">Fonction Immobiliére</a></li>
+    							</ul>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+    							<ul>
+    							  <li><a href="http://intraparis.rh.mdp/" target="_top"><abbr title="Gestion des ressources humaines">RH</abbr></a></li>
+    							  <li><a href="http://intraparis.sequana.mdp/" target="_top"><abbr title="Programme SEQUANA">SEQUANA</abbr></a></li>
+    							  <li><a href="http://m14-base-documentaire.apps.paris.mdp/" target="_top"><abbr title="Base documentaire EPM">Base Doc EPM</abbr></a></li>
+    							  <li><a href="http://intraparis.facilfamille.mdp/" target="_top"><abbr title="Facil Familles">Facil' Familles</abbr></a></li>
+    							  <li><a href="http://intraparis.qualiparis.mdp/" target="_top"><abbr title="QualiPARIS">QualiPARIS</abbr></a></li>
+    							</ul>
+						   </div>
+                <div class="col-xs-12 col-sm-3">
+  							<ul>
+  							  <li><a href="http://intraparis.elise.mdp/" target="_top"><abbr title="Gestion du courrier Elise">Elise</abbr></a></li>
+  							  <li><a href="http://v64-nomos.apps.paris.mdp/nomos/jsp/site/Portal.jsp" target="_top">NOMOS, textes RH</a></li>
+  							  <li><a title="Intraparis Innovations" href="http://intraparis.innovation.mdp/" target="_top">Innovation</a></li>
+  							  <li><a title="Intraparis Delib" href="http://intraparis.delib.mdp/" target="_top">Delib'</a></li>
+  							  <li><a title="Intraparis Jurilib" href="http://intraparis.jurilib.mdp/" target="_top">Jurilib'</a></li>
+  							  <li><a href="http://intraparis.compteparisien.mdp/" target="_top"><abbr title="Compte Parisien">Compte Parisien</abbr></a></li>
+  							</ul>
+						    </div>
+                <div class="col-xs-12 col-sm-3">
+  							<h4>Territoires</h4>
+  							<ul>
+  							  <li><a href="http://intraparis.mairie4.mdp/" target="_top"><abbr title="Mairie du 4ème">Mairie du 4ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie7.mdp/" target="_top"><abbr title="Mairie du 7ème">Mairie du 7ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie11.mdp/" target="_top"><abbr title="Mairie du 11ème">Mairie du 11ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie12.mdp/" target="_top"><abbr title="Mairie du 12ème">Mairie du 12ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie16.mdp/" target="_top"><abbr title="Mairie du 16ème">Mairie du 16ème</abbr></a></li>
+                  <li><a href="http://intraparis.mairie18.mdp/" target="_top"><abbr title="Mairie du 18ème">Mairie du 18ème</abbr></a></li>
+  							</ul>
+              </div>
+            </div>
+          </li>
+				</ul>
 				</li>
 				<li class="dropdown mega-dropdown">
-    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Syndicats <span class="caret"></span></a>				
-					<ul class="dropdown-menu mega-dropdown-menu" style="display: block; overflow: hidden; height: 68.7342px; padding-top: 4.90959px; margin-top: 0px; padding-bottom: 4.90959px; margin-bottom: 0px;">
-						<li class="col-xs-12 col-sm-2">
-    						<ul>
-							  <li><a href="http://intraparis.cfdt.mdp/" target="_top">CFDT</a></li>
-							  <li><a href="http://intraparis.cftc.mdp/" target="_top">CFTC</a></li> 
-								<li><a href="http://intraparis.cgt.mdp/" target="_top">CGT</a></li>
-								<li><a href="http://intraparis.fo.mdp/" target="_top">FO</a></li>
-								<li><a href="http://intraparis.sud.mdp/" target="_top">SUD</a></li>
-							  <li><a href="http://intraparis.supap-fsu.mdp/" target="_top">SUPAP-FSU</a></li>
-							  <li><a href="http://intraparis.ucp.mdp/" target="_top">UCP</a></li>
-							  <li><a href="http://intraparis.unsa.mdp/" target="_top">UNSA</a></li>
-							</ul>
-  
+    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Syndicats <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li>
+              <div class="row">
+                <div class="col-xs-12 col-sm-offset-1 col-sm-2">
+    						  <ul>
+    							  <li><a href="http://intraparis.cfdt.mdp/" target="_top">CFDT</a></li>
+    							  <li><a href="http://intraparis.cftc.mdp/" target="_top">CFTC</a></li>
+    								<li><a href="http://intraparis.cgt.mdp/" target="_top">CGT</a></li>
+    								<li><a href="http://intraparis.fo.mdp/" target="_top">FO</a></li>
+    							</ul>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+    						  <ul>
+    							 <li><a href="http://intraparis.sud.mdp/" target="_top">SUD</a></li>
+    							  <li><a href="http://intraparis.supap-fsu.mdp/" target="_top">SUPAP-FSU</a></li>
+    							  <li><a href="http://intraparis.ucp.mdp/" target="_top">UCP</a></li>
+    							  <li><a href="http://intraparis.unsa.mdp/" target="_top">UNSA</a></li>
+    							</ul>
+                </div>
+              </div>
 						</li>
-					</ul>				
+					</ul>
 				</li>
 				<li class="dropdown mega-dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">OUKI <span class="caret"></span></a>				
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">OUKI <span class="caret"></span></a>
 					<ul class="dropdown-menu mega-dropdown-menu">
 						<li class="col-xs-12 col-sm-12">
-    						<form id="form-ouki" action="http://f20-ouki-v5.apps.paris.mdp/oukildap/jsp/site/Portal.jsp?page=ldapdirectory" target="_top" method="post">
+    						<form id="form-ouki" action="ouki.htm" target="_top" method="post">
 								<input name="page" value="ldapdirectory" type="hidden">
 								<input name="type" value="1" type="hidden">
 								<input name="action" value="find" type="hidden">
@@ -578,30 +346,228 @@
 								</span>
 								</div>
 								</div>
-							</form>	
+							</form>
 							<p class="text-right">
-								<a class="btn btn-default btn-xs" href="http://f20-ouki-v5.apps.paris.mdp/oukildap/jsp/site/Portal.jsp?page=ldapdirectory" target="_top">OUKI recherche avancée</a>
+								<a class="btn btn-default btn-xs" href="ouki.htm" target="_top">OUKI recherche avancée</a>
 							</p>
 						</li>
-					</ul>				
+					</ul>
 				</li>
 		</ul>
-	</div><!-- /.nav-collapse -->
+	</div>
 </nav>
+</header>
+<!-- header -->
+<section class="container-fluid">
+<!-- content -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div id="tabs" class="row">
+    <span class="btn btn-default btn-tab">	<a data-tab="tab_1" data-tab-id="1" class="tab-name pull-left" href="#">Mon Compte</a>	<form method="post" action="jsp/site/plugins/myportal/DoDelTab.jsp" class="form-inline pull-right">		<input name="tab_index" value="1" type="hidden">	</form></span>
+<span class="btn btn-default">
+	<a class="tab-name pull-left" href="crm.htm">
+    Tableau de bord
+  </a>
+</span>
+<div id="tab_1" class="tabs container-fluid">
+	<div class="row">
+		<div class="myportal-column col-xs-12 col-sm-4 col-md-4  ui-sortable">
+			<div id="widget-18" class="panel panel-primary myportal-portlet ui-sortable-handle ui-widget ui-widget-content ui-helper-clearfix">
+	<div class="myportal-portlet-header panel-heading">
+		<h3 class="panel-title">
+			Mes Favoris
+			<div class="btn-toolbar pull-right">
+	<a class="btn btn-default btn-xs" data-toggle="modal" data-title="Mes favoris" data-target="#Widget_modal" href="myfavorites.htm">
+		<span class="fa fa-plus" title="Ajouter un favori"></span>
+	</a>
+
+	  		<div class="btn-group">
+	  			<a class="btn btn-default btn-xs btn-close" data-widget-id="18" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/myportal/DoRemoveWidget.jsp?id_widget=18" title="Retirer le widget de la page">
+						<span class="fa fa-remove"></span>
+					</a>
+					<a class="btn btn-default btn-xs hidden" data-toggle="modal" data-title="Modifier" data-target="#Widget_modal" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=edit_widget&amp;tab_index=1&amp;id_widget=18">
+						<span class="fa fa-edit"></span>
+					</a>
+				<a href="#" class="btn btn-default btn-xs"><span class="fa fa-caret-down"></span></a></div>
+			</div>
+		</h3>
+	</div>
+	<div class="panel-body myportal-portlet-content">
+		<p id="btn-add-fav" class="pull-right" style="display: none;">
+	<a class="btn btn-default btn-xs" data-toggle="modal" data-title="Mes favoris" data-target="#Widget_modal" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;view=createMyFavorites&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18">
+		<span class="fa fa-plus" title="Ajouter un favori"></span>
+	</a>
+</p>
+<form method="post" action="jsp/site/plugins/myportal/modules/mytasks/DoActionMyTask.jsp">
+<input name="action" value="do_change_mytasks_status" type="hidden">
+<input name="id_widget" value="18" type="hidden">
+<input name="myfavorites_url_return" value="../../../../Portal.jsp?page=myportal" type="hidden">
+<input name="myportal_url_return" value="jsp/site/Portal.jsp?page=myportal" type="hidden">
+		<div class="form-group">
+			<div class="well well-sm">
+				<div class="row">
+					<div class="col-xs-12 col-sm-10">
+						<a href="http://paris.fr/" target="_blank" class="btn btn-link">
+							<img src="fichiers/image.png" width="24px"> Météo France
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-2">
+						<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;action=confirmRemoveMyFavorites&amp;id=2&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18%27%20title=%27Supprimer" class="btn btn-danger">
+							<span class="fa fa-remove"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="well well-sm">
+				<div class="row">
+					<div class="col-xs-12 col-sm-10">
+						<a href="http://paris.fr/" target="_blank" class="btn btn-link">
+							<img src="fichiers/image_002.png" width="24px"> Le Monde
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-2">
+						<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;action=confirmRemoveMyFavorites&amp;id=3&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18%27%20title=%27Supprimer" class="btn btn-danger">
+							<span class="fa fa-remove"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="well well-sm">
+				<div class="row">
+					<div class="col-xs-12 col-sm-10">
+						<a href="http://paris.fr/" target="_blank" class="btn btn-link">
+							<img src="fichiers/image_003.png" width="24px"> Calendrier des vacances scolaires
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-2">
+						<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myfavorites&amp;action=confirmRemoveMyFavorites&amp;id=4&amp;myfavorites_url_return=../../../../Portal.jsp?page=myportal&amp;myportal_url_return=jsp/site/Portal.jsp?page=myportal&amp;id_widget=18%27%20title=%27Supprimer" class="btn btn-danger">
+							<span class="fa fa-remove"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+</form>
 <script>
-$( function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
-            $(this).toggleClass('open');       
-        }
-    );
-});
+	$( function(){
+		setToolbarAddon( "#btn-add-fav" );
+	});
 </script>
+
+	</div>
+</div>
+<div id="widget-2" class="panel panel-primary myportal-portlet ui-sortable-handle ui-widget ui-widget-content ui-helper-clearfix">
+	<div class="myportal-portlet-header panel-heading">
+		<h3 class="panel-title">
+			MyApps
+			<div class="btn-toolbar pull-right">
+		<a type="button" class="btn btn-default btn-xs btn-myapps" data-toggle="modal" data-title="Modifier mes applications" data-target="#Widget_modal" href="jsp/site/RunStandaloneApp.jsp?page=myapps-database&amp;action=manage&amp;myapp_code_category=apps">
+			<i class="fa fa-cog" title="Gérer mes applications"></i>
+		</a>
+	</div>
+		</h3>
+	</div>
+	<div class="panel-body myportal-portlet-content">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=85&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=85" alt="" class="img-circle">
+					<br>
+					<small> CapGeo</small>
+		   </a>
+	    	<a class="btn btn-default btn-app hidden-xs" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=53&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=53" alt="" class="img-circle">
+					<br>
+					<small> Chronogestor</small>
+		   </a>
+	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=34&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=34" alt="" class="img-circle">
+					<br>
+					<small> EBENE</small>
+		   </a>
+	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=79&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=79" alt="" class="img-circle">
+					<br>
+					<small> Elise DPE</small>
+		   </a>
+	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=71&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=71" alt="" class="img-circle">
+					<br>
+					<small> Elise DSTI</small>
+		   </a>
+	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=31&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=31" alt="" class="img-circle">
+					<br>
+					<small> FMCR</small>
+		   </a>
+	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=56&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=56" alt="" class="img-circle">
+					<br>
+					<small> ODS Mairies</small>
+		   </a>
+	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=84&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=84" alt="" class="img-circle">
+					<br>
+					<small> ODS V2 Expérimentation</small>
+		   </a>
+	    	<a class="btn btn-default btn-app hidden-xs" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=1&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=1" alt="" class="img-circle">
+					<br>
+					<small> Préannonce HDV</small>
+		   </a>
+	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=9&amp;plugin_name=myapps-database" target="_blank">
+						<img src="image?resource_type=myapps_database_icon&amp;id=9" alt="" class="img-circle">
+					<br>
+					<small> SATIS</small>
+		   </a>
+	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=96&amp;plugin_name=myapps-database" target="_blank">
+					<br>
+					<small> SIPCPR</small>
+		   </a>
+		</div>
+		</div>
+
+	
+
+
+	</div>
+</div>
+		</div>
+		<div class="myportal-column column-fixed col-xs-12 col-sm-4 co">
+			<div id="widget-8" class="panel panel-primary myportal-portlet portlet-fixed ui-widget ui-widget-content ui-helper-clearfix">
+	<div class="myportal-portlet-header panel-heading">
+		<h3 class="panel-title">
+			Actualités IntraParis
+			<div class="btn-toolbar pull-right">
+	  		<div class="btn-group"></div>
+			</div>
+		</h3>
+	</div>
+	<div class="panel-body myportal-portlet-content">
+		<div data-ride="carousel" class="carousel slide" id="carousel-home-rss">
+<ol class="carousel-indicators">
+<li class="active" data-slide-to="0" data-target="#carousel-home-rss"></li>
+</ol>
+<div class="carousel-inner">
+<div class="
+				item
+				
+	            	active
+	            ">
+<img alt="..." src="fichiers/document.jpg"><div class="carousel-caption">
+<p>
+<a href="intraparis.htm">Le gouvernement des Parisiens</a>
+</p>
+</div>
+</div>
+<a data-slide="prev" href="#carousel-home-rss" class="left carousel-control"><span class="glyphicon glyphicon-chevron-left"></span></a><a data-slide="next" href="#carousel-home-rss" class="right carousel-control"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+</div>
+
 	</div>
 </div>
 <div id="widget-20" class="panel panel-primary myportal-portlet portlet-fixed ui-widget ui-widget-content ui-helper-clearfix">
@@ -632,7 +598,7 @@ $( function(){
 	<div class="panel-body myportal-portlet-content">
 		<div class="well well-sm create-ticket">
 <p class="lead">
-<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=ticket&amp;view=createTicket">Accéder aux formulaires de sollicitations</a>
+<a href="ticket.htm">Accéder aux formulaires de sollicitations</a>
 <img src="fichiers/ask.png" alt="" class="img-responsive"> 
 </p>
 </div>
@@ -655,7 +621,12 @@ $( function(){
 		</h3>
 	</div>
 	<div class="panel-body myportal-portlet-content">
-		<p class="clearfix"><span class="pull-left"><i class="fa fa-star fa-fw text-info"></i> Demande de télétravail</span>  <strong><span class="label label-info pull-right">1</span></strong></p>
+		<p class="clearfix">
+			<a href="mydashboard.htm">
+				<span class="pull-left"><i class="fa fa-star fa-fw text-info"></i> Demande de remboursement mutuelle</span>  
+				<strong><span class="label label-info pull-right">1</span></strong>
+			</a>
+		</p>
 	</div>
 </div>
 
@@ -672,6 +643,1567 @@ $( function(){
     </div>
     <div class="modal-content">
       <div class="modal-body">
+	  <div class="myapps-content">
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#enabled" aria-controls="enabled" role="tab" data-toggle="tab">Applications configurées</a>
+    </li>
+    <li role="presentation">
+      <a href="#disabled" aria-controls="enabled" role="tab" data-toggle="tab">Applications non configurées</a>
+    </li>
+    <li role="search" class="text-right">
+      <form action="" method="get" class="form-inline" role="search">
+        <div class="form-group">
+          <input class="form-control" placeholder="Rechercher" name="searchapps" id="searchapps" type="text">
+        </div>
+        <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button>
+      </form>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="enabled">
+      <div class="table-responsive">
+        <table class="table table-hover myapps-table">
+					<tbody><tr>
+						<th>Icône</th>
+				        <th>Nom</th>
+				        <th>Description</th>
+				        <th>Actions</th>
+				    </tr>
+				    						    <tr class="apps-box" data-app="capgeo">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><b>CapGeo</b></td>
+						        <td>mobile</td>
+						        <td>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="85" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+						    <tr class="apps-box" data-app="ebene">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><b>EBENE</b></td>
+						        <td>mobile</td>
+						        <td>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="34" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+						    <tr class="apps-box" data-app="elise dpe">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><b>Elise DPE</b></td>
+						        <td>mobile</td>
+						        <td>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="79" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+						    <tr class="apps-box" data-app="elise dsti">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><b>Elise DSTI</b></td>
+						        <td>mobile</td>
+						        <td>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="71" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+						    <tr class="apps-box" data-app="fmcr">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><b>FMCR</b></td>
+						        <td>mobile</td>
+						        <td>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="31" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+						    <tr class="apps-box" data-app="ods mairies">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><b>ODS Mairies</b></td>
+						        <td>mobile</td>
+						        <td>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="56" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+						    <tr class="apps-box" data-app="ods v2 expérimentation">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><b>ODS V2 Expérimentation</b></td>
+						        <td>mobile</td>
+						        <td>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="84" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+						    <tr class="apps-box" data-app="préannonce hdv">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="hidden-xs" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><b>Préannonce HDV</b></td>
+						        <td>hidden-xs</td>
+						        <td>
+						        		<form class="form-inline" method="post" action="index.htm">
+                          <input name="page" value="myapps-database" type="hidden">
+                          <input name="action" value="modify" type="hidden">
+							        		<input name="myapp_id" value="1" type="hidden">
+							        		<input name="myapp_code_category" value="apps" type="hidden">
+                            <button type="submit" class="btn btn-primary btn-xs" title="Modifier">
+                              <i class="fa fa-pencil"></i>
+                            </button>
+                          </form>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="1" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+						    <tr class="apps-box" data-app="satis">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><b>SATIS</b></td>
+						        <td>mobile</td>
+						        <td>
+						        		<form class="form-inline" method="post" action="index.htm">
+                          <input name="page" value="myapps-database" type="hidden">
+                          <input name="action" value="modify" type="hidden">
+							        		<input name="myapp_id" value="9" type="hidden">
+							        		<input name="myapp_code_category" value="apps" type="hidden">
+                            <button type="submit" class="btn btn-primary btn-xs" title="Modifier">
+                              <i class="fa fa-pencil"></i>
+                            </button>
+                          </form>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="9" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+						    <tr class="apps-box" data-app="sipcpr">
+						        <td>
+						        </td>
+						        <td><b>SIPCPR</b></td>
+						        <td>mobile</td>
+						        <td>
+						        		<form class="form-inline" method="post" action="index.htm">
+                          <input name="page" value="myapps-database" type="hidden">
+                          <input name="action" value="modify" type="hidden">
+							        		<input name="myapp_id" value="96" type="hidden">
+							        		<input name="myapp_code_category" value="apps" type="hidden">
+                            <button type="submit" class="btn btn-primary btn-xs" title="Modifier">
+                              <i class="fa fa-pencil"></i>
+                            </button>
+                          </form>
+                        <form class="form-inline" method="post" action="index.htm">
+						        		  <input name="page" value="myapps-database" type="hidden">
+						        		  <input name="action" value="do_remove" type="hidden">
+						        		  <input name="myapp_id" value="96" type="hidden">
+						        		  <input name="myapp_code_category" value="apps" type="hidden">
+						        		   <button type="submit" class="btn btn-danger btn-xs" title="Effacer">
+                            <i class="fa fa-trash"></i>
+                          </button>
+							        	 </form>
+						        	</td>
+						    </tr>
+				</tbody></table>
+			  </div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="disabled">
+        <div class="table-responsive">
+				<table class="table table-hover myapps-table">
+					<tbody><tr>
+						<th>Icône</th>
+				        <th>Nom</th>
+				        <th>Description</th>
+				        <th>Actions</th>
+				    </tr>
+						     <tr class="apps-box" data-app="alize">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Alize</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="2" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="eudonet">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Eudonet</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="4" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="iboss">
+						        <td>
+						        	<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Iboss</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="5" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="planet">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>PLANET</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="7" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="infocentre rh">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Infocentre RH</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="8" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="reférentiel équipement">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Reférentiel équipement</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="10" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="alpaca">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Alpaca</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="12" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="catia">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Catia</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="13" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="contrôle de légalité (jusqu'au 3.2.2014)">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Contrôle de légalité (jusqu'au 3.2.2014)</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="14" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="epm">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>EPM</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="15" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="epm formation">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>EPM formation</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="16" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="portail sequana">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Portail SEQUANA</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="17" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="rh formation">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>RH Formation</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="18" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="rh gapaie">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>RH GAPAIE</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="19" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="rh médailles">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>RH Médailles</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="20" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="rh poste vacants">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>RH Poste Vacants</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="21" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="rh prorisq">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>RH Prorisq</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="22" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="rh infocentres atmp">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>RH Infocentres ATMP</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="23" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="rh infocentres rh">
+						        <td>
+						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>RH Infocentres RH</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="24" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="service fait">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=25" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Service fait</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="25" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="tempo">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=26" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Tempo</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="26" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="themisa">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=27" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Themisa</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="27" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="visigo">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=28" alt="fixe" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Visigo</strong></td>
+						        <td>fixe</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="28" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="web sima">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=30" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Web SIMA</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="30" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="one2team">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=32" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>One2Team</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="32" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="sourcing">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=33" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Sourcing</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="33" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="sfpi">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=35" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>SFPI</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="35" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="le studio">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=49" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Le Studio</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="49" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="cognos - portail décisionnel">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=50" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>COGNOS - Portail décisionnel</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="50" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=52" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="52" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="dansmarue">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=54" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>DansMaRue</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="54" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="ods">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=55" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>ODS</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="55" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="rh - infocentres new">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=57" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>RH - Infocentres new</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="57" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="prométhée">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=60" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Prométhée</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="60" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="ramen - gestion informatisée des appels traitement des encombrants ">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=61" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>RAMEN - Gestion Informatisée des appels Traitement des Encombrants </strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="61" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="geopro - gestion de la propreté">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=62" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>GEOPRO - Gestion de la Propreté</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="62" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="simpa subventions">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=63" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>SIMPA Subventions</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="63" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="v-smart catalogue - prod">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=64" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>V-Smart Catalogue - PROD</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="64" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="v-smart veille - prod ">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=65" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>V-Smart Veille - PROD </strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="65" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="agilims - laboagro">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=66" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>AGILIMS - LABOAGRO</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="66" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="e-d@l">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=67" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>e-d@l</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="67" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="cdl">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=68" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>CDL</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="68" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="facil' familles">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=69" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Facil' Familles</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="69" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="cognos - saisie des effectifs budgétaires">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=70" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>COGNOS - Saisie des effectifs budgétaires</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="70" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise deve">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=72" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DEVE</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="72" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise dac">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=73" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DAC</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="73" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise dilt">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=74" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DILT</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="74" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise sg">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=75" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise SG</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="75" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise sgcp">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=76" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise SGCP</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="76" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise da">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=77" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DA</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="77" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise df">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=78" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DF</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="78" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise dicom">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=80" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DICOM</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="80" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise dvd">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=81" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DVD</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="81" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise ma12">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=82" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise MA12</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="82" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="contrôle de légalité (nouvelle plate-forme à compter du 3.2.2014)">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=83" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Contrôle de légalité (nouvelle plate-forme à compter du 3.2.2014)</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="83" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise dpa">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=86" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DPA</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="86" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise daj">
+						        <td>
+						        		<img src="icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DAJ</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="87" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise dlh">
+						        <td>
+						        		<img src="icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DLH</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="88" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise cabm">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=89" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise CABM</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="89" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="paris délib'">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=91" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Paris Délib'</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="91" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="apex - saisie des affectifs">
+						        <td>
+						        </td>
+						        <td><strong>APEX - saisie des affectifs</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="93" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="préventiel">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=94" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Préventiel</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="94" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="aoc">
+						        <td>
+						        </td>
+						        <td><strong>AOC</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="97" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="primes">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=98" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Primes</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="98" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise dfa">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=100" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DFA</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="100" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="portail fournisseurs">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=101" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Portail Fournisseurs</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="101" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise du">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=103" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DU</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="103" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise dases">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=104" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DASES</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="104" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="elise dfpe">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=105" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Elise DFPE</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="105" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="primes">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=106" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>Primes</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="106" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="espri²">
+						        <td>
+						        </td>
+						        <td><strong>ESPRI²</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="108" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="sipe">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=109" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>SIPE</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="109" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+						     <tr class="apps-box" data-app="axelnet">
+						        <td>
+						        		<img src="image?resource_type=myapps_database_icon&amp;id=110" alt="mobile" class="img-circle thumbnail-sm">
+						        </td>
+						        <td><strong>AXELNET</strong></td>
+						        <td>mobile</td>
+						        <td>
+						        	<form method="post" action="index.htm">
+						        		<input name="page" value="myapps-database" type="hidden">
+						        		<input name="action" value="insert" type="hidden">
+						        		<input name="myapp_id" value="110" type="hidden">
+						        		<input name="myapp_code_category" value="apps" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+                          <i class="fa fa-plus"></i>
+                        </button>
+						        	</form>
+						        </td>
+						    </tr>
+			</tbody></table>
+		  </div>
+		</div>
+	</div>
+</div>
       </div>
     </div>
       <div class="modal-footer">
@@ -698,7 +2230,7 @@ $( function(){
 		<ul class="list-inline">
 			<li><a href="http://www.paris.fr/contact" title="Contact" target="_blank">Contact</a></li>
 			<li>
-				<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=htmlpage&amp;htmlpage_id=2" title="Mentions lÃ©gales" target="_blank">Mentions légales</a>
+				<a href="#" title="Mentions légales" target="_blank">Mentions légales</a>
 			</li>
 		</ul>
 	</div>
@@ -708,40 +2240,36 @@ $( function(){
 <!-- Le javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-
 <script src="fichiers/jquery-ui.js"></script>
-<script src="fichiers/jquery.ui.touch-punch.min.js"></script>
+<script src="fichiers/jquery_007.js"></script>
 <script src="fichiers/bootstrap.js"></script>
 <script src="fichiers/notify.js"></script>
-<script src="fichiers/jquery_005.js" type="text/javascript"></script><script src="fichiers/jquery_002.js" type="text/javascript"></script><script src="fichiers/load-image.js" type="text/javascript"></script><script src="fichiers/jquery_006.js" type="text/javascript"></script><script src="fichiers/jquery_004.js" type="text/javascript"></script><script src="fichiers/jquery_003.js" type="text/javascript"></script><script src="fichiers/canvas-to-blob.js" type="text/javascript"></script><script src="fichiers/jquery.js" type="text/javascript"></script><script src="fichiers/extend-rating.js" type="text/javascript"></script><script src="fichiers/jquery_007.js" type="text/javascript"></script><script src="fichiers/form.js" type="text/javascript"></script><script src="fichiers/myportal_002.js" type="text/javascript"></script><script src="fichiers/myportal-mytasks.js" type="text/javascript"></script>
-	<!-- Statistical include -->
-
-<!-- Statistical include - End -->
+<script src="fichiers/jquery_006.js" type="text/javascript"></script>
+<script src="fichiers/jquery.js" type="text/javascript"></script>
+<script src="fichiers/load-image.js" type="text/javascript"></script>
+<script src="fichiers/jquery_008.js" type="text/javascript"></script>
+<script src="fichiers/jquery_005.js" type="text/javascript"></script>
+<script src="fichiers/jquery_003.js" type="text/javascript"></script>
+<script src="fichiers/canvas-to-blob.js" type="text/javascript"></script>
+<script src="fichiers/jquery_002.js" type="text/javascript"></script>
+<script src="fichiers/extend-rating.js" type="text/javascript"></script>
+<script src="fichiers/jquery_004.js" type="text/javascript"></script>
+<script src="fichiers/form.js" type="text/javascript"></script>
+<script src="fichiers/myportal_002.js" type="text/javascript"></script>
+<script src="fichiers/myportal-mytasks.js" type="text/javascript"></script>
 <script>
   	$(function() {
-				$('#solr-home').autocomplete({
-						source: function(request, response) {
-							$.ajax({
-								url: 'http://dstibpico34244f.stations.paris.mdp:8080/gra/solrSuggest',
-								dataType: 'jsonp',
-								minLength: 3,
-								data: {
-									q: request.term,
-								},
-								success: function(data) {
-									var formattedResponse = $.map(data.response.docs, function(item) {
-										return {
-											label: item.title,
-											value: item.title,
-										};
-									});
-									response(formattedResponse);
-								}
-							});
-						},
-					});
-			});
+		$(".dropdown").hover(
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');
+        }
+    );
+});
 </script>
-
-
-</body></html>
+</body>
+</html>

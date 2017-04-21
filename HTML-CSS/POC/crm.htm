@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<title>LUTECE - Gestion des relations citoyens</title>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="fr">
+<meta name="author" content="&lt;author&gt;">
+<meta name="copyright" content="&lt;copyright&gt;">
+<meta name="keywords" content="&lt;keywords&gt;">
+<meta name="description" content="&lt;description&gt;">
+<meta name="generator" content="LUTECE 6.0.0-RC-01">
+<!-- Dublin Core metadatas -->
+<meta name="DC.Creator" content="&lt;author&gt;">
+<meta name="DC.Rights" content="&lt;copyright&gt;">
+<meta name="DC.Subject" content="&lt;keywords&gt;">
+<meta name="DC.Description" content="&lt;description&gt;">
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Le style -->
+<link href="fichiers/bootstrap.css" rel="stylesheet">
+<link href="fichiers/font-awesome.css" rel="stylesheet">
+<link href="fichiers/jquery-ui.css" rel="stylesheet">
+<link href="fichiers/page_template_styles_gra.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!-- JQUERY UI: Keep for compatibility -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="favicon.ico">
+<!--
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57-precomposed.png">
+-->
+<link rel="stylesheet" href="fichiers/jquery.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/jquery_002.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/jquery_003.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/form.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/myapps.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/mytasks.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/ticketing.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/workflow_notifygru.css" type="text/css" media="screen">
+<!-- Included JS Files -->
+<script src="fichiers/jquery-1.js"></script>
+<style type="text/css" id="notify-bootstrap">.notifyjs-bootstrap-base {
+	font-weight: bold;
+	padding: 8px 15px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	white-space: nowrap;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}
+.notifyjs-bootstrap-error {
+	color: #B94A48;
+	background-color: #F2DEDE;
+	border-color: #EED3D7;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-success {
+	color: #468847;
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
+}
+.notifyjs-bootstrap-info {
+	color: #3A87AD;
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-warn {
+	color: #C09853;
+	background-color: #FCF8E3;
+	border-color: #FBEED5;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
+}
+</style><style type="text/css" id="core-notify">.notifyjs-corner {
+	position: fixed;
+	margin: 5px;
+	z-index: 1050;
+}
+
+.notifyjs-corner .notifyjs-wrapper,
+.notifyjs-corner .notifyjs-container {
+	position: relative;
+	display: block;
+	height: inherit;
+	width: inherit;
+	margin: 3px;
+}
+
+.notifyjs-wrapper {
+	z-index: 1;
+	position: absolute;
+	display: inline-block;
+	height: 0;
+	width: 0;
+}
+
+.notifyjs-container {
+	display: none;
+	z-index: 1;
+	position: absolute;
+}
+
+.notifyjs-hidable {
+	cursor: pointer;
+}
+
+[data-notify-text],[data-notify-html] {
+	position: relative;
+}
+
+.notifyjs-arrow {
+	position: absolute;
+	z-index: 2;
+	width: 0;
+	height: 0;
+}</style></head>
+<body>
+<!-- header -->
+<header role="banner">
+  <nav class="navbar navbar-inverse">
+      <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myportal-menu">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="index.htm">
+			<span class="img-nef">&nbsp;</span>
+		</a>
+		<a class="navbar-brand navbar-brand-label" href="mydashboard.htm">
+		Bonjour XX !
+		<img class="avatar avatar-large" src="" alt="">
+		</a>
+		<small class="navbar-brand navbar-brand-info hidden-xs">DIR V100000 prenom.nom@paris.fr</small>
+    </div>
+    <div class="collapse navbar-collapse" id="myportal-menu">
+      <form id="search-solr" name="search" action="jsp/site/Portal.jsp" method="post" class="navbar-form navbar-left" role="search">
+				<input name="page" value="search-solr" type="hidden">
+				<div class="form-group">
+          <div class="input-group">
+            <input id="solr-home" class="form-control input-lg" placeholder="Rechercher" name="query" type="text">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-lg btn-default"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li> </li>
+        <li class="active">
+          <a id="new_widget" class="btn-open btn btn-primary" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un widget" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=browse_categories&amp;tab_index=1">
+        	   <i class="fa fa-plus"></i> Ajouter un widget
+        	</a>
+        </li>
+        <li>
+          <a id="new_tab" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=add_tab" class="btn btn-primary btn-open" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un onglet">
+        		<span class="fa fa-tag"></span> Ajouter un onglet
+        	</a>
+        </li>
+      </ul>
+    </div>
+  
+</nav>
+<!-- Nav intraparis -->
+<nav class="navbar navbar-inverse nav-intraparis">
+<div class="navbar-header">
+	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><img src="fichiers/intraparis.png" alt=""></a>
+		</div>
+		<div class="collapse navbar-collapse js-navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="dropdown mega-dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Directions <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li class="col-xs-12 col-sm-3">
+							<ul>
+							  <li><a target="_top" href="http://intraparis.burcab.mdp/"><abbr title="Cabinet du Maire et ses services administratifs">Cabinet de la maire
+							  <br></abbr></a></li>
+							  <li><a target="_top" href="http://intraparis.sg.mdp/SG/jsp/site/Portal.jsp"><abbr title="Secrétariat Général de la Ville de Paris">SG</abbr></a> <a href="http://intraparis.ig.mdp/" target="_top"><abbr title="Inspection Générale"></abbr></a></li>
+							  <li><a href="http://intraparis.ig.mdp/" target="_top"><abbr title="Inspection Générale">IG</abbr></a><a href="http://intraparis.sg.mdp/" target="_top">
+							  <br> </a></li>
+							  <li><a href="http://intraparis.cp.mdp/" target="_top"><abbr title="Conseil de Paris">Conseil de Paris
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.casvp.mdp/" target="_top"><abbr title="Centre daction sociale de la Ville de Paris">CASVP
+							  <br></abbr></a></li>
+							</ul>
+						</li>
+						<li class="col-xs-12 col-sm-2">
+							<ul>
+							  <li><a href="http://intraparis.dases.mdp/" target="_top"><abbr title="Action sociale, enfance et santé">DASES
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dac.mdp/" target="_top"><abbr title="Affaires culturelles">DAC
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.daj.mdp/" target="_top"><abbr title="Affaires Juridiques">DAJ
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dasco.mdp/" target="_top"><abbr title="Affaires scolaires">DASCO
+							  <br></abbr></a></li>
+							  <li><a target="_top" href="http://intraparis.ddct.mdp/DDCT/jsp/site/Portal.jsp"><abbr title="Démocratie, Citoyens et Territoires">DDCT
+							  <br></abbr></a></li>
+							</ul>
+						</li>
+						<li class="col-xs-12 col-sm-2">
+							<ul>
+							  <li><a href="http://intraparis.dae.mdp/" target="_top"><abbr title="Attractivité et Emploi">DAE
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.deve.mdp/" target="_top"><abbr title="Espaces verts et environnement">DEVE
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dfpe.mdp/" target="_top"><abbr title="Familles et petite enfance">DFPE
+							  <br></abbr></a></li>
+							  <li><a title="DFA" target="_top" href="http://intraparis.dfa.mdp/dfa/jsp/site/Portal.jsp?page_id=1"><abbr title="Finances et Achats">DFA
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dilt.mdp/" target="_top"><abbr title="Immobilier, logistique et transports">DILT
+							  <br></abbr></a></li>
+						  </ul>
+    					</li>
+						<li class="col-xs-12 col-sm-2">
+							<ul>
+							  <li><a href="http://intraparis.dicom.mdp/" target="_top"><abbr title="Information et communication">DICOM
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.djs.mdp/" target="_top"><abbr title="Jeunesse et sports">DJS
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dlh.mdp/" target="_top"><abbr title="Logement et habitat">DLH
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dpa.mdp/" target="_top"><abbr title="Patrimoine et architecture">DPA
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dpp.mdp/" target="_top"><abbr title="Prévention et protection">DPSP
+							  <br></abbr></a></li>
+							</ul>
+
+    					</li>
+						<li class="col-xs-12 col-sm-2">
+							<ul>
+							  <li><a href="http://intraparis.dpe.mdp/" target="_top"><abbr title="Propreté et eau">DPE</abbr></a>
+							  <br> <a href="http://intraparis.drh.mdp/" target="_top"><abbr title="Ressources humaines"></abbr></a></li>
+							  <li><a href="http://intraparis.drh.mdp/" target="_top"><abbr title="Ressources humaines">DRH
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dsti.mdp/" target="_top"><abbr title="Systémes et technologies de linformation">DSTI
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.du.mdp/" target="_top"><abbr title="Urbanisme">DU
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dvd.mdp/" target="_top"><abbr title="Voirie et déplacemnts">DVD
+							  <br></abbr></a></li>
+							</ul>
+    					</li>
+					</ul>
+				</li>
+				<li class="dropdown mega-dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseaux <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li>
+              <div class="row">
+                <div class="col-xs-12 col-sm-offset-1 col-sm-2">
+							    <h4>Métiers</h4>
+    							<ul>
+    							  <li><a href="http://intraparis.achats.mdp/" target="_top"><abbr title="Achats et marchés">Achats</abbr></a></li>
+    							  <li><a href="http://intraparis.vie-associative.mdp/" target="_top"><abbr title="Associations">Associations</abbr></a></li>
+    							  <li><a href="http://intraparis.communication.mdp/" target="_top"><abbr title="Communication">Communication</abbr></a></li>
+    							  <li><a href="http://intraparis.finances.mdp/" target="_top"><abbr title="Finances">Finances</abbr></a></li>
+    							  <li><a href="http://intraparis.fonctionimmobiliere.mdp/fimmo/jsp/site/Portal.jsp" target="_top">Fonction Immobiliére</a></li>
+    							</ul>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+    							<ul>
+    							  <li><a href="http://intraparis.rh.mdp/" target="_top"><abbr title="Gestion des ressources humaines">RH</abbr></a></li>
+    							  <li><a href="http://intraparis.sequana.mdp/" target="_top"><abbr title="Programme SEQUANA">SEQUANA</abbr></a></li>
+    							  <li><a href="http://m14-base-documentaire.apps.paris.mdp/" target="_top"><abbr title="Base documentaire EPM">Base Doc EPM</abbr></a></li>
+    							  <li><a href="http://intraparis.facilfamille.mdp/" target="_top"><abbr title="Facil Familles">Facil' Familles</abbr></a></li>
+    							  <li><a href="http://intraparis.qualiparis.mdp/" target="_top"><abbr title="QualiPARIS">QualiPARIS</abbr></a></li>
+    							</ul>
+						   </div>
+                <div class="col-xs-12 col-sm-3">
+  							<ul>
+  							  <li><a href="http://intraparis.elise.mdp/" target="_top"><abbr title="Gestion du courrier Elise">Elise</abbr></a></li>
+  							  <li><a href="http://v64-nomos.apps.paris.mdp/nomos/jsp/site/Portal.jsp" target="_top">NOMOS, textes RH</a></li>
+  							  <li><a title="Intraparis Innovations" href="http://intraparis.innovation.mdp/" target="_top">Innovation</a></li>
+  							  <li><a title="Intraparis Delib" href="http://intraparis.delib.mdp/" target="_top">Delib'</a></li>
+  							  <li><a title="Intraparis Jurilib" href="http://intraparis.jurilib.mdp/" target="_top">Jurilib'</a></li>
+  							  <li><a href="http://intraparis.compteparisien.mdp/" target="_top"><abbr title="Compte Parisien">Compte Parisien</abbr></a></li>
+  							</ul>
+						    </div>
+                <div class="col-xs-12 col-sm-3">
+  							<h4>Territoires</h4>
+  							<ul>
+  							  <li><a href="http://intraparis.mairie4.mdp/" target="_top"><abbr title="Mairie du 4ème">Mairie du 4ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie7.mdp/" target="_top"><abbr title="Mairie du 7ème">Mairie du 7ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie11.mdp/" target="_top"><abbr title="Mairie du 11ème">Mairie du 11ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie12.mdp/" target="_top"><abbr title="Mairie du 12ème">Mairie du 12ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie16.mdp/" target="_top"><abbr title="Mairie du 16ème">Mairie du 16ème</abbr></a></li>
+                  <li><a href="http://intraparis.mairie18.mdp/" target="_top"><abbr title="Mairie du 18ème">Mairie du 18ème</abbr></a></li>
+  							</ul>
+              </div>
+            </div>
+          </li>
+				</ul>
+				</li>
+				<li class="dropdown mega-dropdown">
+    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Syndicats <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li>
+              <div class="row">
+                <div class="col-xs-12 col-sm-offset-1 col-sm-2">
+    						  <ul>
+    							  <li><a href="http://intraparis.cfdt.mdp/" target="_top">CFDT</a></li>
+    							  <li><a href="http://intraparis.cftc.mdp/" target="_top">CFTC</a></li>
+    								<li><a href="http://intraparis.cgt.mdp/" target="_top">CGT</a></li>
+    								<li><a href="http://intraparis.fo.mdp/" target="_top">FO</a></li>
+    							</ul>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+    						  <ul>
+    							 <li><a href="http://intraparis.sud.mdp/" target="_top">SUD</a></li>
+    							  <li><a href="http://intraparis.supap-fsu.mdp/" target="_top">SUPAP-FSU</a></li>
+    							  <li><a href="http://intraparis.ucp.mdp/" target="_top">UCP</a></li>
+    							  <li><a href="http://intraparis.unsa.mdp/" target="_top">UNSA</a></li>
+    							</ul>
+                </div>
+              </div>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown mega-dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">OUKI <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li class="col-xs-12 col-sm-12">
+    						<form id="form-ouki" action="http://f20-ouki-v5.apps.paris.mdp/oukildap/jsp/site/Portal.jsp?page=ldapdirectory" target="_top" method="post">
+								<input name="page" value="ldapdirectory" type="hidden">
+								<input name="type" value="1" type="hidden">
+								<input name="action" value="find" type="hidden">
+								<div class="form-group"> <label for="ouki_nom">Nom</label>
+								<div class="input-group">
+								<input id="ouki_nom" name="name" class="form-control" type="text">
+								<span class="input-group-btn">
+								<button id="valid_ouki" class="btn btn-primary" name="valid_ouki" type="submit">Rechercher</button>
+								</span>
+								</div>
+								</div>
+							</form>
+							<p class="text-right">
+								<a class="btn btn-default btn-xs" href="http://f20-ouki-v5.apps.paris.mdp/oukildap/jsp/site/Portal.jsp?page=ldapdirectory" target="_top">OUKI recherche avancée</a>
+							</p>
+						</li>
+					</ul>
+				</li>
+		</ul>
+	</div>
+</nav>
+
+<!-- -->
+<div class="hide">
+	<div class="col-xs-12 col-sm-4">
+		 <h4>Compte Agents</h4>
+	</div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="btn-menu" style="margin-top:8px">
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-2">
+    <form action="jsp/site/Portal.jsp?page=search" method="get" class="form-inline" style="margin-top:15px">
+      <div class="input-group">
+        <label for="searchfield" class="sr-only">Rechercher :</label>
+        <input name="query" id="searchfield" class="form-control input-sm" placeholder="Rechercher" type="text">
+        <span class="input-group-btn">
+          <button class="btn btn-sm btn-default" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+      </form>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <p style="margin-top:30px">
+      <!-- Button trigger modal -->
+      
+
+<a class="navbar-brand navbar-brand-label" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=mydashboard">
+  Bonjour Laurent
+  <img class="avatar avatar-large" src="" alt="">
+</a>
+<small class="navbar-brand navbar-brand-info hidden-xs">DSTI V1029116 laurent.hohl@paris.fr</small>
+
+      </p>
+    </div>
+</div>
+</header>
+<!-- header -->
+<section class="container-fluid">
+<!-- content -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <script type="text/javascript" src="fichiers/ui.htm"></script>
+<script type="text/javascript" src="fichiers/ui_002.htm"></script>
+<link rel="stylesheet" type="text/css" href="fichiers/ui_003.htm">
+
+
+<div class="row">
+	<div class="col-sm-9 col-md-9">
+		<div class="portlet">
+			<div class="well">
+					<div class="row">
+						<h2>Liste de demandes</h2>
+					</div>
+					<div class="row">
+					
+						<!-- Filter on "type demande", "date de modification", "notification" -->
+							<div class="well">
+								<form class="form-horizontal" action="jsp/site/Portal.jsp?page=crm" method="post" name="form">
+									<div class="form-group">
+										<label class="control-label col-sm-2 col-md-2" for="filter_type_demand">Type de demande : </label>
+										<div class="col-sm-10 col-md-10">
+<select id="demandType" name="demandType">
+		<option selected="selected" value="-1"></option>
+   		<option value="104">Demande de prestation</option>
+   		<option value="103">Rendez-vous</option>
+   		<option value="102">Réclamation</option>
+   		<option value="101">Sollicitation</option>
+</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-2 col-md-2" for="filter_modification_date">Date de modification : </label>
+										<div class="col-sm-4 col-md-4">
+											<input class="form-control input-sm hasDatepicker" name="modificationDate" id="filter_modification_date" size="7" maxlength="10" type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-sm-2 col-md-2" for="filter_notification">Notification : </label>
+										<div class="col-sm-4 col-md-4">
+											<input class="form-control input-sm" name="notification" id="filter_notification" size="40" maxlength="255" type="text">
+											<span class="help-block">Faire une recherche sur le contenu des notifications.</span>
+										</div>
+									</div>
+									<div class="form-actions col-sm-offset-2 col-md-offset-2">
+										<button type="submit" value="Rechercher" name="search" class="btn btn-primary btn-sm">
+									   		Rechercher
+									   	</button>
+									   	<a class="btn btn-primary btn-sm" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm">
+									   		Réinitialiser
+									   	</a>
+								   	</div>
+								</form>
+							</div>
+						
+							<!-- Doesn't display the draft bloc if the checkbox is not checked in the parameters -->
+							<!-- Doesn't display the draft bloc if the checkbox is not checked in the parameters -->
+									<div class="well">
+		<div class="pull-right">
+				<form method="post" class="form-inline">
+	<label>Nombre par page</label>
+  <div class="input-group">
+	  <select data-max-item="4" class="input-xs" name="items_per_page1" id="items_per_page1" title="Nombre par page">
+  				<option selected="selected" value="10">10</option>
+  				<option value="20">20</option>
+  				<option value="50">50</option>
+  				<option value="100">100</option>
+	  </select>
+	  <span class="input-group-btn">
+		<button class="btn btn-default btn-xs" type="submit" title="Actualiser">
+			<i class="fa fa-repeat"></i>
+		</button>
+	</span>
+</div>
+<span class="showcount">
+	&nbsp;-&nbsp;Nombre d'éléments :  4
+</span>
+				</form>
+		</div>
+										<table class="table">
+											<tbody><tr>
+												<th>
+													Validé
+												</th>
+												<th>
+													Date de modification
+	<div class="btn-group" role="group" aria-label="sortButton">
+		<a class="btn btn-default btn-flat btn-xs" id="sort_dateModification" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;session=true&amp;id_status=1&amp;sorted_attribute_name=dateModification&amp;asc_sort=true#sort_dateModification" title="Tri croissant">
+			<i class="fa fa-chevron-up"></i>
+		</a>
+		<a class="btn btn-default btn-flat btn-xs" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;session=true&amp;id_status=1&amp;sorted_attribute_name=dateModification&amp;asc_sort=false#sort_dateModification" title="Tri décroissant">
+			<i class="fa fa-chevron-down"></i>
+		</a>
+	</div>
+												</th>
+												<th>
+													Statut
+												</th>
+												<th>
+													Notification
+	<div class="btn-group" role="group" aria-label="sortButton">
+		<a class="btn btn-default btn-flat btn-xs" id="sort_unreadNotification" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;session=true&amp;id_status=1&amp;sorted_attribute_name=unreadNotification&amp;asc_sort=true#sort_unreadNotification" title="Tri croissant">
+			<i class="fa fa-chevron-up"></i>
+		</a>
+		<a class="btn btn-default btn-flat btn-xs" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;session=true&amp;id_status=1&amp;sorted_attribute_name=unreadNotification&amp;asc_sort=false#sort_unreadNotification" title="Tri décroissant">
+			<i class="fa fa-chevron-down"></i>
+		</a>
+	</div>
+												</th>									
+											</tr>
+													<tr>
+														<td>
+															Demande de prestation
+														</td>
+														<td>
+															29/03/17 10:07
+														</td>
+														<td>
+															En cours de traitement
+														</td>
+														<td>
+																<a class="btn btn-primary btn-sm" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=4" title="Notifications">
+																	<i class="glyphicon glyphicon-envelope"></i>
+																</a>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															Demande de prestation
+														</td>
+														<td>
+															28/03/17 12:40
+														</td>
+														<td>
+															En cours de traitement
+														</td>
+														<td>
+																<a class="btn btn-primary btn-sm" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=3" title="Notifications">
+																	<i class="glyphicon glyphicon-envelope"></i>
+																</a>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															Demande de prestation
+														</td>
+														<td>
+															28/03/17 10:43
+														</td>
+														<td>
+															En cours de traitement
+														</td>
+														<td>
+																<a class="btn btn-primary btn-sm" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=2" title="Notifications">
+																	<i class="glyphicon glyphicon-envelope"></i>
+																</a>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															Demande de prestation
+														</td>
+														<td>
+															28/03/17 10:43
+														</td>
+														<td>
+															En cours de traitement
+														</td>
+														<td>
+																<a class="btn btn-primary btn-sm" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=1" title="Notifications">
+																	<i class="glyphicon glyphicon-envelope"></i>
+																</a>
+																	<span class="alert">
+																		1
+																	</span>
+														</td>
+													</tr>
+										</tbody></table>
+		<div class="pull-right">
+				<form method="post" class="form-inline">
+<span class="showcount">
+	&nbsp;-&nbsp;Nombre d'éléments :  4
+</span>
+				</form>
+		</div>
+									</div>
+					</div>
+		</div>
+	</div>
+</div>
+
+	<div class="col-sm-3 col-md-3">
+		<div class="portlet">
+			<div class="well">
+					<div class="row">
+						Laurent Hohl
+					</div>
+					<div class="row">
+						<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=modify_crm_user">
+							Mon compte
+						</a>
+					</div>
+			</div>
+		</div>
+			<div class="portlet">
+				<div class="well">
+					<div class="row">
+						Liste des types de demandes
+					</div>
+					<div class="row">
+								<fieldset>
+									<ul>
+											<li>
+												<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/crm/DoOpenDemandType.jsp?id_demand_type=104" target="_self">
+													Demande de prestation
+												</a>
+											</li>
+											<li>
+												<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/crm/DoOpenDemandType.jsp?id_demand_type=103" target="_self">
+													Rendez-vous
+												</a>
+											</li>
+											<li>
+												<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/crm/DoOpenDemandType.jsp?id_demand_type=102" target="_self">
+													Réclamation
+												</a>
+											</li>
+											<li>
+												<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/crm/DoOpenDemandType.jsp?id_demand_type=101" target="_self">
+													Sollicitation
+												</a>
+											</li>
+									</ul>
+								</fieldset>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+<script src="fichiers/jquery-ui-1.js"></script>
+<script src="fichiers/ui.js"></script>
+	<script src="fichiers/jquery-ui_002.js"></script>
+	<script src="fichiers/ui.js"></script>
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+		$('#filter_modification_date').datepicker({language: 'fr'});
+	});
+	</script>
+
+    </div>
+  </div>
+</section>
+<!-- /content -->
+
+<footer>
+<div class="row">
+	<div class="col-xs-12 col-md-offset-1 col-sm-3">
+		<a href="http://www.paris.fr/" alt="Paris.fr" title="Paris.fr" target="_blank"><img src="fichiers/logo_mdp.png"></a>
+	</div>
+	<div class="col-xs-12 col-md-offset-1 col-sm-7">
+		<ul class="list-inline">
+			<li><a href="http://www.paris.fr/contact" title="Contact" target="_blank">Contact</a></li>
+			<li>
+				<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=htmlpage&amp;htmlpage_id=2" title="Mentions lÃ©gales" target="_blank">Mentions légales</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</footer>
+	
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script src="fichiers/jquery-ui.js"></script>
+<script src="fichiers/jquery_007.js"></script>
+<script src="fichiers/bootstrap.js"></script>
+<script src="fichiers/notify.js"></script>
+<script src="fichiers/jquery_005.js" type="text/javascript"></script><script src="fichiers/jquery_004.js" type="text/javascript"></script><script src="fichiers/load-image.js" type="text/javascript"></script><script src="fichiers/jquery_008.js" type="text/javascript"></script><script src="fichiers/jquery_006.js" type="text/javascript"></script><script src="fichiers/jquery_003.js" type="text/javascript"></script><script src="fichiers/canvas-to-blob.js" type="text/javascript"></script><script src="fichiers/jquery.js" type="text/javascript"></script><script src="fichiers/extend-rating.js" type="text/javascript"></script><script src="fichiers/jquery_002.js" type="text/javascript"></script><script src="fichiers/form.js" type="text/javascript"></script><script src="fichiers/myportal-mytasks.js" type="text/javascript"></script>
+	<!-- Statistical include -->
+
+<!-- Statistical include - End -->
+<script>
+  	$(function() {
+				$('#solr-home').autocomplete({
+						source: function(request, response) {
+							$.ajax({
+								url: 'http://dstibpico34244f.stations.paris.mdp:8080/gra/solrSuggest',
+								dataType: 'jsonp',
+								minLength: 3,
+								data: {
+									q: request.term,
+								},
+								success: function(data) {
+									var formattedResponse = $.map(data.response.docs, function(item) {
+										return {
+											label: item.title,
+											value: item.title,
+										};
+									});
+									response(formattedResponse);
+								}
+							});
+						},
+					});
+
+    $(".dropdown").hover(
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');
+        }
+    );
+});
+</script>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<!-- base href="http://dstibpico34244f.stations.paris.mdp:8080/gra/" -->
+<title>LUTECE - Création d'une demande</title>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="fr">
+<meta name="author" content="&lt;author&gt;">
+<meta name="copyright" content="&lt;copyright&gt;">
+<meta name="keywords" content="&lt;keywords&gt;">
+<meta name="description" content="&lt;description&gt;">
+<meta name="generator" content="LUTECE 6.0.0-RC-01">
+<!-- Dublin Core metadatas -->
+<meta name="DC.Creator" content="&lt;author&gt;">
+<meta name="DC.Rights" content="&lt;copyright&gt;">
+<meta name="DC.Subject" content="&lt;keywords&gt;">
+<meta name="DC.Description" content="&lt;description&gt;">
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Le style -->
+<link href="fichiers/bootstrap.css" rel="stylesheet">
+<link href="fichiers/font-awesome.css" rel="stylesheet">
+<link href="fichiers/jquery-ui.css" rel="stylesheet">
+<link href="fichiers/page_template_styles_gra.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!-- JQUERY UI: Keep for compatibility -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/favicon.ico">
+<link rel="stylesheet" href="fichiers/jquery.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/jquery_002.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/jquery_003.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/form.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/myapps.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/mytasks.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/ticketing.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/workflow_notifygru.css" type="text/css" media="screen">
+
+<!-- Included JS Files -->
+<script src="fichiers/jquery-1.js"></script>
+<style type="text/css" id="notify-bootstrap">.notifyjs-bootstrap-base {
+	font-weight: bold;
+	padding: 8px 15px 8px 14px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	white-space: nowrap;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}
+.notifyjs-bootstrap-error {
+	color: #B94A48;
+	background-color: #F2DEDE;
+	border-color: #EED3D7;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-success {
+	color: #468847;
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
+}
+.notifyjs-bootstrap-info {
+	color: #3A87AD;
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
+}
+.notifyjs-bootstrap-warn {
+	color: #C09853;
+	background-color: #FCF8E3;
+	border-color: #FBEED5;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
+}
+</style><style type="text/css" id="core-notify">.notifyjs-corner {
+	position: fixed;
+	margin: 5px;
+	z-index: 1050;
+}
+
+.notifyjs-corner .notifyjs-wrapper,
+.notifyjs-corner .notifyjs-container {
+	position: relative;
+	display: block;
+	height: inherit;
+	width: inherit;
+	margin: 3px;
+}
+
+.notifyjs-wrapper {
+	z-index: 1;
+	position: absolute;
+	display: inline-block;
+	height: 0;
+	width: 0;
+}
+
+.notifyjs-container {
+	display: none;
+	z-index: 1;
+	position: absolute;
+}
+
+.notifyjs-hidable {
+	cursor: pointer;
+}
+
+[data-notify-text],[data-notify-html] {
+	position: relative;
+}
+
+.notifyjs-arrow {
+	position: absolute;
+	z-index: 2;
+	width: 0;
+	height: 0;
+}</style></head>
+<body>
+<!-- header -->
+<header role="banner">
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myportal-menu">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="index.htm">
+			<span class="img-nef">&nbsp;</span>
+		</a>
+		<a class="navbar-brand navbar-brand-label" href="mydashboard.htm">
+		Bonjour XX !
+		<img class="avatar avatar-large" src="" alt="">
+		</a>
+		<small class="navbar-brand navbar-brand-info hidden-xs">DIR V100000 prenom.nom@paris.fr</small>
+    </div>
+    <div class="collapse navbar-collapse" id="myportal-menu">
+      <form id="search-solr" name="search" action="jsp/site/Portal.jsp" method="post" class="navbar-form navbar-left" role="search">
+				<input name="page" value="search-solr" type="hidden">
+				<div class="form-group">
+          <div class="input-group">
+            <input id="solr-home" class="form-control" placeholder="Rechercher" name="query" type="text">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li> </li>
+        <li class="active">
+          <a id="new_widget" class="btn-open btn btn-primary" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un widget" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=browse_categories&amp;tab_index=1">
+        	   <i class="fa fa-plus"></i> Ajouter un widget
+        	</a>
+        </li>
+        <li>
+          <a id="new_tab" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=add_tab" class="btn btn-primary btn-open" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un onglet">
+        		<span class="fa fa-tag"></span> Ajouter un onglet
+        	</a>
+        </li>
+      </ul>
+    </div>
+  
+</nav>
+<!-- Nav intraparis -->
+<nav class="navbar navbar-inverse nav-intraparis">
+<div class="navbar-header">
+	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#"><img src="fichiers/intraparis.png" alt=""></a>
+		</div>
+		<div class="collapse navbar-collapse js-navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="dropdown mega-dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Directions <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li class="col-xs-12 col-sm-3">
+							<ul>
+							  <li><a target="_top" href="http://intraparis.burcab.mdp/"><abbr title="Cabinet du Maire et ses services administratifs">Cabinet de la maire
+							  <br></abbr></a></li>
+							  <li><a target="_top" href="http://intraparis.sg.mdp/SG/jsp/site/Portal.jsp"><abbr title="Secrétariat Général de la Ville de Paris">SG</abbr></a> <a href="http://intraparis.ig.mdp/" target="_top"><abbr title="Inspection Générale"></abbr></a></li>
+							  <li><a href="http://intraparis.ig.mdp/" target="_top"><abbr title="Inspection Générale">IG</abbr></a><a href="http://intraparis.sg.mdp/" target="_top">
+							  <br> </a></li>
+							  <li><a href="http://intraparis.cp.mdp/" target="_top"><abbr title="Conseil de Paris">Conseil de Paris
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.casvp.mdp/" target="_top"><abbr title="Centre daction sociale de la Ville de Paris">CASVP
+							  <br></abbr></a></li>
+							</ul>
+						</li>
+						<li class="col-xs-12 col-sm-2">
+							<ul>
+							  <li><a href="http://intraparis.dases.mdp/" target="_top"><abbr title="Action sociale, enfance et santé">DASES
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dac.mdp/" target="_top"><abbr title="Affaires culturelles">DAC
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.daj.mdp/" target="_top"><abbr title="Affaires Juridiques">DAJ
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dasco.mdp/" target="_top"><abbr title="Affaires scolaires">DASCO
+							  <br></abbr></a></li>
+							  <li><a target="_top" href="http://intraparis.ddct.mdp/DDCT/jsp/site/Portal.jsp"><abbr title="Démocratie, Citoyens et Territoires">DDCT
+							  <br></abbr></a></li>
+							</ul>
+						</li>
+						<li class="col-xs-12 col-sm-2">
+							<ul>
+							  <li><a href="http://intraparis.dae.mdp/" target="_top"><abbr title="Attractivité et Emploi">DAE
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.deve.mdp/" target="_top"><abbr title="Espaces verts et environnement">DEVE
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dfpe.mdp/" target="_top"><abbr title="Familles et petite enfance">DFPE
+							  <br></abbr></a></li>
+							  <li><a title="DFA" target="_top" href="http://intraparis.dfa.mdp/dfa/jsp/site/Portal.jsp?page_id=1"><abbr title="Finances et Achats">DFA
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dilt.mdp/" target="_top"><abbr title="Immobilier, logistique et transports">DILT
+							  <br></abbr></a></li>
+						  </ul>
+    					</li>
+						<li class="col-xs-12 col-sm-2">
+							<ul>
+							  <li><a href="http://intraparis.dicom.mdp/" target="_top"><abbr title="Information et communication">DICOM
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.djs.mdp/" target="_top"><abbr title="Jeunesse et sports">DJS
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dlh.mdp/" target="_top"><abbr title="Logement et habitat">DLH
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dpa.mdp/" target="_top"><abbr title="Patrimoine et architecture">DPA
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dpp.mdp/" target="_top"><abbr title="Prévention et protection">DPSP
+							  <br></abbr></a></li>
+							</ul>
+
+    					</li>
+						<li class="col-xs-12 col-sm-2">
+							<ul>
+							  <li><a href="http://intraparis.dpe.mdp/" target="_top"><abbr title="Propreté et eau">DPE</abbr></a>
+							  <br> <a href="http://intraparis.drh.mdp/" target="_top"><abbr title="Ressources humaines"></abbr></a></li>
+							  <li><a href="http://intraparis.drh.mdp/" target="_top"><abbr title="Ressources humaines">DRH
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dsti.mdp/" target="_top"><abbr title="Systémes et technologies de linformation">DSTI
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.du.mdp/" target="_top"><abbr title="Urbanisme">DU
+							  <br></abbr></a></li>
+							  <li><a href="http://intraparis.dvd.mdp/" target="_top"><abbr title="Voirie et déplacemnts">DVD
+							  <br></abbr></a></li>
+							</ul>
+    					</li>
+					</ul>
+				</li>
+				<li class="dropdown mega-dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseaux <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li>
+              <div class="row">
+                <div class="col-xs-12 col-sm-offset-1 col-sm-2">
+							    <h4>Métiers</h4>
+    							<ul>
+    							  <li><a href="http://intraparis.achats.mdp/" target="_top"><abbr title="Achats et marchés">Achats</abbr></a></li>
+    							  <li><a href="http://intraparis.vie-associative.mdp/" target="_top"><abbr title="Associations">Associations</abbr></a></li>
+    							  <li><a href="http://intraparis.communication.mdp/" target="_top"><abbr title="Communication">Communication</abbr></a></li>
+    							  <li><a href="http://intraparis.finances.mdp/" target="_top"><abbr title="Finances">Finances</abbr></a></li>
+    							  <li><a href="http://intraparis.fonctionimmobiliere.mdp/fimmo/jsp/site/Portal.jsp" target="_top">Fonction Immobiliére</a></li>
+    							</ul>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+    							<ul>
+    							  <li><a href="http://intraparis.rh.mdp/" target="_top"><abbr title="Gestion des ressources humaines">RH</abbr></a></li>
+    							  <li><a href="http://intraparis.sequana.mdp/" target="_top"><abbr title="Programme SEQUANA">SEQUANA</abbr></a></li>
+    							  <li><a href="http://m14-base-documentaire.apps.paris.mdp/" target="_top"><abbr title="Base documentaire EPM">Base Doc EPM</abbr></a></li>
+    							  <li><a href="http://intraparis.facilfamille.mdp/" target="_top"><abbr title="Facil Familles">Facil' Familles</abbr></a></li>
+    							  <li><a href="http://intraparis.qualiparis.mdp/" target="_top"><abbr title="QualiPARIS">QualiPARIS</abbr></a></li>
+    							</ul>
+						   </div>
+                <div class="col-xs-12 col-sm-3">
+  							<ul>
+  							  <li><a href="http://intraparis.elise.mdp/" target="_top"><abbr title="Gestion du courrier Elise">Elise</abbr></a></li>
+  							  <li><a href="http://v64-nomos.apps.paris.mdp/nomos/jsp/site/Portal.jsp" target="_top">NOMOS, textes RH</a></li>
+  							  <li><a title="Intraparis Innovations" href="http://intraparis.innovation.mdp/" target="_top">Innovation</a></li>
+  							  <li><a title="Intraparis Delib" href="http://intraparis.delib.mdp/" target="_top">Delib'</a></li>
+  							  <li><a title="Intraparis Jurilib" href="http://intraparis.jurilib.mdp/" target="_top">Jurilib'</a></li>
+  							  <li><a href="http://intraparis.compteparisien.mdp/" target="_top"><abbr title="Compte Parisien">Compte Parisien</abbr></a></li>
+  							</ul>
+						    </div>
+                <div class="col-xs-12 col-sm-3">
+  							<h4>Territoires</h4>
+  							<ul>
+  							  <li><a href="http://intraparis.mairie4.mdp/" target="_top"><abbr title="Mairie du 4ème">Mairie du 4ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie7.mdp/" target="_top"><abbr title="Mairie du 7ème">Mairie du 7ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie11.mdp/" target="_top"><abbr title="Mairie du 11ème">Mairie du 11ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie12.mdp/" target="_top"><abbr title="Mairie du 12ème">Mairie du 12ème</abbr></a></li>
+  							  <li><a href="http://intraparis.mairie16.mdp/" target="_top"><abbr title="Mairie du 16ème">Mairie du 16ème</abbr></a></li>
+                  <li><a href="http://intraparis.mairie18.mdp/" target="_top"><abbr title="Mairie du 18ème">Mairie du 18ème</abbr></a></li>
+  							</ul>
+              </div>
+            </div>
+          </li>
+				</ul>
+				</li>
+				<li class="dropdown mega-dropdown">
+    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Syndicats <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li>
+              <div class="row">
+                <div class="col-xs-12 col-sm-offset-1 col-sm-2">
+    						  <ul>
+    							  <li><a href="http://intraparis.cfdt.mdp/" target="_top">CFDT</a></li>
+    							  <li><a href="http://intraparis.cftc.mdp/" target="_top">CFTC</a></li>
+    								<li><a href="http://intraparis.cgt.mdp/" target="_top">CGT</a></li>
+    								<li><a href="http://intraparis.fo.mdp/" target="_top">FO</a></li>
+    							</ul>
+                </div>
+                <div class="col-xs-12 col-sm-2">
+    						  <ul>
+    							 <li><a href="http://intraparis.sud.mdp/" target="_top">SUD</a></li>
+    							  <li><a href="http://intraparis.supap-fsu.mdp/" target="_top">SUPAP-FSU</a></li>
+    							  <li><a href="http://intraparis.ucp.mdp/" target="_top">UCP</a></li>
+    							  <li><a href="http://intraparis.unsa.mdp/" target="_top">UNSA</a></li>
+    							</ul>
+                </div>
+              </div>
+						</li>
+					</ul>
+				</li>
+				<li class="dropdown mega-dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">OUKI <span class="caret"></span></a>
+					<ul class="dropdown-menu mega-dropdown-menu">
+						<li class="col-xs-12 col-sm-12">
+    						<form id="form-ouki" action="http://f20-ouki-v5.apps.paris.mdp/oukildap/jsp/site/Portal.jsp?page=ldapdirectory" target="_top" method="post">
+								<input name="page" value="ldapdirectory" type="hidden">
+								<input name="type" value="1" type="hidden">
+								<input name="action" value="find" type="hidden">
+								<div class="form-group"> <label for="ouki_nom">Nom</label>
+								<div class="input-group">
+								<input id="ouki_nom" name="name" class="form-control" type="text">
+								<span class="input-group-btn">
+								<button id="valid_ouki" class="btn btn-primary" name="valid_ouki" type="submit">Rechercher</button>
+								</span>
+								</div>
+								</div>
+							</form>
+							<p class="text-right">
+								<a class="btn btn-default btn-xs" href="http://f20-ouki-v5.apps.paris.mdp/oukildap/jsp/site/Portal.jsp?page=ldapdirectory" target="_top">OUKI recherche avancée</a>
+							</p>
+						</li>
+					</ul>
+				</li>
+		</ul>
+	</div>
+</nav>
+
+<!-- -->
+<div class="hide">
+	<div class="col-xs-12 col-sm-4">
+		 <h4>Compte Agents</h4>
+	</div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="btn-menu" style="margin-top:8px">
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-2">
+    <form action="jsp/site/Portal.jsp?page=search" method="get" class="form-inline" style="margin-top:15px">
+      <div class="input-group">
+        <label for="searchfield" class="sr-only">Rechercher :</label>
+        <input name="query" id="searchfield" class="form-control input-sm" placeholder="Rechercher" type="text">
+        <span class="input-group-btn">
+          <button class="btn btn-sm btn-default" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+      </form>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <p style="margin-top:30px">
+      <!-- Button trigger modal -->
+      
+
+<a class="navbar-brand navbar-brand-label" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=mydashboard">
+  Bonjour Laurent
+  <img class="avatar avatar-large" src="" alt="">
+</a>
+<small class="navbar-brand navbar-brand-info hidden-xs">DSTI V1029116 laurent.hohl@paris.fr</small>
+
+      </p>
+    </div>
+</div>
+</header>
+<!-- header -->
+<section class="container-fluid">
+<!-- content -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      
+
+<div class="container">
+	<div id="create_ticket" class="row">
+    <div class="col-xs-12 col-sm-12">
+			<h2>Créer une sollicitation</h2>
+		<form class="form" role="form" method="post" action="jsp/site/Portal.jsp?page=ticket" enctype="multipart/form-data">
+      
+
+
+
+      <input name="page" value="ticket" type="hidden">
+			<input name="action" value="recapTicket" type="hidden">
+  	  <input id="id" name="id" type="hidden">
+    	<input id="guid" name="guid" value="5DFA5022B93E8644A83E7EB078D6B2B900000000" type="hidden">
+      <div class="form-group">
+        <label for="id_user_title" class="sr-only">Civilité (obligatoire)</label>
+					<label class="radio-inline" for="id_user_title_2">
+						<input name="id_user_title" id="id_user_title_2" value="2" type="radio">
+						<span class="radio-label">M.</span>
+					</label>
+					<label class="radio-inline" for="id_user_title_1">
+						<input name="id_user_title" id="id_user_title_1" value="1" type="radio">
+						<span class="radio-label">Mme</span>
+					</label>
+					<label class="radio-inline" for="id_user_title_0">
+						<input name="id_user_title" id="id_user_title_0" value="0" checked="checked" type="radio">
+						<span class="radio-label">Non précisée</span>
+					</label>
+       <span class="help-block sr-only"></span>
+      </div>
+      <div class="form-group">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<label for="lastname">Nom (obligatoire)</label>
+						<input class="form-control" id="lastname" name="lastname" maxlength="50" type="text">
+						<span class="help-block sr-only"></span>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<label for="firstname">Prénom (obligatoire)</label>
+						<input class="form-control" id="firstname" name="firstname" maxlength="50" type="text">
+						<span class="help-block sr-only"></span>
+					</div>
+				</div>
+            </div>
+            <div class="form-group">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<label for="email">E-mail de contact (obligatoire)</label>
+						<input class="form-control" id="email" name="email" maxlength="255" type="text">
+						<span class="help-block v"></span>
+					</div>
+				</div>
+            </div>
+            <div class="form-group">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6">
+						<label for="fixed_phone_number">Numéro de téléphone fixe</label>
+						<input class="form-control input-phone" id="fixed_phone_number" name="fixed_phone_number" maxlength="10" type="text">
+						<span class="help-block">Renseigner au moins un des deux numéros de téléphone</span>
+					</div>
+					<div class="col-xs-12 col-sm-6">
+						<label for="mobile_phone_number">Numéro de téléphone portable</label>
+						<input class="form-control input-phone" id="mobile_phone_number" name="mobile_phone_number" maxlength="10" type="text">
+						<span class="help-block">Renseigner au moins un des deux numéros de téléphone</span>
+					</div>
+				</div>
+            </div>
+			<div class="form-group" style="display: none;">
+                <label for="id_contact_mode">Pour me contacter</label>
+				<p>
+					<label class="radio-inline" for="id_contact_mode_1">
+						<input name="id_contact_mode" id="id_contact_mode_1" value="1" checked="checked" type="radio">
+						<span class="radio-label">E-mail</span>
+					</label>
+					<label class="radio-inline" for="id_contact_mode_2">
+						<input name="id_contact_mode" id="id_contact_mode_2" value="2" type="radio">
+						<span class="radio-label">Courrier</span>
+					</label>
+				</p>
+        <span class="help-block sr-only"></span>
+      </div>
+			<hr>
+      <div class="form-group">
+        <label for="id_ticket_type">Nature de la demande (obligatoire)</label>
+				<div class="select">
+					<select id="id_ticket_type" name="id_ticket_type" class="form-control select-control">
+								
+					<option value="1" selected="selected">Demande de prestation</option></select>
+				</div>
+				<span class="help-block sr-only"></span>
+            </div>
+            <div class="form-group">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6">
+									<label for="id_ticket_domain" class="select">Domaine (obligatoire)</label>
+									<div class="select">
+										<select id="id_ticket_domain" name="id_ticket_domain" class="form-control select-control">
+												
+										<option value="211" selected="selected">Prestations sociales</option></select>
+									</div>
+									<span class="help-block sr-only"></span>
+								</div>
+								<div class="col-xs-12 col-sm-6">
+									<label for="id_ticket_category">Problématique (obligatoire)</label>
+									<div class="select">
+										<select id="id_ticket_category" name="id_ticket_category" class="form-control select-control">
+										<option value="10" selected="selected">Remboursement partiel des titres de transports</option><option value="11">Demande d'APS</option></select>
+									</div>
+									<span class="help-block sr-only" id="help_message_category"></span>
+								</div>
+							</div>
+            </div>
+            <div class="form-group" style="display: none;">
+                <div class="select">
+									<select id="id_ticket_precision" name="id_ticket_precision" class="select-control">
+									</select>
+								</div>
+                <span class="help-block sr-only" id="help_message_precision"></span>
+						</div>
+            <div class="form-group">
+                <label for="ticket_comment">Objet</label>
+                <textarea class="ticketing form-control" id="ticket_comment" name="ticket_comment"> </textarea>
+				<span class="help-block">5 000 caractères maximum</span>
+            </div>
+						<div id="generic_attributes"><!-- display ticket_form if defined -->
+  <div class="form-group">
+	<label for="attribute4">Matricule (obligatoire)</label>
+    	<input name="attribute4" id="attribute4" size="50" class="form-control " type="text">
+<div class="form-group">
+	<label for="attribute5">Grade</label>
+    	<input name="attribute5" id="attribute5" size="50" class="form-control " type="text">
+<script src="fichiers/popin.js"></script>
+
+<!-- Digital safe popin -->
+<div class="modal fade" id="ticketing-modal-digital-safe" tabindex="-1" role="dialog" aria-labelledby="ticketing-modal-digital-safe" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $( function(){
+	  loadModalContent("#ticketing-modal-digital-safe");
+  });
+</script><div class="form-group">
+	<label class="" for="attribute3" id="form3">Titre de transport :</label>
+	<div class="">
+	<span class="fileinput-button btn btn-primary btn-file">
+		<input name="attribute3" id="attribute3" multiple="multiple" class=" ticketAsynchronousUploadHandler" data-filestyle="false" type="file">
+		<!-- <button class="btn btn-primary btn-sm" name="_ticket_upload_submit_attribute3" id="_ticket_upload_submit_attribute3" value="_ticket_upload_submit_attribute3" type="submit" >
+			Sélectionner
+		</button>-->
+		Sélectionner
+	</span>
+	<input name="asynchronousupload.handler" value="ticketAsynchronousUploadHandler" type="hidden">
+	<div id="progress_attribute3" class="progress" style="display:none;">
+        <div id="progress-bar_attribute3" class="progress-bar progress-bar-success progress-bar-striped">&nbsp;</div>
+    </div>
+			<span class="help-block">Titre de transport au format PDF ou Image</span>
+	</div>
+</div>
+
+
+	
+	
+	<div id="_file_error_box_attribute3">
+	</div>
+	
+	<div class="form-group" style="display:none;" id="_file_deletion_label_attribute3">
+		<label class="control-label col-xs-12 col-sm-3">Fichier(s) envoyé(s) </label>
+		<div id="_file_deletion_attribute3" class="col-xs-12 col-sm-9 up-files">
+		</div>
+		<br>
+		<div class="col-xs-12 col-sm-offset-3 col-sm-9 up-btn-del"> 
+				<button class="btn btn-danger btn-sm" name="_ticket_upload_delete_attribute3" value="_ticket_upload_delete_attribute3" type="submit">Supprimer</button>
+		</div>
+	</div>
+<div class="form-group">
+	<label for="attribute6">Adresse de résidence (obligatoire)</label>
+    	<input name="attribute6" id="attribute6" size="250" class="form-control " type="text">
+<div class="form-group ">
+    <h3>Mon commentaire</h3>
+</div></div></div></div></div>
+						<div class="clearfix"></div>
+            <div class="form-group text-center" style="margin-top:20px;">
+                <button name="action_recapTicket" class="btn btn-primary" type="submit">
+                    J'envoie ma demande
+                 </button>
+            </div>
+		</form>
+    </div>
+	</div>
+</div>
+<script src="fichiers/bootstrap-datepicker.js"></script>
+<script src="fichiers/bootstrap-datepicker_002.js" charset="utf-8"></script>
+<script src="fichiers/ticket_tree.js"></script>
+<script src="fichiers/jquery_002.js"></script>
+<script language="javascript">
+    var category_id = 0;
+    var url = "jsp/site/Portal.jsp?page=ticket&view=ticketForm";
+    $( function() {
+        lutece_ticket_tree("#id_ticket_type", "#id_ticket_domain", "#id_ticket_category", "#id_ticket_precision", category_id, url);
+
+		/* Check maxlength for textarea input */
+		var maxObjet = 5000;
+		$("#ticket_comment").keypress(function(e) {
+			if( e.charCode >= 48 ){
+			var nCar = $(this).val().length;
+				$(this).next().html( "<stong>" + nCar + " caractÃ¨res</strong>");
+				if( nCar >= maxObjet){
+					$(this).next().html('<strong class="label label-warning">Attention limite de '+ maxObjet +' caractÃ¨res atteinte !</strong>');
+					return false;
+				}
+			}
+		});
+
+		$("#ticket_comment").blur(function(e) {
+			var txt = $(this).val();
+			if( txt.length > maxObjet){
+				$(this).next().html('<span class="label label-warning">Attention limite de '+ maxObjet +' caractÃ¨res atteinte ! <i class="fa fa-exclamation-triangle fa-fw"></i> Votre texte a Ã©tÃ© tronquÃ© Ã  '+ maxObjet +' caractÃ¨res</span>');
+				$(this).val( txt.substr(0,maxObjet) );
+			} else {
+				var nCar = $(this).val().length;
+				$(this).next().html( "<stong>" + nCar + " caractÃ¨res</strong>");
+			}
+		});
+
+		/* Phone */
+        $('.input-phone').change(function() {
+            var result = $(this).val().replace(/\s/g,"");
+            $(this).val(result);
+        });
+
+		/* Buttons info message */
+		$(".btn-connexion-decline").click( function(e){
+			$("#create_ticket").show();
+			$("#mcinfo").addClass("noaccount")
+			$(this).toggle();
+			var cookieOptions = {'path': '/',expires: null };
+			if ( -1 !== new String(window.location.host).indexOf('paris.fr')) { cookieOptions.domain = window.location.host; }
+			$.cookie('cookie-moncompte-parisfr', 'true', cookieOptions);
+		});
+
+		$(".btn-connexion-accept").click( function(e){
+			displayCreateAccountPage( window.location.href );
+		});
+
+		/* Check cookie for info message display */
+		if( $.cookie('cookie-moncompte-parisfr') == 'true' ){
+			$("#mcinfo").addClass("noaccount");
+			$("#create_ticket").show();
+			$(".btn-connexion-decline").toggle();
+
+		}
+
+			var ticketingPostData = {};
+			ticketingPostData["gender"] = "0";
+			ticketingPostData["first_name"] = "";
+			ticketingPostData["preferred_username"] = "";
+			ticketingPostData["fixed_phone"] = "";
+			ticketingPostData["mobile_phone"] = "";
+			$.ajax({
+				url : "jsp/site/plugins/ticketing/personaldata/InitPersonalData.jsp",
+				type: 'POST',
+				data: ticketingPostData,
+				async: false,
+				cache:false
+			});
+    });
+</script>
+<script type="text/javascript" src="fichiers/GetMainUploadJs.htm"></script>
+
+    </div>
+  </div>
+</section>
+<!-- /content -->
+
+<footer>
+<div class="row">
+	<div class="col-xs-12 col-md-offset-1 col-sm-3">
+		<a href="http://www.paris.fr/" alt="Paris.fr" title="Paris.fr" target="_blank"><img src="fichiers/logo_mdp.png"></a>
+	</div>
+	<div class="col-xs-12 col-md-offset-1 col-sm-7">
+		<ul class="list-inline">
+			<li><a href="http://www.paris.fr/contact" title="Contact" target="_blank">Contact</a></li>
+			<li>
+				<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=htmlpage&amp;htmlpage_id=2" title="Mentions lÃ©gales" target="_blank">Mentions légales</a>
+			</li>
+		</ul>
+	</div>
+</div>
+</footer>
+	
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script src="fichiers/jquery-ui.js"></script>
+<script src="fichiers/jquery_008.js"></script>
+<script src="fichiers/bootstrap.js"></script>
+<script src="fichiers/notify.js"></script>
+<script src="fichiers/jquery_007.js" type="text/javascript"></script><script src="fichiers/jquery_004.js" type="text/javascript"></script><script src="fichiers/load-image.js" type="text/javascript"></script><script src="fichiers/jquery_009.js" type="text/javascript"></script><script src="fichiers/jquery_006.js" type="text/javascript"></script><script src="fichiers/jquery_003.js" type="text/javascript"></script><script src="fichiers/canvas-to-blob.js" type="text/javascript"></script><script src="fichiers/jquery.js" type="text/javascript"></script><script src="fichiers/extend-rating.js" type="text/javascript"></script><script src="fichiers/jquery_005.js" type="text/javascript"></script><script src="fichiers/form.js" type="text/javascript"></script><script src="fichiers/myportal-mytasks.js" type="text/javascript"></script>
+	<!-- Statistical include -->
+
+<!-- Statistical include - End -->
+<script>
+  	$(function() {
+				$('#solr-home').autocomplete({
+						source: function(request, response) {
+							$.ajax({
+								url: 'http://dstibpico34244f.stations.paris.mdp:8080/gra/solrSuggest',
+								dataType: 'jsonp',
+								minLength: 3,
+								data: {
+									q: request.term,
+								},
+								success: function(data) {
+									var formattedResponse = $.map(data.response.docs, function(item) {
+										return {
+											label: item.title,
+											value: item.title,
+										};
+									});
+									response(formattedResponse);
+								}
+							});
+						},
+					});
+
+    $(".dropdown").hover(
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');
+        }
+    );
+});
+</script>
+
+
+</body></html>
