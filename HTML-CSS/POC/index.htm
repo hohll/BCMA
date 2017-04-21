@@ -377,7 +377,7 @@
 		<h3 class="panel-title">
 			Mes Favoris
 			<div class="btn-toolbar pull-right">
-				<a class="btn btn-default btn-xs" data-toggle="modal" data-title="Mes favoris" data-target="#Widget_modal" href="myfavorites.htm">
+				<a class="btn btn-default btn-xs" data-toggle="modal" data-title="Mes favoris" data-target="#fav_modal" href="">
 					<span class="fa fa-plus" title="Ajouter un favori"></span>
 				</a>
 				<div class="btn-group">
@@ -387,18 +387,16 @@
 					<a class="btn btn-default btn-xs hidden" data-toggle="modal" data-title="Modifier" data-target="#Widget_modal" href="">
 						<span class="fa fa-edit"></span>
 					</a>
-					<a href="#" class="btn btn-default btn-xs"><span class="fa fa-caret-down"></span></a></div>
+					
 				</div>
 			</h3>
 		</div>
-		<div class="panel-body myportal-portlet-content">
+		<div class="panel-body myportal-portlet-content my-favorites">
 			<p id="btn-add-fav" class="pull-right" style="display: none;">
 				<a class="btn btn-default btn-xs" data-toggle="modal" data-title="Mes favoris" data-target="#Widget_modal" href="">
 				<span class="fa fa-plus" title="Ajouter un favori"></span>
 			</a>
 		</p>
-		<form method="post" action="">
-		<input name="action" value="do_change_mytasks_status" type="hidden">
 		<div class="form-group">
 			<div class="well well-sm">
 				<div class="row">
@@ -419,7 +417,7 @@
 			<div class="well well-sm">
 				<div class="row">
 					<div class="col-xs-12 col-sm-10">
-						<a href="http://paris.fr/" target="_blank" class="btn btn-link">
+						<a href="http://lemonde.fr/" target="_blank" class="btn btn-link">
 							<img src="fichiers/image_002.png" width="24px"> Le Monde
 						</a>
 					</div>
@@ -435,7 +433,7 @@
 			<div class="well well-sm">
 				<div class="row">
 					<div class="col-xs-12 col-sm-10">
-						<a href="http://paris.fr/" target="_blank" class="btn btn-link">
+						<a href="http://vacances-scolaires.education/" target="_blank" class="btn btn-link">
 							<img src="fichiers/image_003.png" width="24px"> Calendrier des vacances scolaires
 						</a>
 					</div>
@@ -447,83 +445,72 @@
 				</div>
 			</div>
 		</div>
-</form>
-<script>
-	$( function(){
-		setToolbarAddon( "#btn-add-fav" );
-	});
-</script>
-
 	</div>
-</div>
-<div id="widget-2" class="panel panel-primary myportal-portlet ui-sortable-handle ui-widget ui-widget-content ui-helper-clearfix">
-	<div class="myportal-portlet-header panel-heading">
-		<h3 class="panel-title">
-			MyApps
+	</div>
+	<div id="widget-2" class="panel panel-primary myportal-portlet ui-sortable-handle ui-widget ui-widget-content ui-helper-clearfix">
+		<div class="myportal-portlet-header panel-heading">
+			<h3 class="panel-title">MyApps
 			<div class="btn-toolbar pull-right">
-		<a type="button" class="btn btn-default btn-xs btn-myapps" data-toggle="modal" data-title="Modifier mes applications" data-target="#Widget_modal" href="jsp/site/RunStandaloneApp.jsp?page=myapps-database&amp;action=manage&amp;myapp_code_category=apps">
-			<i class="fa fa-cog" title="Gérer mes applications"></i>
-		</a>
-	</div>
-		</h3>
-	</div>
-	<div class="panel-body myportal-portlet-content">
+				<a type="button" class="btn btn-default btn-xs btn-myapps" data-toggle="modal" data-title="Modifier mes applications" data-target="#Apps_modal" href="#">
+					<i class="fa fa-cog" title="Gérer mes applications"></i>
+				</a>
+			</div>
+			</h3>
+		</div>
+		<div class="panel-body myportal-portlet-content">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12">
-	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=85&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=85" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app mobile" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> CapGeo</small>
 		   </a>
-	    	<a class="btn btn-default btn-app hidden-xs" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=53&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=53" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app hidden-xs" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> Chronogestor</small>
 		   </a>
-	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=34&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=34" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app mobile" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> EBENE</small>
 		   </a>
-	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=79&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=79" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app mobile" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> Elise DPE</small>
 		   </a>
-	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=71&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=71" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app mobile" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> Elise DSTI</small>
 		   </a>
-	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=31&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=31" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app mobile" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> FMCR</small>
 		   </a>
-	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=56&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=56" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app mobile" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> ODS Mairies</small>
 		   </a>
-	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=84&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=84" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app mobile" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> ODS V2 Expérimentation</small>
 		   </a>
-	    	<a class="btn btn-default btn-app hidden-xs" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=1&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=1" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app hidden-xs" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> Préannonce HDV</small>
 		   </a>
-	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=9&amp;plugin_name=myapps-database" target="_blank">
-						<img src="image?resource_type=myapps_database_icon&amp;id=9" alt="" class="img-circle">
+	    	<a class="btn btn-default btn-app mobile" href="" target="_blank">
+						<img src="fichiers/icon_content.jpg" alt="" class="img-circle">
 					<br>
 					<small> SATIS</small>
 		   </a>
-	    	<a class="btn btn-default btn-app mobile" href="jsp/site/plugins/myapps/DoOpenMyApp.jsp?myapp_id=96&amp;plugin_name=myapps-database" target="_blank">
-					<br>
-					<small> SIPCPR</small>
-		   </a>
+	    
 		</div>
 		</div>
 
@@ -549,11 +536,7 @@
 <li class="active" data-slide-to="0" data-target="#carousel-home-rss"></li>
 </ol>
 <div class="carousel-inner">
-<div class="
-				item
-				
-	            	active
-	            ">
+<div class="item active">
 <img alt="..." src="fichiers/document.jpg"><div class="carousel-caption">
 <p>
 <a href="intraparis.htm">Le gouvernement des Parisiens</a>
@@ -612,7 +595,7 @@
 					<a class="btn btn-default btn-xs hidden" data-toggle="modal" data-title="Modifier" data-target="#Widget_modal" href="intraparis.htm;action=edit_widget&amp;tab_index=1&amp;id_widget=23">
 						<span class="fa fa-edit"></span>
 					</a>
-				<a href="#" class="btn btn-default btn-xs"><span class="fa fa-caret-down"></span></a></div>
+				
 			</div>
 		</h3>
 	</div>
@@ -631,11 +614,308 @@
 </div>
 
 </div>
+<!-- FAVORIS -->
+<div class="modal fade" id="fav_modal" tabindex="-1" role="dialog" aria-labelledby="myFavModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <h4 class="modal-title" id="myFavModalLabel">Ajouter un favoris</h4>
+    </div>
+    <div class="modal-content">
+      <div class="modal-body">
+	  <div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<form class="form-horizontal" action="" method="post" role="form">
+		<div class="form-group">
+			<label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 control-label" for="label">
+			Nom
+					&nbsp;  <i class="fa fa-asterisk" aria-hidden="true"></i>
+
+		</label>
+		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+	<input class="form-control " id="label" name="label" value="" tabindex="2" maxlength="50" required="" aria-describedby="label_help" type="text">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 control-label" for="url">
+			Liens
+				&nbsp;  <i class="fa fa-asterisk" aria-hidden="true"></i>
+
+		</label>
+		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+	<input class="form-control " id="url" name="url" value="" tabindex="0" maxlength="255" required="" aria-describedby="url_help" type="text">
+			<span class="help-block" id="url_help">Lien exemple: http://www.paris.fr</span>
+		</div>
+	</div>
+        <div class="form-group">
+          <label class="col-xs-12 col-sm-3 col-md-3 col-lg-3 control-label" for="id_icon">Icône * :</label>
+          <div class="col-xs-12 col-sm-9 col-md-6 col-lg-6">
+  <label class="radio-inline">
+	  <input class="radio" name="id_icon" value="3" type="radio">
+    <img class="widget-icon img-responsive" src="fichiers/image.png" height="64" width="64">
+  </label>
+  <label class="radio-inline">
+	  <input class="radio" name="id_icon" value="6" type="radio">
+    <img class="widget-icon img-responsive" src="fichiers/image_002.png" height="64" width="64">
+  </label>
+  <label class="radio-inline">
+	  <input class="radio" name="id_icon" value="7" type="radio">
+    <img class="widget-icon img-responsive" src="fichiers/image_003.png" height="64" width="64">
+  </label>
+  
+          </div>
+	      </div>
+	<div class="form-group">
+		<div class="col-xs-12 col-sm-offset-3 col-sm-9 col-md-offset-3 col-md-9 col-lg-offset-3 col-lg-9">
+
+
+	<a class="btn btn-sm btn-primary btn-flat" href="index.htm" title="Créer" name="action_createMyFavorites">
+  <i class="fa fa-plus" aria-hidden="true"></i>
+		Créer
+	</a>
+		      <a class="btn btn-sm btn-default btn-flat" href="index.htm" title="Annuler">
+ 		       <i class="fa fa-close" aria-hidden="true"></i>	Annuler
+			    </a>
+		</div>
+	</div>
+	</form>
+	</div>
+	</div>
+	  </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+</div>
+
+
+<!-- WIDGET -->
 <div class="modal fade" id="Widget_modal" tabindex="-1" role="dialog" aria-labelledby="myWidgetModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
       <h4 class="modal-title" id="myWidgetModalLabel">Ajouter un widget</h4>
+    </div>
+    <div class="modal-content">
+      <div class="modal-body">
+	  <div id="myportal-navigation">
+		<ul class="myportal-nav nav nav-tabs" role="tablist">
+		<li class="active">
+			<a href="jsp/site/Portal.jsp?page=myportal&amp;action=browse_categories&amp;tab_index=1" onclick="reloadContent( this, 'http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/myportal/BrowseCategories.jsp?tab_index=1', 'myportal-navigation', 'myportal-navigation-content', 'myportal-content' );return false;"> Explorer les catégories
+			</a>
+		</li>
+		<li>
+			<a href="jsp/site/Portal.jsp?page=myportal&amp;action=browse_essential_widgets&amp;tab_index=1" onclick="reloadContent( this, 'http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/myportal/BrowseEssentialWidgets.jsp?tab_index=1', 'myportal-navigation', 'myportal-navigation-content', 'myportal-content' );return false;"> Widgets essentiels
+			</a>
+		</li>
+		<li>
+			<a href="jsp/site/Portal.jsp?page=myportal&amp;action=browse_new_widgets&amp;tab_index=1" onclick="reloadContent( this, 'http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/myportal/BrowseNewWidgets.jsp?tab_index=1', 'myportal-navigation', 'myportal-navigation-content', 'myportal-content' );return false;"> Nouveaux widgets
+			</a>
+		</li>
+		<li>
+			<form method="post" class="navbar-form navbar-right" action="jsp/site/Portal.jsp?page=myportal&amp;action=search_widgets" onsubmit="doSearchWidgets( 'http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/myportal/SearchWidgets.jsp?tab_index=1', 'myportal-navigation', 'myportal-navigation-content', 'myportal-content' );return false;">
+				<input name="tab_index" value="1" type="hidden">
+				<div class="input-group">
+					<input name="search_widgets_name" value="" class="form-control input-sm" type="text">
+					<span class="input-group-btn">
+						<button type="submit" class="btn btn-primary btn-sm" value="Rechercher">Rechercher</button>
+					</span>
+				</div>
+			</form>
+		</li>
+	</ul>
+	</div>
+	<div id="myportal-navigation-content">
+		<div id="myportal-content">
+		<div id="myportal-categories-list">
+			<ul class="myportal-cat nav nav-tabs" role="tablist">
+   				<li class="active">
+   					<a href="" onclick="return false;">
+   						Accessoires
+   					</a>
+   				</li>
+   				<li>
+   					<a href="" onclick="return false;">
+   						Actualités
+   					</a>
+   				</li>
+   				<li>
+   					<a href="" onclick="return false;">
+   						IntraParis
+   					</a>
+   				</li>
+   				<li>
+   					<a href="" onclick="return false;">
+   						Mes Demandes
+   					</a>
+   				</li>
+   				<li>
+   					<a href="" onclick="return false;">
+   						Mes infos 
+   					</a>
+   				</li>
+   		</ul>
+	</div>
+	<div id="myportal-widgets-list">
+		<div id="myportal-content">
+<div id="myportal-widgets-list-content">
+	<div class="row">
+		<div class="box-widget col-xs-4 col-sm-2 col-md-2 col-lg-2 ">
+      <div class="box-icon hidden">
+        <img class="img-circle img-responsive" src="image?resource_type=myportal_icon_img&amp;id=2" alt="Calculatrice simple" title="Calculatrice simple">
+      </div>
+      <div class="info">
+      	<form method="post" class="fom-inline" action="">
+				<input name="id_widget" value="1" type="hidden">
+				<input name="tab_index" value="1" type="hidden">
+					<button type="submit" class="btn btn-default btn-block btn-add-widget" title="Ajouter">
+						<img class="img-circle img-responsive img-app" src="fichiers/intraparis.png" alt="Calculatrice simple" title="Calculatrice simple">
+						Calculette
+					</button>
+				</form>
+      </div>
+    </div>
+		<div class="box-widget col-xs-4 col-sm-2 col-md-2 col-lg-2 ">
+      <div class="box-icon hidden">
+        <img class="img-circle img-responsive" src="fichiers/intraparis.png alt="Calendrier" title="Calendrier">
+      </div>
+      <div class="info">
+      	<form method="post" class="fom-inline" action="">
+				<input name="id_widget" value="3" type="hidden">
+				<input name="tab_index" value="1" type="hidden">
+					<button type="submit" class="btn btn-default btn-block btn-add-widget" title="Ajouter">
+						<img class="img-circle img-responsive img-app" src="fichiers/intraparis.png" alt="Calendrier" title="Calendrier">
+						Calendrier
+					</button>
+				</form>
+      </div>
+    </div>
+		<div class="box-widget col-xs-4 col-sm-2 col-md-2 col-lg-2 ">
+      <div class="box-icon hidden">
+        <img class="img-circle img-responsive" src="image?resource_type=myportal_icon_img&amp;id=4" alt="Chronogestor" title="Chronogestor">
+      </div>
+      <div class="info">
+      	<form method="post" class="fom-inline" action="jsp/site/plugins/myportal/DoAddWidget.jsp">
+				<input name="id_widget" value="9" type="hidden">
+				<input name="tab_index" value="1" type="hidden">
+					<button type="submit" class="btn btn-default btn-block btn-add-widget" title="Ajouter">
+						<img class="img-circle img-responsive img-app" src="fichiers/intraparis.png" alt="Chronogestor" title="Chronogestor">
+						Chronogestor
+					</button>
+				</form>
+      </div>
+    </div>
+		<div class="box-widget col-xs-4 col-sm-2 col-md-2 col-lg-2 ">
+      <div class="box-icon hidden">
+        <img class="img-circle img-responsive" src="image?resource_type=myportal_icon_img&amp;id=5" alt="Recherche Google" title="Recherche Google">
+      </div>
+      <div class="info">
+      	<form method="post" class="fom-inline" action="jsp/site/plugins/myportal/DoAddWidget.jsp">
+				<input name="id_widget" value="4" type="hidden">
+				<input name="tab_index" value="1" type="hidden">
+					<button type="submit" class="btn btn-default btn-block btn-add-widget" title="Ajouter">
+						<img class="img-circle img-responsive img-app" src="fichiers/intraparis.png" alt="Recherche Google" title="Recherche Google">
+						Google
+					</button>
+				</form>
+      </div>
+    </div>
+		<div class="box-widget col-xs-4 col-sm-2 col-md-2 col-lg-2 ">
+      <div class="box-icon hidden">
+        <img class="img-circle img-responsive" src="image?resource_type=myportal_icon_img&amp;id=8" alt="Google Maps" title="Google Maps">
+      </div>
+      <div class="info">
+      	<form method="post" class="fom-inline" action="">
+				<input name="id_widget" value="5" type="hidden">
+				<input name="tab_index" value="1" type="hidden">
+					<button type="submit" class="btn btn-default btn-block btn-add-widget" title="Ajouter">
+						<img class="img-circle img-responsive img-app" src="fichiers/intraparis.png" alt="Google Maps" title="Google Maps">
+						Google Maps
+					</button>
+				</form>
+      </div>
+    </div>
+		<div class="box-widget col-xs-4 col-sm-2 col-md-2 col-lg-2 ">
+      <div class="box-icon hidden">
+        <img class="img-circle img-responsive" src="image?resource_type=myportal_icon_img&amp;id=4" alt="Horloge analogique" title="Horloge analogique">
+      </div>
+      <div class="info">
+      	<form method="post" class="fom-inline" action="">
+				<input name="id_widget" value="7" type="hidden">
+				<input name="tab_index" value="1" type="hidden">
+					<button type="submit" class="btn btn-default btn-block btn-add-widget" title="Ajouter">
+						<img class="img-circle img-responsive img-app" src="fichiers/intraparis.png" alt="Horloge analogique" title="Horloge analogique">
+						Horloge
+					</button>
+				</form>
+      </div>
+    </div>
+		<div class="box-widget col-xs-4 col-sm-2 col-md-2 col-lg-2 ">
+      <div class="box-icon hidden">
+        <img class="img-circle img-responsive" src="fichiers/intraparis.png" alt="Actualités de ma Direction" title="Actualités de ma Direction">
+      </div>
+      <div class="info">
+      	<form method="post" class="fom-inline" action="">
+				<input name="id_widget" value="11" type="hidden">
+				<input name="tab_index" value="1" type="hidden">
+					<button type="submit" class="btn btn-default btn-block btn-add-widget" title="Ajouter">
+						<img class="img-circle img-responsive img-app" src="fichiers/intraparis.png" alt="Actualités de ma Direction" title="Actualités de ma Direction">
+						Ma Direction
+					</button>
+				</form>
+      </div>
+    </div>
+		<div class="box-widget col-xs-4 col-sm-2 col-md-2 col-lg-2 ">
+      <div class="box-icon hidden">
+        <img class="img-circle img-responsive" src="fichiers/intraparis.png" alt="Mes Taches" title="Mes Taches">
+      </div>
+      <div class="info">
+      	<form method="post" class="fom-inline" action="">
+				<input name="id_widget" value="10" type="hidden">
+				<input name="tab_index" value="1" type="hidden">
+					<button type="submit" class="btn btn-default btn-block btn-add-widget" title="Ajouter">
+						<img class="img-circle img-responsive img-app" src="fichiers/intraparis.png" alt="Mes Taches" title="Mes Taches">
+						Mes Taches
+					</button>
+				</form>
+      </div>
+    </div>
+		<div class="box-widget col-xs-4 col-sm-2 col-md-2 col-lg-2 ">
+      <div class="box-icon hidden">
+        <img class="img-circle img-responsive" src="fichiers/intraparis.png" alt="Ouki" title="Ouki">
+      </div>
+      <div class="info">
+      	<form method="post" class="fom-inline" action="">
+				<input name="id_widget" value="16" type="hidden">
+				<input name="tab_index" value="1" type="hidden">
+					<button type="submit" class="btn btn-default btn-block btn-add-widget" title="Ajouter">
+						<img class="img-circle img-responsive img-app" src="fichiers/intraparis.png" alt="Ouki" title="Ouki">
+						Ouki
+					</button>
+						</form>
+						</div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+			  </div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- APPS -->
+<div class="modal fade" id="Apps_modal" tabindex="-1" role="dialog" aria-labelledby="myAppsModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <h4 class="modal-title" id="myAppsModalLabel">Ajouter un widget</h4>
     </div>
     <div class="modal-content">
       <div class="modal-body">
@@ -896,9 +1176,9 @@
 						        		<input name="action" value="insert" type="hidden">
 						        		<input name="myapp_id" value="2" type="hidden">
 						        		<input name="myapp_code_category" value="apps" type="hidden">
-                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
-                          <i class="fa fa-plus"></i>
-                        </button>
+									<button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+									  <i class="fa fa-plus"></i>
+									</button>
 						        	</form>
 						        </td>
 						    </tr>
@@ -914,9 +1194,9 @@
 						        		<input name="action" value="insert" type="hidden">
 						        		<input name="myapp_id" value="4" type="hidden">
 						        		<input name="myapp_code_category" value="apps" type="hidden">
-                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
-                          <i class="fa fa-plus"></i>
-                        </button>
+										<button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+										  <i class="fa fa-plus"></i>
+										</button>
 						        	</form>
 						        </td>
 						    </tr>
@@ -932,9 +1212,9 @@
 						        		<input name="action" value="insert" type="hidden">
 						        		<input name="myapp_id" value="5" type="hidden">
 						        		<input name="myapp_code_category" value="apps" type="hidden">
-                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
-                          <i class="fa fa-plus"></i>
-                        </button>
+										<button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+										  <i class="fa fa-plus"></i>
+										</button>
 						        	</form>
 						        </td>
 						    </tr>
@@ -950,9 +1230,9 @@
 						        		<input name="action" value="insert" type="hidden">
 						        		<input name="myapp_id" value="7" type="hidden">
 						        		<input name="myapp_code_category" value="apps" type="hidden">
-                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
-                          <i class="fa fa-plus"></i>
-                        </button>
+										<button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+										  <i class="fa fa-plus"></i>
+										</button>
 						        	</form>
 						        </td>
 						    </tr>
@@ -968,9 +1248,9 @@
 						        		<input name="action" value="insert" type="hidden">
 						        		<input name="myapp_id" value="8" type="hidden">
 						        		<input name="myapp_code_category" value="apps" type="hidden">
-                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
-                          <i class="fa fa-plus"></i>
-                        </button>
+										<button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+										  <i class="fa fa-plus"></i>
+										</button>
 						        	</form>
 						        </td>
 						    </tr>
@@ -986,9 +1266,9 @@
 						        		<input name="action" value="insert" type="hidden">
 						        		<input name="myapp_id" value="10" type="hidden">
 						        		<input name="myapp_code_category" value="apps" type="hidden">
-                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
-                          <i class="fa fa-plus"></i>
-                        </button>
+										<button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+										  <i class="fa fa-plus"></i>
+										</button>
 						        	</form>
 						        </td>
 						    </tr>
@@ -1004,15 +1284,15 @@
 						        		<input name="action" value="insert" type="hidden">
 						        		<input name="myapp_id" value="12" type="hidden">
 						        		<input name="myapp_code_category" value="apps" type="hidden">
-                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
-                          <i class="fa fa-plus"></i>
-                        </button>
+										<button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+										  <i class="fa fa-plus"></i>
+										</button>
 						        	</form>
 						        </td>
 						    </tr>
 						     <tr class="apps-box" data-app="catia">
 						        <td>
-						        		<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
+						        	<img src="fichiers/icon_content.jpg" alt="mobile" class="img-circle thumbnail-sm">
 						        </td>
 						        <td><strong>Catia</strong></td>
 						        <td>mobile</td>
@@ -1022,9 +1302,9 @@
 						        		<input name="action" value="insert" type="hidden">
 						        		<input name="myapp_id" value="13" type="hidden">
 						        		<input name="myapp_code_category" value="apps" type="hidden">
-                        <button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
-                          <i class="fa fa-plus"></i>
-                        </button>
+										<button type="submit" class="btn btn-primary btn-xs" title="Ajouter">
+										  <i class="fa fa-plus"></i>
+										</button>
 						        	</form>
 						        </td>
 						    </tr>

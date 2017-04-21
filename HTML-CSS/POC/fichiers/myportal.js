@@ -42,8 +42,12 @@ $(function() {
     $( ".myportal-portlet-header .btn-close" ).click(function(e) {
         e.preventDefault();
          var id = $( this ).attr('data-widget-id');
-         $.ajax({ type: "POST", url: "jsp/site/plugins/myportal/DoRemoveWidget.jsp", data: "id_widget=" + id });
          $( this ).parents( ".myportal-portlet:first" ).hide().animate({ "duration": "slow", "easing": "easein" });
+    });
+	
+	$( ".my-favorites .btn-danger" ).click(function(e) {
+        e.preventDefault();
+        $( this ).parents( ".well:first" ).hide().animate({ "duration": "slow", "easing": "easein" });
     });
 
     $( ".myportal-column" ).disableSelection();
@@ -65,31 +69,14 @@ $(function() {
     });
 });
 
-/*** Save myportal state on every drap&drop ***/
-function saveCurrentConf(  ) {
-	var strJson = '{"page":{"name":"Ma page","tabs":[', nIndex=1;
-	$( ".btn-tab" ).each( function( tabIndex ){
-		//var tabId = $( this ).children("a").attr( "href" );
-		var tabId = '#tab_' + nIndex, tabName = $( this ).children( "a:first" ).html(  );
-    var colTab = tabId + " .myportal-column";
-		strJson += '{"name": "' + tabName + '","widgets":[';
-    $( colTab ).each( function( columnPos ) {
-      columnPos++;
-      $( this ).children( ".myportal-portlet").each( function( portletPos ) {
-        var cstate = $( this ).find( ".fa-caret-up");
-        strJson += '{"id":' + $(this).attr("id").substring(7) + ', "state": '+ cstate.length + ',"column":' + columnPos + '},';
-      });
-    });
-		strJson += ']},';
-    nIndex++;
-	});
-	strJson += ']}}';
-  $.ajax({ type: "POST", url: "jsp/site/plugins/myportal/DoSavePortalState.jsp", data: "portalState=" + strJson });
-}
-
-$( ".myportal-column" ).on( "sortstop", saveCurrentConf );
 
 $('#Widget_modal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget);
+  var title = button.data('title');
+  $(this).find('.modal-title').html(title);
+})
+
+$('#App_modal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget);
   var title = button.data('title');
   $(this).find('.modal-title').html(title);
