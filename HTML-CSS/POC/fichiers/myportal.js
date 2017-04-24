@@ -41,8 +41,7 @@ $(function() {
 
     $( ".myportal-portlet-header .btn-close" ).click(function(e) {
         e.preventDefault();
-         var id = $( this ).attr('data-widget-id');
-         $( this ).parents( ".myportal-portlet:first" ).hide().animate({ "duration": "slow", "easing": "easein" });
+        $( this ).parents( ".myportal-portlet:first" ).hide().animate({ "duration": "slow", "easing": "easein" });
     });
 	
 	$( ".my-favorites .btn-danger" ).click(function(e) {
