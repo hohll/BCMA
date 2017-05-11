@@ -1,4 +1,4 @@
-var width = $(window).width(), height = $(window).height(), shown=0;
+
 
 function setToolbarAddon( elt ){
   var btnAddon = $( elt ).html();
@@ -6,6 +6,11 @@ function setToolbarAddon( elt ){
 };
 
 $(function() {
+	
+	var xs_shown=Cookies.get('xs_shown'); ;
+	if (xs_shown == undefined ){ xs_shown=0; }
+	var width = $(window).width(), height = $(window).height();
+
     //  $( "#tabs" ).tabs({cookie: { expires: 90 }}).find("#tabs").sortable({ axis: "x", items: ".btn-tab:gt(0)" });
     // Hide tab content except for tab 1
     var nIdx=1;
@@ -16,15 +21,19 @@ $(function() {
       nIdx++;
     });
 
-    if ( (width <= 768) && (height <= 1024) && (shown==0) )  {
-      alert("Vous ne pourrez visualiser certaines application sous cette résolution ! ")
-      shown++;
+    // Désactive drag/drop si résolution petite
+    if ( (width <= 768) && (height <= 1024) && (xs_shown==0) )  {
+      //alert("Vous ne pourrez visualiser certaines application sous cette résolution ! "); 
+	  $().notify("Vous ne pourrez visualiser certaines application sous cette résolution ! ");
+      xs_shown++;
+      Cookies.set('xs_shown', xs_shown);
+    } else {
+    // Active drag/drop si résolution grande
+      $( ".myportal-column" ).not( ".column-fixed" ).sortable({
+      	connectWith: ".myportal-column",
+      	items: ".myportal-portlet"
+      });
     }
-
-    $( ".myportal-column" ).not( ".column-fixed" ).sortable({
-    	connectWith: ".myportal-column",
-    	items: ".myportal-portlet"
-    });
 
     $( ".myportal-portlet" ).addClass( "ui-widget ui-widget-content ui-helper-clearfix" )
     .find( ".myportal-portlet-header .btn-group" )
@@ -41,9 +50,10 @@ $(function() {
 
     $( ".myportal-portlet-header .btn-close" ).click(function(e) {
         e.preventDefault();
-        $( this ).parents( ".myportal-portlet:first" ).hide().animate({ "duration": "slow", "easing": "easein" });
+         var id = $( this ).attr('data-widget-id');
+         $( this ).parents( ".myportal-portlet:first" ).hide().animate({ "duration": "slow", "easing": "easein" });
     });
-	
+
 	$( ".my-favorites .btn-danger" ).click(function(e) {
         e.preventDefault();
         $( this ).parents( ".well:first" ).hide().animate({ "duration": "slow", "easing": "easein" });
@@ -85,8 +95,8 @@ $('#App_modal').on('show.bs.modal', function (event) {
 $( window ).resize( function() {
   width = $(window).width();
   height = $(window).height();
-  if ( (width <= 768) && (shown==0) )  {
+  if ( (width <= 768) && (xs_shown==0) )  {
       alert("Vous ne pourrez visualiser certaines application sous cette résolution ! ")
-      shown++;
+      xs_shown++;
   }
 });

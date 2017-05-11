@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
-<title>LUTECE - Mon tableau de bord</title>
+<title>Intraparis </title>
 <meta http-equiv="x-ua-compatible" content="IE=edge">
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,7 +9,7 @@
 <meta name="copyright" content="&lt;copyright&gt;">
 <meta name="keywords" content="&lt;keywords&gt;">
 <meta name="description" content="&lt;description&gt;">
-<meta name="generator" content="LUTECE 6.0.0-RC-01">
+<meta name="generator" content="LUTECE 6.0.0-SNAPSHOT">
 <!-- Dublin Core metadatas -->
 <meta name="DC.Creator" content="&lt;author&gt;">
 <meta name="DC.Rights" content="&lt;copyright&gt;">
@@ -18,467 +18,222 @@
 <!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Le style -->
-<link href="fichiers/bootstrap.css" rel="stylesheet">
-<link href="fichiers/font-awesome.css" rel="stylesheet">
 <link href="fichiers/jquery-ui.css" rel="stylesheet">
+<link href="fichiers/font-awesome.css" rel="stylesheet">
+<link href="fichiers/bootstrap.css" rel="stylesheet">
+<link href="fichiers/toastr.css" rel="stylesheet">
 <link href="fichiers/page_template_styles_gra.css" rel="stylesheet">
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!-- JQUERY UI: Keep for compatibility -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-<![endif]-->
-<!-- Le fav and touch icons -->
-<link rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="fichiers/jquery.css" type="text/css" media="screen">
-<link rel="stylesheet" href="fichiers/jquery_002.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/jquery_003.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/jquery_002.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/form.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/myapps.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/jquery-ui-1.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/ceebox-min.css" type="text/css" media="screen">
+<link rel="stylesheet" href="fichiers/myportal.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/mytasks.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/ticketing.css" type="text/css" media="screen">
 <link rel="stylesheet" href="fichiers/workflow_notifygru.css" type="text/css" media="screen">
-
 <!-- Included JS Files -->
 <script src="fichiers/jquery-1.js"></script>
-<style type="text/css" id="notify-bootstrap">.notifyjs-bootstrap-base {
-	font-weight: bold;
-	padding: 8px 15px 8px 14px;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-	background-color: #fcf8e3;
-	border: 1px solid #fbeed5;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
-	white-space: nowrap;
-	padding-left: 25px;
-	background-repeat: no-repeat;
-	background-position: 3px 7px;
-}
-.notifyjs-bootstrap-error {
-	color: #B94A48;
-	background-color: #F2DEDE;
-	border-color: #EED3D7;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
-}
-.notifyjs-bootstrap-success {
-	color: #468847;
-	background-color: #DFF0D8;
-	border-color: #D6E9C6;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
-}
-.notifyjs-bootstrap-info {
-	color: #3A87AD;
-	background-color: #D9EDF7;
-	border-color: #BCE8F1;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
-}
-.notifyjs-bootstrap-warn {
-	color: #C09853;
-	background-color: #FCF8E3;
-	border-color: #FBEED5;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
-}
-</style><style type="text/css" id="core-notify">.notifyjs-corner {
-	position: fixed;
-	margin: 5px;
-	z-index: 1050;
-}
-
-.notifyjs-corner .notifyjs-wrapper,
-.notifyjs-corner .notifyjs-container {
-	position: relative;
-	display: block;
-	height: inherit;
-	width: inherit;
-	margin: 3px;
-}
-
-.notifyjs-wrapper {
-	z-index: 1;
-	position: absolute;
-	display: inline-block;
-	height: 0;
-	width: 0;
-}
-
-.notifyjs-container {
-	display: none;
-	z-index: 1;
-	position: absolute;
-}
-
-.notifyjs-hidable {
-	cursor: pointer;
-}
-
-[data-notify-text],[data-notify-html] {
-	position: relative;
-}
-
-.notifyjs-arrow {
-	position: absolute;
-	z-index: 2;
-	width: 0;
-	height: 0;
-}</style></head>
+</head>
 <body>
 <!-- header -->
 <header role="banner">
   <nav class="navbar navbar-inverse">
-      <div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myportal-menu">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myportal-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a class="btn btn-xs btn-link navbar-toggle" title="Mon Profil" href="identity.htm">
+			<i class="fa fa-user-circle fa-2x"></i> 
+        </a>
+		<a class="btn btn-xs btn-link navbar-toggle" title="Mes notifications" href="mydashboard.htm">
+			<i class="fa fa-inbox fa-2x"></i> 
+        </a>
+		<a class="btn btn-link btn-xs navbar-toggle" title="Ouki" href="ouki.htm" target="_top">
+			<i class="fa fa-vcard-o fa-2x"></i>
+		</a>
 		<a class="navbar-brand" href="index.htm">
 			<span class="img-nef">&nbsp;</span>
 		</a>
-		<a class="navbar-brand navbar-brand-label" href="mydashboard.htm">
-		Bonjour XX !
-		<img class="avatar avatar-large" src="" alt="">
-		</a>
-		<small class="navbar-brand navbar-brand-info hidden-xs">DIR V100000 prenom.nom@paris.fr</small>
+	<a class="navbar-brand navbar-brand-label" href=".">
+	  Bonjour XX <img class="avatar avatar-large" src="" alt="">
+	</a>
+	
+	
     </div>
-    <div class="collapse navbar-collapse" id="myportal-menu">
-      <form id="search-solr" name="search" action="jsp/site/Portal.jsp" method="post" class="navbar-form navbar-left" role="search">
-				<input name="page" value="search-solr" type="hidden">
-				<div class="form-group">
-          <div class="input-group">
-            <input id="solr-home" class="form-control input-lg" placeholder="Rechercher" name="query" type="text">
-            <span class="input-group-btn">
-              <button type="submit" class="btn btn-lg btn-default"><i class="fa fa-search"></i></button>
-            </span>
-          </div>
-        </div>
+	<div class="collapse navbar-collapse js-navbar-collapse" id="myportal-menu">
+	 <ul class="nav navbar-nav">
+			<li class="dropdown mega-dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">	<img src="fichiers/intraparis.png" alt=""> </a>
+				<ul class="dropdown-menu mega-dropdown-menu">
+					<li class="col-sm-2">
+						<ul>
+							<li class="dropdown-header">Directions</li>
+								<a target="_top" href="intraparis.htm">
+										<abbr title="Cabinet du Maire et ses services administratifs">Cabinet de la maire
+							  </abbr></a>
+							  </li>
+							  <li><a target="_top" href="intraparis.htm"><abbr title="Secrétariat Général de la Ville de Paris">SG</abbr></a> <a href="intraparis.htm" target="_top"><abbr title="Inspection Générale"></abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Inspection Générale">IG</abbr></a><a href="intraparis.htm" target="_top">
+							 </a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Conseil de Paris">Conseil de Paris
+							   </abbr></a>
+							 </li>
+								<li><a href="intraparis.htm" target="_top"><abbr title="Action sociale, enfance et santé">DASES
+							  </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Affaires culturelles">DAC
+							  </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Affaires Juridiques">DAJ
+							  </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Affaires scolaires">DASCO
+							  </abbr></a></li>
+							  <li><a target="_top" href="intraparis.htm"><abbr title="Démocratie, Citoyens et Territoires">DDCT
+							  </abbr></a>
+							</li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Attractivité et Emploi">DAE
+								  </abbr></a></li>
+								  <li><a href="intraparis.htm" target="_top"><abbr title="Espaces verts et environnement">DEVE
+								  </abbr></a></li>
+								  <li><a href="intraparis.htm" target="_top"><abbr title="Familles et petite enfance">DFPE
+								  </abbr></a></li>
+								  <li><a title="DFA" target="_top" href="intraparis.htm"><abbr title="Finances et Achats">DFA
+								  </abbr></a></li>
+								  <li><a href="intraparis.htm" target="_top"><abbr title="Immobilier, logistique et transports">DILT
+								  </abbr></a></li>
+									<li><a href="intraparis.htm" target="_top"><abbr title="Information et communication">DICOM
+			  </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Jeunesse et sports">DJS
+							  </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Logement et habitat">DLH
+							  </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Patrimoine et architecture">DPA
+							 </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Prévention et protection">DPSP
+							  </abbr></a></li>
+								<li><a href="intraparis.htm" target="_top"><abbr title="Propreté et eau">DPE</abbr></a>
+							   <a href="intraparis.htm" target="_top"><abbr title="Ressources humaines"></abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Ressources humaines">DRH
+							  </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Systémes et technologies de linformation">DSTI
+							  </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Urbanisme">DU
+							  </abbr></a></li>
+							  <li><a href="intraparis.htm" target="_top"><abbr title="Voirie et déplacemnts">DVD
+							  </abbr></a></li>
+						</ul>
+					</li>
+					<li class="col-sm-2">
+						<ul>
+							<li class="dropdown-header">Métiers</li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Achats et marchés">Achats</abbr></a></li>
+    					<li><a href="intraparis.htm" target="_top"><abbr title="Associations">Associations</abbr></a></li>
+    					<li><a href="intraparis.htm" target="_top"><abbr title="Communication">Communication</abbr></a></li>
+    					<li><a href="intraparis.htm" target="_top"><abbr title="Finances">Finances</abbr></a></li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Gestion des ressources humaines">RH</abbr></a></li>
+    					<li><a href="intraparis.htm" target="_top"><abbr title="Programme SEQUANA">SEQUANA</abbr></a></li>
+    					<li><a href="intraparis.htm" target="_top"><abbr title="Base documentaire EPM">Base Doc EPM</abbr></a></li>
+    					<li><a href="intraparis.htm" target="_top"><abbr title="Facil Familles">Facil' Familles</abbr></a></li>
+    					<li><a href="intraparis.htm" target="_top"><abbr title="QualiPARIS">QualiPARIS</abbr></a></li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Gestion du courrier Elise">Elise</abbr></a></li>
+  						<li><a href="intraparis.htm" target="_top">NOMOS, textes RH</a></li>
+  						<li><a title="Intraparis Innovations" href="intraparis.htm" target="_top">Innovation</a></li>
+  						<li><a title="Intraparis Delib" href="intraparis.htm" target="_top">Delib'</a></li>
+  						<li><a title="Intraparis Jurilib" href="intraparis.htm" target="_top">Jurilib'</a></li>
+  						<li><a href="intraparis.htm" target="_top"><abbr title="Compte Parisien">Compte Parisien</abbr></a></li>	  
+						</ul>
+					</li>
+					<li class="col-sm-2">
+						<ul>
+							<li class="dropdown-header">Territoires</li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Mairie du 4ème">Mairie du 4ème</abbr></a></li>
+  					  <li><a href="intraparis.htm" target="_top"><abbr title="Mairie du 7ème">Mairie du 7ème</abbr></a></li>
+  						<li><a href="intraparis.htm" target="_top"><abbr title="Mairie du 11ème">Mairie du 11ème</abbr></a></li>
+  						<li><a href="intraparis.htm" target="_top"><abbr title="Mairie du 12ème">Mairie du 12ème</abbr></a></li>
+  						<li><a href="intraparis.htm" target="_top"><abbr title="Mairie du 16ème">Mairie du 16ème</abbr></a></li>
+              <li><a href="intraparis.htm" target="_top"><abbr title="Mairie du 18ème">Mairie du 18ème</abbr></a></li>
+						</ul>
+					</li>
+					<li class="col-sm-2">
+						<ul>
+							<li class="dropdown-header">Syndicats</li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Confédération Française Démocratique du Travail">CFDT</abbr></a></li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Confédération Française des Travailleurs Chrétiens">CFTC</abbr></a></li>
+    						<li><a href="intraparis.htm" target="_top"><abbr title="Confédération Générale du Travail">CGT</abbr></a></li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Force Ouvrière">FO</abbr></a></li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Solidaires, Unitaires, Démocratiques ">SUD</abbr></a></li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Syndicat Unitaires des Personnels des Administrations Parisiennes, Fédération Syndicale Unitaire">SUPAP-FSU</abbr></a></li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Union des Cadres de Paris">UCP</abbr></a></li>
+							<li><a href="intraparis.htm" target="_top"><abbr title="Union Nationale des Syndicats Autonomes">UNSA</abbr></a></li>		
+						</ul>
+					</li>
+					<li class="col-sm-3">
+    					<ul>
+							<li class="dropdown-header">Annuaire</li>
+							<form id="form-ouki" action="ouki.htm" target="_top" method="post">
+								<div class="form-group"> <label for="ouki_nom">Nom</label>
+									<div class="input-group">
+									<input id="ouki_nom" name="name" class="form-control" type="text">
+									<span class="input-group-btn">
+									<a id="valid_ouki" class="btn btn-primary" name="valid_ouki" href="https://r21.rec.apps.paris.mdp/gra/ouki.htm">Rechercher</a>
+									</span>
+									</div>
+								</div>
+							</form>
+							<li class="divider"></li>
+							<li><a class="btn btn-default btn-xs" href="ouki.htm" target="_top">OUKI recherche avancée</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<form id="search-solr" name="search" action="search.htm" method="post" class="navbar-form navbar-left" role="search">
+			<input name="page" value="search-solr" type="hidden">
+			<div class="form-group">
+			  <div class="input-group">
+				<input id="solr-home" class="form-control ui-autocomplete-input" placeholder="Rechercher" name="query" autocomplete="off" type="text">
+				<span class="input-group-btn">
+				  <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+				</span>
+			  </div>
+			</div>
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li> </li>
-        <li class="active">
-          <a id="new_widget" class="btn-open btn btn-primary" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un widget" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=browse_categories&amp;tab_index=1">
-        	   <i class="fa fa-plus"></i> Ajouter un widget
+      <ul class="nav navbar-nav navbar-right hidden-xs">
+		<li>  
+			<a class="navbar-brand navbar-brand-label hidden-xs" href="identity.htm" title="Gérer mon profil">
+				<i class="fa fa-user-circle"></i> 
+			</a>
+		</li>
+		<li>  
+			<a class="navbar-brand navbar-brand-label" title="Mes notifications" href="mydashboard.htm">
+        	   <i class="fa fa-inbox"></i> 
         	</a>
-        </li>
-        <li>
-          <a id="new_tab" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/RunStandaloneApp.jsp?page=myportal&amp;action=add_tab" class="btn btn-primary btn-open" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un onglet">
-        		<span class="fa fa-tag"></span> Ajouter un onglet
+		</li>
+		<li>  
+			<a id="ouki" class="navbar-brand navbar-brand-label" title="Ouki" href="ouki.htm">
+        	   <i class="fa fa-vcard-o"></i> 
+        	</a>
+		</li>
+        <li class="active">
+			<a id="new_widget" class="btn btn-primary" title="Ajouter un widget" data-toggle="modal" data-target="#Widget_modal" data-title="Ajouter un widget" href="widget.htm">
+        	   <i class="fa fa-plus-square-o fa-2x"></i>
         	</a>
         </li>
       </ul>
     </div>
   
 </nav>
-<!-- Nav intraparis -->
-<nav class="navbar navbar-inverse nav-intraparis">
-<div class="navbar-header">
-	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#"><img src="fichiers/intraparis.png" alt=""></a>
-		</div>
-		<div class="collapse navbar-collapse js-navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li class="dropdown mega-dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Directions <span class="caret"></span></a>
-					<ul class="dropdown-menu mega-dropdown-menu">
-						<li class="col-xs-12 col-sm-3">
-							<ul>
-							  <li><a target="_top" href="http://intraparis.burcab.mdp/"><abbr title="Cabinet du Maire et ses services administratifs">Cabinet de la maire
-							  <br></abbr></a></li>
-							  <li><a target="_top" href="http://intraparis.sg.mdp/SG/jsp/site/Portal.jsp"><abbr title="Secrétariat Général de la Ville de Paris">SG</abbr></a> <a href="http://intraparis.ig.mdp/" target="_top"><abbr title="Inspection Générale"></abbr></a></li>
-							  <li><a href="http://intraparis.ig.mdp/" target="_top"><abbr title="Inspection Générale">IG</abbr></a><a href="http://intraparis.sg.mdp/" target="_top">
-							  <br> </a></li>
-							  <li><a href="http://intraparis.cp.mdp/" target="_top"><abbr title="Conseil de Paris">Conseil de Paris
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.casvp.mdp/" target="_top"><abbr title="Centre daction sociale de la Ville de Paris">CASVP
-							  <br></abbr></a></li>
-							</ul>
-						</li>
-						<li class="col-xs-12 col-sm-2">
-							<ul>
-							  <li><a href="http://intraparis.dases.mdp/" target="_top"><abbr title="Action sociale, enfance et santé">DASES
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dac.mdp/" target="_top"><abbr title="Affaires culturelles">DAC
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.daj.mdp/" target="_top"><abbr title="Affaires Juridiques">DAJ
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dasco.mdp/" target="_top"><abbr title="Affaires scolaires">DASCO
-							  <br></abbr></a></li>
-							  <li><a target="_top" href="http://intraparis.ddct.mdp/DDCT/jsp/site/Portal.jsp"><abbr title="Démocratie, Citoyens et Territoires">DDCT
-							  <br></abbr></a></li>
-							</ul>
-						</li>
-						<li class="col-xs-12 col-sm-2">
-							<ul>
-							  <li><a href="http://intraparis.dae.mdp/" target="_top"><abbr title="Attractivité et Emploi">DAE
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.deve.mdp/" target="_top"><abbr title="Espaces verts et environnement">DEVE
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dfpe.mdp/" target="_top"><abbr title="Familles et petite enfance">DFPE
-							  <br></abbr></a></li>
-							  <li><a title="DFA" target="_top" href="http://intraparis.dfa.mdp/dfa/jsp/site/Portal.jsp?page_id=1"><abbr title="Finances et Achats">DFA
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dilt.mdp/" target="_top"><abbr title="Immobilier, logistique et transports">DILT
-							  <br></abbr></a></li>
-						  </ul>
-    					</li>
-						<li class="col-xs-12 col-sm-2">
-							<ul>
-							  <li><a href="http://intraparis.dicom.mdp/" target="_top"><abbr title="Information et communication">DICOM
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.djs.mdp/" target="_top"><abbr title="Jeunesse et sports">DJS
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dlh.mdp/" target="_top"><abbr title="Logement et habitat">DLH
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dpa.mdp/" target="_top"><abbr title="Patrimoine et architecture">DPA
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dpp.mdp/" target="_top"><abbr title="Prévention et protection">DPSP
-							  <br></abbr></a></li>
-							</ul>
-
-    					</li>
-						<li class="col-xs-12 col-sm-2">
-							<ul>
-							  <li><a href="http://intraparis.dpe.mdp/" target="_top"><abbr title="Propreté et eau">DPE</abbr></a>
-							  <br> <a href="http://intraparis.drh.mdp/" target="_top"><abbr title="Ressources humaines"></abbr></a></li>
-							  <li><a href="http://intraparis.drh.mdp/" target="_top"><abbr title="Ressources humaines">DRH
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dsti.mdp/" target="_top"><abbr title="Systémes et technologies de linformation">DSTI
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.du.mdp/" target="_top"><abbr title="Urbanisme">DU
-							  <br></abbr></a></li>
-							  <li><a href="http://intraparis.dvd.mdp/" target="_top"><abbr title="Voirie et déplacemnts">DVD
-							  <br></abbr></a></li>
-							</ul>
-    					</li>
-					</ul>
-				</li>
-				<li class="dropdown mega-dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Réseaux <span class="caret"></span></a>
-					<ul class="dropdown-menu mega-dropdown-menu">
-						<li>
-              <div class="row">
-                <div class="col-xs-12 col-sm-offset-1 col-sm-2">
-							    <h4>Métiers</h4>
-    							<ul>
-    							  <li><a href="http://intraparis.achats.mdp/" target="_top"><abbr title="Achats et marchés">Achats</abbr></a></li>
-    							  <li><a href="http://intraparis.vie-associative.mdp/" target="_top"><abbr title="Associations">Associations</abbr></a></li>
-    							  <li><a href="http://intraparis.communication.mdp/" target="_top"><abbr title="Communication">Communication</abbr></a></li>
-    							  <li><a href="http://intraparis.finances.mdp/" target="_top"><abbr title="Finances">Finances</abbr></a></li>
-    							  <li><a href="http://intraparis.fonctionimmobiliere.mdp/fimmo/jsp/site/Portal.jsp" target="_top">Fonction Immobiliére</a></li>
-    							</ul>
-                </div>
-                <div class="col-xs-12 col-sm-3">
-    							<ul>
-    							  <li><a href="http://intraparis.rh.mdp/" target="_top"><abbr title="Gestion des ressources humaines">RH</abbr></a></li>
-    							  <li><a href="http://intraparis.sequana.mdp/" target="_top"><abbr title="Programme SEQUANA">SEQUANA</abbr></a></li>
-    							  <li><a href="http://m14-base-documentaire.apps.paris.mdp/" target="_top"><abbr title="Base documentaire EPM">Base Doc EPM</abbr></a></li>
-    							  <li><a href="http://intraparis.facilfamille.mdp/" target="_top"><abbr title="Facil Familles">Facil' Familles</abbr></a></li>
-    							  <li><a href="http://intraparis.qualiparis.mdp/" target="_top"><abbr title="QualiPARIS">QualiPARIS</abbr></a></li>
-    							</ul>
-						   </div>
-                <div class="col-xs-12 col-sm-3">
-  							<ul>
-  							  <li><a href="http://intraparis.elise.mdp/" target="_top"><abbr title="Gestion du courrier Elise">Elise</abbr></a></li>
-  							  <li><a href="http://v64-nomos.apps.paris.mdp/nomos/jsp/site/Portal.jsp" target="_top">NOMOS, textes RH</a></li>
-  							  <li><a title="Intraparis Innovations" href="http://intraparis.innovation.mdp/" target="_top">Innovation</a></li>
-  							  <li><a title="Intraparis Delib" href="http://intraparis.delib.mdp/" target="_top">Delib'</a></li>
-  							  <li><a title="Intraparis Jurilib" href="http://intraparis.jurilib.mdp/" target="_top">Jurilib'</a></li>
-  							  <li><a href="http://intraparis.compteparisien.mdp/" target="_top"><abbr title="Compte Parisien">Compte Parisien</abbr></a></li>
-  							</ul>
-						    </div>
-                <div class="col-xs-12 col-sm-3">
-  							<h4>Territoires</h4>
-  							<ul>
-  							  <li><a href="http://intraparis.mairie4.mdp/" target="_top"><abbr title="Mairie du 4ème">Mairie du 4ème</abbr></a></li>
-  							  <li><a href="http://intraparis.mairie7.mdp/" target="_top"><abbr title="Mairie du 7ème">Mairie du 7ème</abbr></a></li>
-  							  <li><a href="http://intraparis.mairie11.mdp/" target="_top"><abbr title="Mairie du 11ème">Mairie du 11ème</abbr></a></li>
-  							  <li><a href="http://intraparis.mairie12.mdp/" target="_top"><abbr title="Mairie du 12ème">Mairie du 12ème</abbr></a></li>
-  							  <li><a href="http://intraparis.mairie16.mdp/" target="_top"><abbr title="Mairie du 16ème">Mairie du 16ème</abbr></a></li>
-                  <li><a href="http://intraparis.mairie18.mdp/" target="_top"><abbr title="Mairie du 18ème">Mairie du 18ème</abbr></a></li>
-  							</ul>
-              </div>
-            </div>
-          </li>
-				</ul>
-				</li>
-				<li class="dropdown mega-dropdown">
-    			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Syndicats <span class="caret"></span></a>
-					<ul class="dropdown-menu mega-dropdown-menu">
-						<li>
-              <div class="row">
-                <div class="col-xs-12 col-sm-offset-1 col-sm-2">
-    						  <ul>
-    							  <li><a href="http://intraparis.cfdt.mdp/" target="_top">CFDT</a></li>
-    							  <li><a href="http://intraparis.cftc.mdp/" target="_top">CFTC</a></li>
-    								<li><a href="http://intraparis.cgt.mdp/" target="_top">CGT</a></li>
-    								<li><a href="http://intraparis.fo.mdp/" target="_top">FO</a></li>
-    							</ul>
-                </div>
-                <div class="col-xs-12 col-sm-2">
-    						  <ul>
-    							 <li><a href="http://intraparis.sud.mdp/" target="_top">SUD</a></li>
-    							  <li><a href="http://intraparis.supap-fsu.mdp/" target="_top">SUPAP-FSU</a></li>
-    							  <li><a href="http://intraparis.ucp.mdp/" target="_top">UCP</a></li>
-    							  <li><a href="http://intraparis.unsa.mdp/" target="_top">UNSA</a></li>
-    							</ul>
-                </div>
-              </div>
-						</li>
-					</ul>
-				</li>
-				<li class="dropdown mega-dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">OUKI <span class="caret"></span></a>
-					<ul class="dropdown-menu mega-dropdown-menu">
-						<li class="col-xs-12 col-sm-12">
-    						<form id="form-ouki" action="http://f20-ouki-v5.apps.paris.mdp/oukildap/jsp/site/Portal.jsp?page=ldapdirectory" target="_top" method="post">
-								<input name="page" value="ldapdirectory" type="hidden">
-								<input name="type" value="1" type="hidden">
-								<input name="action" value="find" type="hidden">
-								<div class="form-group"> <label for="ouki_nom">Nom</label>
-								<div class="input-group">
-								<input id="ouki_nom" name="name" class="form-control" type="text">
-								<span class="input-group-btn">
-								<button id="valid_ouki" class="btn btn-primary" name="valid_ouki" type="submit">Rechercher</button>
-								</span>
-								</div>
-								</div>
-							</form>
-							<p class="text-right">
-								<a class="btn btn-default btn-xs" href="http://f20-ouki-v5.apps.paris.mdp/oukildap/jsp/site/Portal.jsp?page=ldapdirectory" target="_top">OUKI recherche avancée</a>
-							</p>
-						</li>
-					</ul>
-				</li>
-		</ul>
-	</div>
-</nav>
-
-<!-- -->
-<div class="hide">
-	<div class="col-xs-12 col-sm-4">
-		 <h4>Compte Agents</h4>
-	</div>
-  <div class="col-xs-12 col-sm-4">
-    <div class="btn-menu" style="margin-top:8px">
-    </div>
-  </div>
-  <div class="col-xs-12 col-sm-2">
-    <form action="jsp/site/Portal.jsp?page=search" method="get" class="form-inline" style="margin-top:15px">
-      <div class="input-group">
-        <label for="searchfield" class="sr-only">Rechercher :</label>
-        <input name="query" id="searchfield" class="form-control input-sm" placeholder="Rechercher" type="text">
-        <span class="input-group-btn">
-          <button class="btn btn-sm btn-default" type="button">
-            <i class="fa fa-search"></i>
-          </button>
-        </span>
-      </div>
-      </form>
-    </div>
-    <div class="col-xs-12 col-sm-2">
-      <p style="margin-top:30px">
-      <!-- Button trigger modal -->
-      
-
-<a class="navbar-brand navbar-brand-label" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=mydashboard">
-  Bonjour Laurent
-  <img class="avatar avatar-large" src="" alt="">
-</a>
-<small class="navbar-brand navbar-brand-info hidden-xs">DSTI V1029116 laurent.hohl@paris.fr</small>
-
-      </p>
-    </div>
-</div>
 </header>
 <!-- header -->
-<section class="container-fluid">
+<section id="main" class="container-fluid">
 <!-- content -->
-  <div class="row">
-    <div class="col-xs-12 col-sm-12">
-      <div class="row-fluid">
-	<fieldset>
-		<legend>
-			Mon tableau de bord
-			<div class="pull-right hidden">
-				<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=mydashboard&amp;view=getModifyDashboards" class="btn btn-small btn-primary">
-					<i class="icon-white icon-edit">&nbsp;</i>&nbsp;Agencer mon tableau de bord
-				</a>
-			</div>
-		</legend>
-					<div class="well">
+<div class="row pad10">
+<div class="col-xs-12 col-sm-12">
 				    
-<script>
-
-$( function() {
-
-    $(".crm-demand-head").click(function(e) {
-        var idDemand = $(this).data("id")
-        e.preventDefault();
-        if ($("#sub-crm-demand-" + idDemand).length > 0) {
-            $("#sub-crm-demand-" + idDemand).toggle();
-        } else {
-       
-            baseUrl = document.getElementsByTagName('base')[0].href;
-            jQuery.ajax(baseUrl + 'jsp/site/Portal.jsp?page=demandMyAcount&view=view_notifications&id_demand=' + idDemand, {
-                type: "GET",
-                cache: false,
-                success: function(data, status, xhr) {
-
-                    $("#crm-demand-" + idDemand).after(data);
-
-                },
-                error: function(jqxhr, textStatus, errorThrown) {
-                    if (jqxhr.status == 401) {
-
-                    }
-                },
-
-            });
-
-        }
-    });
-    $(".message-head").click(function(e) {
-        var idMessage = $(this).data("id")
-        e.preventDefault();
-        if ($("#sub-msg-" + idMessage).length > 0) {
-            $("#sub-msg-" + idMessage).toggle();
-        } else {
-       
-            baseUrl = document.getElementsByTagName('base')[0].href;
-            jQuery.ajax(baseUrl + 'jsp/site/Portal.jsp?page=demandMyAcount&view=view_messages&id_message=' + idMessage, {
-                type: "GET",
-                cache: false,
-                success: function(data, status, xhr) {
-
-                    $("#msg-" + idMessage).after(data);
-
-                },
-                error: function(jqxhr, textStatus, errorThrown) {
-                    if (jqxhr.status == 401) {
-
-                    }
-                },
-
-            });
-
-        }
-    });
-});
-
-/*
-$( function() {
-  $(".navbar-nav > li").removeClass("active");
-    $(".navbar-nav > li#demarches").addClass("active");
-});
-*/
-</script>
 
     <!-- Doesn't display the draft block if the checkbox is not checked in the parameters -->
     
@@ -505,105 +260,116 @@ $( function() {
                     <th class="hidden-xs text-center">
                         <span>Statut</span>
                     </th>
-                    <th class="hidden-xs text-center">
+                    <th class="hidden text-center">
                       <span>Actions</span>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-	                        <tr id="crm-demand-4" data-id="4" class="crm-demand-head">
+	                        <tr id="crm-demand-55" data-id="55" class="crm-demand-head">
 	                          <td class="text-center">
-	                              <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=4">
-	                                <i class="fa fa-envelope-o hidden" title="Notifications"></i>
+	                              <a class="btn btn-link btn-default" href="https://r21.rec.apps.paris.mdp/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=55">
+										<i class="fa fa-envelope-open-o" title="Notifications"></i>
 	                              </a>
 	                          </td>
 	                          <td class="demand-label">
-	                            <h6>29.03.2017 10:07</h6>
+	                            <h6>10.05.2017 17:35</h6>
 	                              <h5>Demande de prestation</h5>
-	                            <strong class="visible-xs">En cours de traitement</strong>
+	                            <strong class="visible-xs">En attente de compléments</strong>
 	                          </td>
-	                          <td class="text-center hidden-xs"><strong>En cours de traitement</strong></td>
-	                          <td class="text-center hidden-xs">
-	                            <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=remove_demand&amp;id_demand=4" title="Supprimer">
-	                              <!-- <i class="fa fa-trash fa-2x"></i> -->
-	                              <img src="fichiers/trash.htm" alt="Supprimer" title="Supprimer">
+	                          <td class="text-center hidden-xs"><strong>En attente de compléments</strong></td>
+	                          <td class="text-center hidden">
+	                            <a class="btn btn-link btn-default" href="https://r21.rec.apps.paris.mdp/gra/jsp/site/Portal.jsp?page=crm&amp;action=remove_demand&amp;id_demand=55" title="Supprimer">
+	                             <i class="fa fa-trash fa-2x" alt="Supprimer" title="Supprimer"></i>
 	                            </a>
-	                            <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/crm/DoEditDemand.jsp?id_demand=4" target="_self" title="Modifier">
-	                              <!-- <i class="fa fa-archive fa-2x"></i> -->
-	                              <img src="fichiers/archive.htm" alt="Supprimer" title="Supprimer">
+	                            <a class="btn btn-link btn-default" href="https://r21.rec.apps.paris.mdp/gra/jsp/site/plugins/crm/DoEditDemand.jsp?id_demand=55" target="_self" title="Modifier">
+	                              <i class="fa fa-archive fa-2x" alt="Supprimer" title="Supprimer"></i> 
 	                            </a>
 	                            </td>
 	                          </tr>
-	                        <tr id="crm-demand-3" data-id="3" class="crm-demand-head">
+							  <tr class="sub msg-55" id="sub-crm-demand-55">
+								<td colspan="4">
+									<div class="panel panel-msg">
+										<div class="panel-heading">
+											<span class="img-admin img-circle">&nbsp;</span>
+										</div>
+										<div class="panel-body">
+											<h5> 
+												10.05.2017 17:35 - Mairie de Paris
+													<span class="label label-success">Lu</span>
+											</h5>
+											<p><b>Demande d'information complémentaires, demande PRE170500043</b></p>
+											<p></p><p>Bonjour Jean-Pierre BOUVARD,</p>
+						<p>Votre demande PRE170500043 est en attente d'informations complémentaires de votre part. <a href="https://r21.rec.apps.paris.mdp:443/gra/jsp/site/Portal.jsp?page=editticket&amp;id_history=110&amp;id_task=401&amp;id_action=323&amp;signature=511db6f4e2b48b730cf7d57ab21db4ac9b39d54c&amp;timestamp=1494430541601">Cliquez ici</a> pour accéder à votre demande.</p>
+						<p>Cordialement,</p>
+						<p>Mairie de Paris</p><p></p>
+										</div>
+									</div>
+									<div class="panel panel-msg">
+										<div class="panel-heading">
+											<span class="img-admin img-circle">&nbsp;</span>
+										</div>
+										<div class="panel-body">
+											<h5> 
+												10.05.2017 17:30 - Mairie de Paris
+													<span class="label label-success">Lu</span>
+											</h5>
+											<p><b>Votre demande PRE170500043</b></p>
+											<p></p><p>Bonjour Jean-Pierre BOUVARD,</p>
+						<p>Nous avons bien reçu votre demande et nous vous remercions de votre confiance.</p>
+						<p>Un e-mail de confirmation vous a été envoyé à l'adresse suivante bouvard.jean-pierre@paris.fr. Il contient un numéro de suivi qui vous sera demandé par votre UGD&nbsp;pour suivre son état d'avancement. Il est également disponible dans votre espace Compte Agent.</p>
+						<p>Nous restons à votre entière disposition pour toute information complémentaire.</p>
+						<p>Cordialement,</p>
+						<p>Votre UGD.</p><p></p>
+										</div>
+									</div>
+								</td>
+							</tr>
+	                        <tr id="crm-demand-54" data-id="54" class="crm-demand-head">
 	                          <td class="text-center">
-	                              <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=3">
-	                                <i class="fa fa-envelope-o hidden" title="Notifications"></i>
+	                              <a class="btn btn-link btn-default" href="https://r21.rec.apps.paris.mdp/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=54">
+										<i class="fa fa-envelope-o" title="Notifications"></i> 
+										<span class="label label-info">1 message non lu</span>
+										<i class="fa fa-circle hidden" title="1"></i>
 	                              </a>
 	                          </td>
 	                          <td class="demand-label">
-	                            <h6>28.03.2017 12:40</h6>
-	                              <h5>Demande de prestation</h5>
-	                            <strong class="visible-xs">En cours de traitement</strong>
-	                          </td>
-	                          <td class="text-center hidden-xs"><strong>En cours de traitement</strong></td>
-	                          <td class="text-center hidden-xs">
-	                            <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=remove_demand&amp;id_demand=3" title="Supprimer">
-	                              <!-- <i class="fa fa-trash fa-2x"></i> -->
-	                              <img src="fichiers/trash.htm" alt="Supprimer" title="Supprimer">
-	                            </a>
-	                            <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/crm/DoEditDemand.jsp?id_demand=3" target="_self" title="Modifier">
-	                              <!-- <i class="fa fa-archive fa-2x"></i> -->
-	                              <img src="fichiers/archive.htm" alt="Supprimer" title="Supprimer">
-	                            </a>
-	                            </td>
-	                          </tr>
-	                        <tr id="crm-demand-2" data-id="2" class="crm-demand-head">
-	                          <td class="text-center">
-	                              <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=2">
-	                                <i class="fa fa-envelope-o hidden" title="Notifications"></i>
-	                              </a>
-	                          </td>
-	                          <td class="demand-label">
-	                            <h6>28.03.2017 10:43</h6>
-	                              <h5>Demande de prestation</h5>
-	                            <strong class="visible-xs">En cours de traitement</strong>
-	                          </td>
-	                          <td class="text-center hidden-xs"><strong>En cours de traitement</strong></td>
-	                          <td class="text-center hidden-xs">
-	                            <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=remove_demand&amp;id_demand=2" title="Supprimer">
-	                              <!-- <i class="fa fa-trash fa-2x"></i> -->
-	                              <img src="fichiers/trash.htm" alt="Supprimer" title="Supprimer">
-	                            </a>
-	                            <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/crm/DoEditDemand.jsp?id_demand=2" target="_self" title="Modifier">
-	                              <!-- <i class="fa fa-archive fa-2x"></i> -->
-	                              <img src="fichiers/archive.htm" alt="Supprimer" title="Supprimer">
-	                            </a>
-	                            </td>
-	                          </tr>
-	                        <tr id="crm-demand-1" data-id="1" class="crm-demand-head">
-	                          <td class="text-center">
-	                              <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=manage_notifications&amp;id_demand=1">
-	                                <i class="fa fa-envelope-o hidden" title="Notifications"></i>
-	                                   <i class="fa fa-circle" title="1"></i>
-	                              </a>
-	                          </td>
-	                          <td class="demand-label">
-	                            <h6>28.03.2017 10:43</h6>
+	                            <h6>10.05.2017 17:29</h6>
 	                              <h4>Demande de prestation</h4>
 	                            <strong class="visible-xs">En cours de traitement</strong>
 	                          </td>
 	                          <td class="text-center hidden-xs"><strong>En cours de traitement</strong></td>
-	                          <td class="text-center hidden-xs">
-	                            <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=crm&amp;action=remove_demand&amp;id_demand=1" title="Supprimer">
-	                              <!-- <i class="fa fa-trash fa-2x"></i> -->
-	                              <img src="fichiers/trash.htm" alt="Supprimer" title="Supprimer">
+	                          <td class="text-center hidden">
+	                            <a class="btn btn-link btn-default" href="https://r21.rec.apps.paris.mdp/gra/jsp/site/Portal.jsp?page=crm&amp;action=remove_demand&amp;id_demand=54" title="Supprimer">
+	                             <i class="fa fa-trash fa-2x" alt="Supprimer" title="Supprimer"></i>
 	                            </a>
-	                            <a class="btn btn-link btn-default" href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/plugins/crm/DoEditDemand.jsp?id_demand=1" target="_self" title="Modifier">
-	                              <!-- <i class="fa fa-archive fa-2x"></i> -->
-	                              <img src="fichiers/archive.htm" alt="Supprimer" title="Supprimer">
+	                            <a class="btn btn-link btn-default" href="https://r21.rec.apps.paris.mdp/gra/jsp/site/plugins/crm/DoEditDemand.jsp?id_demand=54" target="_self" title="Modifier">
+	                              <i class="fa fa-archive fa-2x" alt="Supprimer" title="Supprimer"></i> 
 	                            </a>
 	                            </td>
 	                          </tr>
+							  <tr class="sub msg-54" id="sub-crm-demand-54">
+									<td colspan="4">
+										<div class="panel panel-msg">
+											<div class="panel-heading">
+												<span class="img-admin img-circle">&nbsp;</span>
+											</div>
+											<div class="panel-body">
+												<h5> 
+													10.05.2017 17:29 - Mairie de Paris
+														<span class="label label-info">Nouveau</span>
+												</h5>
+												<p><b>Votre demande PRE170500042</b></p>
+												<p></p><p>Bonjour Jean-Pierre BOUVARD,</p>
+							<p>Nous avons bien reçu votre demande et nous vous remercions de votre confiance.</p>
+							<p>Un e-mail de confirmation vous a été envoyé à l'adresse suivante bouvard.jean-pierre@paris.fr. Il contient un numéro de suivi qui vous sera demandé par votre UGD&nbsp;pour suivre son état d'avancement. Il est également disponible dans votre espace Compte Agent.</p>
+							<p>Nous restons à votre entière disposition pour toute information complémentaire.</p>
+							<p>Cordialement,</p>
+							<p>Votre UGD.</p><p></p>
+											</div>
+										</div>
+									</td>
+								</tr>
               </tbody>
             </table>
          
@@ -623,25 +389,10 @@ $( function() {
                </div>
             </div>
         </div>
-  
-
-
-
-
-    
-<script>
-
-
-/*
-$( function() {
-  $(".navbar-nav > li").removeClass("active");
-    $(".navbar-nav > li#demarches").addClass("active");
-});
-*/
-</script>
-
+ 
 			</div>
-	</fieldset>
+		</div>
+	</div>
 </div>
     </div>
   </div>
@@ -657,7 +408,7 @@ $( function() {
 		<ul class="list-inline">
 			<li><a href="http://www.paris.fr/contact" title="Contact" target="_blank">Contact</a></li>
 			<li>
-				<a href="http://dstibpico34244f.stations.paris.mdp:8080/gra/jsp/site/Portal.jsp?page=htmlpage&amp;htmlpage_id=2" title="Mentions lÃ©gales" target="_blank">Mentions légales</a>
+				<a href="https://r21.rec.apps.paris.mdp/gra/jsp/site/Portal.jsp?page=htmlpage&amp;htmlpage_id=2" title="Mentions légales" target="_blank">Mentions légales</a>
 			</li>
 		</ul>
 	</div>
@@ -667,51 +418,60 @@ $( function() {
 <!-- Le javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-
-<script src="fichiers/jquery-ui.js"></script>
-<script src="fichiers/jquery_007.js"></script>
 <script src="fichiers/bootstrap.js"></script>
-<script src="fichiers/notify.js"></script>
-<script src="fichiers/jquery_006.js" type="text/javascript"></script><script src="fichiers/jquery_004.js" type="text/javascript"></script><script src="fichiers/load-image.js" type="text/javascript"></script><script src="fichiers/jquery_008.js" type="text/javascript"></script><script src="fichiers/jquery_005.js" type="text/javascript"></script><script src="fichiers/jquery_003.js" type="text/javascript"></script><script src="fichiers/canvas-to-blob.js" type="text/javascript"></script><script src="fichiers/jquery.js" type="text/javascript"></script><script src="fichiers/extend-rating.js" type="text/javascript"></script><script src="fichiers/jquery_002.js" type="text/javascript"></script><script src="fichiers/form.js" type="text/javascript"></script><script src="fichiers/myportal-mytasks.js" type="text/javascript"></script>
-	<!-- Statistical include -->
-
-<!-- Statistical include - End -->
+<script src="fichiers/js.js"></script>
+<script src="fichiers/toastr.js"></script>          
+<!-- Fix BS tooltip Ui override  -->
+<script>var _tooltip = jQuery.fn.tooltip;</script>
+<script src="fichiers/jquery-ui.js"></script>
+<script type="javascript">var jQuery.fn.tooltip = _tooltip;</script>
+<!-- End fix -->
 <script>
   	$(function() {
-				$('#solr-home').autocomplete({
-						source: function(request, response) {
-							$.ajax({
-								url: 'http://dstibpico34244f.stations.paris.mdp:8080/gra/solrSuggest',
-								dataType: 'jsonp',
-								minLength: 3,
-								data: {
-									q: request.term,
-								},
-								success: function(data) {
-									var formattedResponse = $.map(data.response.docs, function(item) {
-										return {
-											label: item.title,
-											value: item.title,
-										};
-									});
-									response(formattedResponse);
-								}
-							});
-						},
-					});
-
-    $(".dropdown").hover(
+		$(".sub").hide();
+		
+		$(".navbar-nav li a").tooltip();
+		
+		$(".dropdown").hover(
         function() {
             $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
             $(this).toggleClass('open');
-        },
+			},
         function() {
             $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
             $(this).toggleClass('open');
-        }
-    );
-});
+        });
+		
+		$("#intraparis-menu").click(
+			function(e) {
+				$('.mega-dropdown', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+				$(this).toggleClass('open');
+				return false;
+			},
+			function(e) {
+				$('.mega-dropdown', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+				$(this).toggleClass('open');
+				return false;
+        });
+
+		
+		
+		$(".crm-demand-head").click(function(e) {
+			var idDemand = $(this).data("id")
+        	$("#sub-crm-demand-" + idDemand ).toggle();
+		 });
+    });
 </script>
 
+<!--
+<script src="fichiers/jquery_005.js" type="text/javascript"></script>
+<script src="fichiers/jquery_003.js" type="text/javascript"></script>
+<script src="fichiers/load-image.js" type="text/javascript"></script>
+<script src="fichiers/jquery_008.js" type="text/javascript">
+</script><script src="fichiers/jquery_006.js" type="text/javascript"></script>
+<script src="fichiers/jquery_007.js" type="text/javascript"></script>
+<script src="fichiers/canvas-to-blob.js" type="text/javascript"></script>
+<script src="fichiers/jquery_002.js" type="text/javascript"></script><script src="fichiers/extend-rating.js" type="text/javascript"></script><script src="fichiers/jquery_004.js" type="text/javascript"></script><script src="fichiers/form.js" type="text/javascript"></script><script src="fichiers/mydashboard_identity.js" type="text/javascript"></script><script src="fichiers/myportal-mytasks.js" type="text/javascript"></script>
+ -->
 
-</body></html>
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div></body></html>
