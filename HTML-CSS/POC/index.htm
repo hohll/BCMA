@@ -251,15 +251,20 @@
 				<div class="panel-body myportal-portlet-content">
 					<div class="row">
 						<div id="myapps-list" class="col-xs-12 col-sm-12" style="max-width:450px">
-								<a class="btn btn-default btn-app mobile" href="." target="_blank">
+								<a class="btn btn-default btn-app mobile hidden" data-app="delib" href="." target="_blank">
 									<img src="fichiers/RunStandaloneApp_data/image_002.png" alt="" class="img-circle">
 								<br>
 								<small style="color:#000">Paris Délib'</small>
 						   </a>
-							<a class="btn btn-default btn-app mobile" href="." target="_blank">
+							<a class="btn btn-default btn-app mobile hidden" data-app="satis" href="." target="_blank">
 									<img src="fichiers/RunStandaloneApp_data/image.png" alt="" class="img-circle">
 								<br>
 								<small style="color:#000">SATIS</small>
+						   </a>
+						   <a class="btn btn-default btn-app mobile hidden" data-app="alize" href="." target="_blank">
+									<img src="fichiers/image_041.png" alt="" class="img-circle">
+								<br>
+								<small style="color:#000">Alize</small>
 						   </a>
 						</div>
 					</div>
@@ -440,23 +445,22 @@
 					<h3 class="hidden"></h3>
 					<ul id="mynotifications" class="list-group">
 						<a href="mydashboard.htm">
-							<li class="list-group-item">Demande de prestation<span class="badge" style="background-color: darkorange;color:#fff">2</span></li>
+							<li class="list-group-item">Demande de prestation<span class="badge" style="background-color: darkorange;color:#fff">1</span></li>
 						</a>
 					</ul>
 				</div>
 			</div>
-			<div id="widget-24" class="panel panel-primary myportal-portlet no-header portlet-fixed ui-sortable-handle ui-widget ui-widget-content ui-helper-clearfix">
+			<div id="widget-24" class="panel panel-primary myportal-portlet  portlet-fixed ui-sortable-handle ui-widget ui-widget-content ui-helper-clearfix">
 				<div class="myportal-portlet-header panel-heading">
 					<h3 class="panel-title">
-						Je prépare une sollicitation
+						Accéder aux demandes RH
 					</h3>
 				</div>
 				<div class="panel-body myportal-portlet-content">
-					<div class="well well-sm">
-						<h5>Accéder aux demandes RH</h5>
-						<p><a href="ticket.htm">Remboursement transport</a></p>
-						<p><a href="ticket2.htm">Allocation Prévoyance Santé </a></p>
-					</div>
+					<ul class="list-group">
+						<li class="list-group-item"><a href="ticket.htm">Remboursement transport</a></li>
+						<li class="list-group-item"><a href="ticket2.htm">Allocation Prévoyance Santé </a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -721,6 +725,19 @@
 							'<button type="button" class="btn btn-danger btn-delete" ><span class="fa fa-remove"></span></button></div></div></div>';
 			$("#favorites").append( content );
 		});
+		
+		var satis=Cookies.get('satis'), delib=Cookies.get('delib'), alize=Cookies.get('alize'); 
+		if ( satis == 1 ){ 
+			$(".btn-app[data-app='satis']").toggleClass( "hidden" );
+		}
+		if ( delib == 1 ){ 
+			$(".btn-app[data-app='delib']").toggleClass( "hidden" );
+		}
+		if ( alize == 1 ){ 
+			$(".btn-app[data-app='alize']").toggleClass( "hidden" );
+		}
+		
+		
 		
 		$(".btn-add-widget").click( function(){
 			$('#widgets_modal').modal('hide')
