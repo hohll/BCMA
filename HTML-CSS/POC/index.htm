@@ -347,8 +347,28 @@
 					</div>
 				</div>
 			</div>
+			<div id="widget-66" class="panel panel-primary myportal-portlet ui-widget ui-widget-content ui-helper-clearfix ui-sortable-handle hidden">
+				<div class="myportal-portlet-header panel-heading">
+					<h3 class="panel-title">Horloge
+						<div class="btn-toolbar pull-right">
+							<div class="btn-group">
+								<a class="btn btn-default btn-xs btn-close" data-widget-id="66	" href="" title="Retirer le widget de la page">
+									<span class="fa fa-remove"></span>
+								</a>	
+							</div>
+						</div>
+					</h3>
+				</div>
+				<div class="panel-body myportal-portlet-content">
+					<!--[if IE]><script type="text/javascript" src="fichiers/excanvas.js"></script><![endif]--> 
+					<script type="text/javascript" src="fichiers/coolclock.js"></script> 
+					<script type="text/javascript" src="fichiers/moreskins.js"></script>
+					<center>
+						<canvas id="clock1" class="CoolClock:classic" width="170" height="170" style="width: 170px; height: 170px;"></canvas>
+					</center>
+				</div>
+			</div>
 		</div>
-		
 		
 		<div class="myportal-column column-fixed col-xs-12 col-sm-4">
 			<div id="widget-8" class="panel panel-primary myportal-portlet portlet-fixed ui-widget ui-widget-content ui-helper-clearfix">
@@ -704,12 +724,7 @@
 		
 		$(".btn-add-widget").click( function(){
 			$('#widgets_modal').modal('hide')
-			var content1='<div id="widget-66" class="panel panel-primary myportal-portlet ui-widget ui-widget-content ui-helper-clearfix ui-sortable-handle">' +
-			'<div class="myportal-portlet-header panel-heading"><h3 class="panel-title">Horloge<div class="btn-toolbar pull-right">' +
-			'<div class="btn-group"><button class="btn btn-default btn-xs btn-close" data-widget-id="66" title="Retirer le widget de la page"><span class="fa fa-remove"></span></button>' +
-			'<a href="#" class="btn btn-default btn-xs"><span class="fa fa-caret-down"></span></a></div></div></h3></div>' +
-			'<div class="panel-body myportal-portlet-content"><center><img src="fichiers/horloge.png"></center></div></div>';
-			$("#col-1").append( content1 );
+			$("#widget-66").toggleClass( "hidden" );
 		});
 		
 		$(".btn-delete").click( function(){ 
