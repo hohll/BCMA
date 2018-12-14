@@ -85,6 +85,21 @@ table {
   width: 66.66%;
 }
 
+
+.grid-flex {
+ padding: 5% 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	
+
+}
+
+.grid-flex section{
+   flex: 1 1 0;
+  margin: 15px;
+  border: 1px solid red;
+}
 /*
   ========================================
   Clearfix
