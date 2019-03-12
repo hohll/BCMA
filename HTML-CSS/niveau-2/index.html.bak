@@ -24,73 +24,14 @@
         </h3>
 		<ol>
 			<li>
-				<a href="#" title="ATOM">
-				 ATOM, éditeur de code
+				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-1/intro.pdf" title="Télécharger">
+					Intro, Visual Studio Code
 				</a>
-				<a href="https://github.com/atom/atom/releases/download/v1.24.1/atom-windows.zip" title="ATOM">
-				&nbsp;
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-1/intro-float.pdf" title="Télécharger">
-					Intro, les Floats
-				</a>
-				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-1/code-1.zip" title="Code du cours">
-				 &nbsp;
-				</a>
-			</li>		
-			<li>
-				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-2/flexbox.pdf" title="Télécharger">
-					Flexbox
-				</a>
-				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-2/exercice/corrige-exercice-1.zip" title="Télécharger">&nbsp;</a>
-            </li>
-            <li>
-				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-3/positionnement_selecteurs.pdf" title="Télécharger">
-					Positionnement et sélecteurs 
-				</a>
-				<ul>
-					<li>
-						<a class="exo" href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-3/exercice/position.zip" title="Code du cours">
-							Positionnement 
-						</a> 
-					</li>
-					<li>
-						<a class="exo" href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-3/exercice/selecteurs.zip" title="Code du cours">
-							Sélecteurs
-						</a>
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/exercice1/BCMA-HTML-niveau2-exo-recap-1.pdf" title="Télécharger">
-					Enoncé exercice 1
-				</a>
-				<ul>
-					<li>
-						<a class="exo" href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/exercice1/exercice-1-enonce.zip" title="Code du cours">
-							Fichiers de l'exercice
-						</a> 
-					</li>	
-					<li>
-						<a class="exo" href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/exercice1/exercice-1-correction.zip" title="Code du cours">
-							Correction de l'exercice
-						</a> 
-					</li>
-				</ul>
-			</li>
-			<li>
-				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-4/responsivedesign.pdf" title="Télécharger">Responsive Design</a>  
-				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-4/site-responsive.zip" title="Code du cours">
-				 &nbsp;
-				</a>
-			</li>
-			<li>
-				<a href="https://getbootstrap.com/docs/3.3/getting-started/" title="Télécharger">Télécharger Bootstrap 3.3.7</a>
-				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-4/bootstrap_samples.zip" title="Exemples de code bootstrap">
-				 &nbsp;
+				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-1/ecrire-le-meilleur-code-possible.pdf" title="Ecrire le meilleur code possible">
+					Ecrire le meilleur code possible
 				</a>
 			</li>	
+			
 		</ol>
     </section>
 </div>
