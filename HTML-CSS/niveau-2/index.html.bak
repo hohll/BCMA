@@ -23,7 +23,7 @@
           Liste des cours du module
         </h3>
 		<ol>
-			<li>
+			<li class="extra">
 				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-1/intro.pdf" title="Télécharger">
 					Intro, Visual Studio Code
 				</a>
@@ -31,7 +31,19 @@
 					Ecrire le meilleur code possible
 				</a>
 			</li>	
-			
+			<li class="extra">
+				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-2/floats.pdf" title="Cours sur les floats">
+					Cours Floats
+				</a>
+				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-2/code-floats.zip" title="Code du cours">
+					&nbsp;
+				</a>
+				<p>
+				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-2/site-floats.zip" title="Exercice supplémentaire">
+					Exercice supplémentaire
+				</a>
+				</p>
+			</li>	
 		</ol>
     </section>
 </div>
