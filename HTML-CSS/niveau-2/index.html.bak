@@ -40,9 +40,20 @@
 				</a>
 				<p>
 					<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-2/site-float.zip" title="Exercice supplémentaire">
-						Exercice supplémentaire
+						Exercice supplémentaire Float
 					</a>
 				</p>
+				<p>
+					<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-2/site-float-correction.zip" title="Exercice supplémentaire">
+						Correction exercice supplémentaire Float
+					</a>
+				</p>
+			</li>	
+			<li class="extra">
+				<a href="https://github.com/hohll/BCMA/raw/master/HTML-CSS/niveau-2/bcma-3/site-flex.zip" title="Exercice Cours">
+					Initialisation exercice Cours
+				</a>
+				
 			</li>	
 		</ol>
     </section>
