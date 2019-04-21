@@ -361,6 +361,9 @@ ol li a.exo:hover{ -webkit-box-shadow: none;-moz-box-shadow:none;box-shadow: non
 ol li ul{ list-style-type:none; }
 ol li > ul li{ display:inline; }
 
+ol li ul.ref{ list-style-type:square  ; }
+ol li > ul.ref li{ display:block; }
+
 ol li.extra a{
   background-position: left center;
   line-height: 22px;
