@@ -10,13 +10,16 @@
 	<style>
 		a, a:visited, a:hover, a:focus, a:active{ color: #fff }
 		#main_content_wrap{ background-color: #888 }
-		.list-unstyled{ list-style-type:none; display:inline-table; padding:0; margin:0 }
-		.list-item{ display:table-cell;  }
-		.img-list{ height: 64px; margin-right: 15px }
+		.list-unstyled{ list-style-type:none; display:flex; flex-direction: column; align-items: center; justify-content:center; padding:0; margin:0 }
+		.list-item{  display:flex; justify-content:center;  }
+		.img-list{ height: 64px;  margin: 15px auto; position: relative; opacity:.5 }
+		.img-list.cal:hover{ transition: all 2s easeInOut; height: 600px; position: absolute; top: -90px; left: -50px; z-index: 99; opacity:1;cursor:wait; }
 		.pdf:after{ content:url(../../images/pdf_download.png); position: relative; top: 3px; }
 		.pdf:hover{ color: #FF402F }
-		.nostyle{ background: none !important; text-align: left !important;	width: auto !important; height: auto !important;}
+		.nostyle{ background: none !important; text-align: left !important;	width: auto !important; height: auto !important; }
 		.nostyle:hover{ border: 0 !important; box-shadow: none !important;}
+		
+		summary{padding: 5px 15px;}
 	</style>
   </head>
   <body>
@@ -32,16 +35,64 @@
       <section id="main_content" class="inner">
 		<ul class="list-unstyled">
 			<li class="list-item">
-				<a href="calendrier_1er_semestre.png" alt="Calendrier 1er semestre"  title="[Nouvelle fenêtre] Calendrier 1er semestre" target="_blank">
-					<img class="img-list" src="calendrier_1er_semestre.png" alt="" title="Calendrier 1er semestre">
+				<a href="https://cma.paris.fr/#displayElement(8525)" alt="Fiche CMA"  title="[Nouvelle fenêtre] Fiche CMA" target="_blank">
+					<img class="img-list" src="cma.png" alt="" title="[Nouvelle fenêtre] Fiche CMA">
 				</a>
 			</li>
 			<li class="list-item">
-				<a href="https://cma.paris.fr/#displayElement(7520)" alt="Fiche CMA"  title="[Nouvelle fenêtre] Fiche CMA" target="_blank">
-					<img class="img-list" src="cma.png" alt="" title="Fiche CMA">
-				</a>
+				<details>
+					<summary>Calendrier 1er semestre</summary>
+					<a href="calendrier_1er_semestre.png" alt="Calendrier 1er semestre"  title="[Nouvelle fenêtre] Calendrier 1er semestre" target="_blank">
+						<img class="img-list cal" src="calendriers2020-2021semestre1.jpg" alt="" title="Calendrier 1er semestre">
+					</a>
+				</details>
+				<details>
+					<summary>Calendrier 2eme semestre</summary>
+					<a href="calendrier_1er_semestre.png" alt="Calendrier 2eme semestre"  title="[Nouvelle fenêtre] Calendrier 2eme semestre" target="_blank">
+						<img class="img-list cal" src="calendriers2020-2021semestre2.jpg" alt="" title="Calendrier 2eme semestre">
+					</a>
+				</details>
 			</li>
+			
 		</ul>
+		<h3>Le programme...</h3>
+		<dl>
+			<dt>Introduction</dt>
+			<dd>L'objectif de HTML, CSS et JavaScript, la différence entre les framework et les langages, et comment s'y retrouver dans un projet de site Web de base avec Atom. </dt>
+			<dt>Pages web, la base</dt>
+			<dd>Le squelette de chaque page web sur Internet, ainsi que les éléments HTML fondamentaux tels que les titres, les paragraphes, les listes, etc. </dt>
+			<dt>Liens et images</dt>
+			<dd>L'établissement de liens vers d'autres pages, la référence à ces dernières avec des chemins absolus, relatifs et relatifs à la racine, l'intégration d'images et la finition du squelette de base de notre page web.</dt> 
+			<dt>Du style avec CSS</dt>
+			Connecter une feuille de style, styliser les éléments HTML avec toutes sortes de propriétés CSS, sélectionner différents éléments et réutiliser des styles sur plusieurs pages web.</dt> 
+			</dt>
+			<dt>Le modèle de la boîte
+			<dd>Boîtes à blocs, boîtes en ligne, padding, bordures, marges, dimensions, et une introduction à la façon dont les sites web sont construits avec des boîtes.</dt> 
+			<dt>Les sélecteurs css</dt>
+			<dd>Les sélecteurs de classe, les sélecteurs de descendants, les très utiles <div>, les liens de style avec les pseudo-classes, et pourquoi les sélecteurs d'identification sont une mauvaise idée.</dt> 
+			<dt>Float</dt>
+			<dd>Introduction à la mise en page CSS à base de float, au contrôle du flux horizontal de la page, à l'élimination des float et à la dissimulation des débordements.</dt> 
+			<dt>Flexbox</dt>
+			<dd>Les conteneurs flexibles par rapport aux articles flexibles, l'alignement vertical et horizontal, la distribution, l'emballage, la réorganisation et la création de mises en page CSS modernes.</dt> 
+			<dt>Grid</dt>
+			<dd>La grille ou le graâl de la mise en page moderne. Enfin une façon de positionner son contenu en deux dimensions sur votre page web, et bien plus encore.</dt>
+			<dt>Positionnement avancé</dt>
+			<dd>Le positionnement statique, relatif, absolu et fixe, les menus déroulants, l'index z et d'autres CSS sophistiqués qui vous feront sentir vraiment intelligent.</dt> 
+			<dt>Un site Responsive</dt>
+			<dd>Utilisation des requêtes média pour contrôler l'application des règles CSS, développement mobile en premier et désactivation du zoom de la fenêtre de visualisation.</dt> 
+			<dt>Images réactives</dt>
+			<dd>La partie difficile de la conception réactive : écrans rétiniens, images fluides, optimisation des dispositifs avec srcset, et direction artistique avec l'élément <image>.</dt> 
+			<dt>Html sémantique</dt>
+			<dd>Le plan du document, les articles, les sections, les navigations, les en-têtes, les pieds de page, les apartés, les figures, et d'autres moyens de rendre votre balisage HTML plus informatif. Plus d'informations.</dt>
+			<dt>Formulaires</dt>
+			<dd>Formulaires frontaux : le HTML pour créer des champs de texte, des boutons radio, des menus déroulants, des cases à cocher et des boutons, ainsi que le CSS pour les styliser tous.</dt> 
+			<dt>Typographie web</dt>
+			<dd>Où trouver des polices de caractères pour le web, hébergement local ou externe, gestion de plusieurs polices de caractères et principes typographiques de base comme l'alignement du texte, l'orientation et la mesure.</dt> 
+			<dt>Et si on testait</dt>
+			<dd>Mise en pratique et experimentations diverses si le temps le permet... </dt>
+		<dl>
+
+		<div hidden>
         <h3>
           Liste des cours du module
         </h3>
@@ -212,6 +263,7 @@
 				</a>
 			</li>
 		</ol>
+		</div>
     </section>
 </div>
 <!-- FOOTER  -->
